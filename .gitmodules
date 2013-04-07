@@ -13,3 +13,6 @@
 [submodule "acteur-modules/acteur-parent"]
 	path = acteur-modules/acteur-parent
 	url = https://github.com/timboudreau/acteur.git
+[submodule "giulius-tests-modules/giulius-tests-parent"]
+	path = giulius-tests-modules/giulius-tests-parent
+	url = https://github.com/timboudreau/giulius-tests.git
