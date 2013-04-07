@@ -23,3 +23,10 @@ in a Git submodule.  Thus each sub-project can be built as long as the parent PO
 as a group using the module-POM files that are part of this project.
 
 
+To build all of the above, clone this repo and then:
+
+   git submodule init
+   git submodule update
+   mvn install
+
+
