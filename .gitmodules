@@ -10,3 +10,6 @@
 [submodule "util"]
 	path = util
 	url = https://github.com/timboudreau/util
+[submodule "acteur-modules/acteur-parent"]
+	path = acteur-modules/acteur-parent
+	url = https://github.com/timboudreau/acteur.git
