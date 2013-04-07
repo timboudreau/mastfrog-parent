@@ -1,0 +1,12 @@
+[submodule "giulius-web-modules/giulius-web-parent"]
+	path = giulius-web-modules/giulius-web-parent
+	url = https://github.com/timboudreau/giulius-web.git
+[submodule "giulius-modules/giulius-parent"]
+	path = giulius-modules/giulius-parent
+	url = https://github.com/timboudreau/giulius.git
+[submodule "scopes-modules/scopes-parent"]
+	path = scopes-modules/scopes-parent
+	url = https://github.com/timboudreau/scopes.git
+[submodule "util"]
+	path = util
+	url = https://github.com/timboudreau/util
