@@ -16,3 +16,6 @@
 [submodule "giulius-tests-modules/giulius-tests-parent"]
 	path = giulius-tests-modules/giulius-tests-parent
 	url = https://github.com/timboudreau/giulius-tests.git
+[submodule "giulius-selenium-tests-modules/giulius-selenium-tests-parent"]
+	path = giulius-selenium-tests-modules/giulius-selenium-tests-parent
+	url = https://github.com/timboudreau/giulius-selenium-tests.git
