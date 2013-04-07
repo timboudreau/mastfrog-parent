@@ -11,3 +11,10 @@ The following structure is used to allow child projects to remain individually b
 
 ``parent/pom.xml`` is the master POM file.
 
+To build all of the above, clone this repo and then:
+
+   git submodule init
+   git submodule update
+   mvn install
+
+
