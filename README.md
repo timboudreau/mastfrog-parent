@@ -11,6 +11,8 @@ The following projects are built here (and can be found via [this Maven reposito
   * [Giulius-Web](https://github.com/timboudreau/giulius-web) - Mini-frameworks for doing traditional Java web development with Guice
   * [Utilities](https://github.com/timboudreau/util) - Misc utilities
   * [Giulius-Selenium](https://github.com/timboudreau/giulius-selenium-tests) - An extension to Giulius-Tests which makes it easy to write Selenium tests with injected test fixtures and run them via JUnit, so your Selenium tests can take advantage of all of the reporting options for JUnit
+  * [Acteur](https://github.com/timboudreau/acteur) - A Netty+Guice framework using constructors as function objects to easily build scalable HTTP servers
+  * [Acteur-Timetracker](https://github.com/timboudreau/acteur-timetracker) - A simple JSON web API for time tracking, abcked by Acteur and MongoDB
 
 The following structure is used to allow child projects to remain independently buildable:
 
