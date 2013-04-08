@@ -19,3 +19,6 @@
 [submodule "giulius-selenium-tests-modules/giulius-selenium-tests-parent"]
 	path = giulius-selenium-tests-modules/giulius-selenium-tests-parent
 	url = https://github.com/timboudreau/giulius-selenium-tests.git
+[submodule "acteur-timetracker"]
+	path = acteur-timetracker
+	url = https://github.com/timboudreau/acteur-timetracker.git

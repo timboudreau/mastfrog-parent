@@ -19,5 +19,6 @@
         <module>giulius-selenium-tests-modules</module>
         <module>giulius-web-modules</module>
         <module>acteur-modules</module>
+        <module>acteur-timetracker</module>
     </modules>
 </project>
