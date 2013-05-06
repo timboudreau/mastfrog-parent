@@ -20,5 +20,6 @@
         <module>giulius-web-modules</module>
         <module>acteur-modules</module>
         <module>acteur-timetracker</module>
+	<module>netty-http-client/netty-http-client</module>
     </modules>
 </project>

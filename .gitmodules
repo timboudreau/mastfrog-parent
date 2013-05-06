@@ -22,3 +22,6 @@
 [submodule "acteur-timetracker"]
 	path = acteur-timetracker
 	url = https://github.com/timboudreau/acteur-timetracker.git
+[submodule "netty-http-client"]
+	path = netty-http-client
+	url = https://github.com/timboudreau/netty-http-client.git
