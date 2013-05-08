@@ -13,6 +13,7 @@ The following projects are built here (and can be found via [this Maven reposito
   * [Giulius-Selenium](https://github.com/timboudreau/giulius-selenium-tests) - An extension to Giulius-Tests which makes it easy to write Selenium tests with injected test fixtures and run them via JUnit, so your Selenium tests can take advantage of all of the reporting options for JUnit
   * [Acteur](https://github.com/timboudreau/acteur) - A Netty+Guice framework using constructors as function objects to easily build scalable HTTP servers
   * [Acteur-Timetracker](https://github.com/timboudreau/acteur-timetracker) - A simple JSON web API for time tracking, abcked by Acteur and MongoDB
+  * [Netty-Http-Client](https://github.com/timboudreau/netty-http-client) - A simple JSON web API for time tracking, abcked by Acteur and MongoDB
 
 The following structure is used to allow child projects to remain independently buildable:
 
@@ -28,3 +29,7 @@ as a group using the module-POM files that are part of this project.
 
 To build all of the above, clone this repo and the run the ``init`` script in the root of the repository, to populate the Git submodules and do an initial build
 
+You will see warnings that the POM in the parent directory of each project is not the parent POM
+referenced from the project, and the child projects don't specify a relative path to ``../parent``
+This is the price of having projects which can be checked out by themselves and build and work,
+but which can also be checked out as a set of git submodules and be built as a tree.

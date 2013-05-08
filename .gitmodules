@@ -25,3 +25,6 @@
 [submodule "netty-http-client"]
 	path = netty-http-client
 	url = https://github.com/timboudreau/netty-http-client.git
+[submodule "acteur-tutorial"]
+	path = acteur-tutorial
+	url = https://github.com/timboudreau/acteur-tutorial.git
