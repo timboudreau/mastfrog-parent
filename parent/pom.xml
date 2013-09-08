@@ -17,7 +17,7 @@
         <!-- what still uses this?! -->
         <!--<netty.version>4.0.0.Final-SNAPSHOT</netty.version>-->
         <netty.version>4.1.0.Alpha1-SNAPSHOT</netty.version>
-        <guice.version>3.1.0-SNAPSHOT</guice.version>
+        <guice.version>4.0-beta</guice.version>
         <netbeans.version>RELEASE73</netbeans.version>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
