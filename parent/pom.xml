@@ -38,9 +38,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.14.1</version>
+                <version>2.16</version>
                 <configuration>
-                    <parallel>true</parallel>
+                    <parallel>methods</parallel>
                     <parallelMavenExecution>true</parallelMavenExecution>
                     <perCoreThreadCount>4</perCoreThreadCount>
                     <threadCount>5</threadCount>
@@ -64,9 +64,9 @@
                                 <requireMavenVersion>
                                     <version>3.0</version>
                                 </requireMavenVersion>
-                                <requireJavaVersion>
+<!--                                <requireJavaVersion>
                                     <version>1.7</version>
-                                </requireJavaVersion>
+                                </requireJavaVersion>-->
                                 <!-- This would be useful, but has problems
                                 because there is no real standard for
                                 maven versions.  Uncommenting it does
@@ -84,7 +84,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>1.2</version>
+                    <version>1.3.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -92,7 +92,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-remote-resources-plugin</artifactId>
-                    <version>1.4</version>
+                    <version>1.5</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -101,7 +101,7 @@
                 <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
-                    <version>2.1.4</version>
+                    <version>2.1.5</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
@@ -119,7 +119,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.14.1</version>
+                    <version>2.16</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -199,18 +199,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>timboudreau.org-snapshots</id>
-            <url>http://deployment:daemon@hp:8081/nexus/content/repositories/snapshots</url>
-            <name>Tim Boudreau Staging Repository</name>
-        </snapshotRepository>
-        <repository>
-            <id>timboudreau.org-releases</id>
-            <url>http://deployment:daemon@hp:8081/nexus/content/repositories/releases</url>
-            <name>Tim Boudreau Release Repository</name>
-        </repository>
-    </distributionManagement>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -341,22 +329,22 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>2.2.1</version>
+                <version>2.2.3</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>2.2.0</version>
+                <version>2.2.3</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>2.2.1</version>
+                <version>2.2.3</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-joda</artifactId>
-                <version>2.2.1</version>
+                <version>2.2.3</version>
             </dependency>
             <dependency>
                 <groupId>com.google.android</groupId>
@@ -366,12 +354,12 @@
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>jsr305</artifactId>
-                <version>2.0.1</version>
+                <version>2.0.2</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>14.0.1</version>
+                <version>15.0</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
@@ -387,11 +375,6 @@
                 <groupId>com.google.inject</groupId>
                 <artifactId>guice</artifactId>
                 <version>${guice.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>embedded-jetty</artifactId>
-                <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
@@ -513,7 +496,7 @@
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>2.2</version>
+                <version>2.3</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -538,12 +521,12 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
-                <version>4.2.5</version>
+                <version>4.3</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
-                <version>4.2.4</version>
+                <version>4.3</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
@@ -553,42 +536,42 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-core</artifactId>
-                <version>3.0.5</version>
+                <version>3.1.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-plugin-api</artifactId>
-                <version>3.0.5</version>
+                <version>3.1.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>el-api</artifactId>
-                <version>6.0.36</version>
+                <version>6.0.37</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-jaxrs</artifactId>
-                <version>1.9.12</version>
+                <version>1.9.13</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-utils</artifactId>
-                <version>3.0.10</version>
+                <version>3.0.15</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-server</artifactId>
-                <version>9.0.0.RC2</version>
+                <version>9.1.0.RC0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-servlet</artifactId>
-                <version>9.0.0.RC2</version>
+                <version>9.1.0.RC0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-webapp</artifactId>
-                <version>9.0.0.RC2</version>
+                <version>9.1.0.RC0</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish</groupId>
@@ -598,7 +581,7 @@
             <dependency>
                 <groupId>org.jasypt</groupId>
                 <artifactId>jasypt</artifactId>
-                <version>1.9.0</version>
+                <version>1.9.1</version>
             </dependency>
             <dependency>
                 <groupId>org.netbeans.api</groupId>
@@ -638,7 +621,7 @@
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>mongo-java-driver</artifactId>
-                <version>2.11.1</version>
+                <version>2.11.3</version>
             </dependency>            
         </dependencies>
     </dependencyManagement>
