@@ -28,3 +28,9 @@
 [submodule "acteur-tutorial"]
 	path = acteur-tutorial
 	url = https://github.com/timboudreau/acteur-tutorial.git
+[submodule "acteur-auth"]
+	path = acteur-auth
+	url = https://github.com/timboudreau/acteur-auth.git
+[submodule "generic-web-api"]
+	path = generic-web-api
+	url = https://github.com/timboudreau/generic-web-api.git

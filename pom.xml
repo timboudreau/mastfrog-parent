@@ -22,5 +22,7 @@
         <module>acteur-timetracker</module>
 	<module>netty-http-client</module>
 	<module>acteur-tutorial</module>
+	<module>acteur-auth</module>
+	<module>generic-web-api</module>
     </modules>
 </project>

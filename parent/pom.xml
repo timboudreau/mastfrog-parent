@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
@@ -64,7 +64,7 @@
                                 <requireMavenVersion>
                                     <version>3.1.1</version>
                                 </requireMavenVersion>
-<!--                                <requireJavaVersion>
+                                <!--                                <requireJavaVersion>
                                     <version>1.7</version>
                                 </requireJavaVersion>-->
                                 <!-- This would be useful, but has problems
@@ -254,6 +254,41 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-auth</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-facebook-auth</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-google-auth</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-linkedin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-mongo</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-twitter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-mongo-userstore</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -632,6 +667,28 @@
                 <groupId>org.mongodb</groupId>
                 <artifactId>mongo-java-driver</artifactId>
                 <version>2.11.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.restfb</groupId>
+                <artifactId>restfb</artifactId>
+                <version>1.6.12</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scribe</groupId>
+                <artifactId>scribe</artifactId>
+                <version>1.3.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.http-client</groupId>
+                <artifactId>google-http-client-jackson2</artifactId>
+                <version>1.17.0-rc</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.google.api-client</groupId>
+                <artifactId>google-api-client</artifactId>
+                <version>1.17.0-rc</version>
+                <type>jar</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
