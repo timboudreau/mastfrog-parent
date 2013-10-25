@@ -50,6 +50,7 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
+                        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -72,6 +73,13 @@
                                 maven versions.  Uncommenting it does
                                 give some useful information though. -->
                                 <!--<DependencyConvergence/>-->
+                                <bannedDependencies>
+                                    <searchTransitive>true</searchTransitive>
+                                    <excludes>
+                                        <!--<exclude>commons-logging:commons-logging</exclude>-->
+                                        <!--<exclude>org.slf4j:slf4j-simple</exclude>-->
+                                    </excludes>
+                                </bannedDependencies>                                
                             </rules>
                         </configuration>
                     </execution>
@@ -693,9 +701,9 @@
         </dependencies>
     </dependencyManagement>
     <scm>
-        <connection>scm:hg:https://timboudreau.com/code/useful/</connection>
-        <url>https://timboudreau.com/code/useful/</url>
-        <developerConnection>scm:hg:https://timboudreau.com/code/useful/</developerConnection>
+        <connection>scm:git:https://github.com/timboudreau/mastfrog-parent.git</connection>
+        <url>https://github.com/timboudreau/mastfrog-parent</url>
+        <developerConnection>scm:git:git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
     <licenses>
         <license>
