@@ -14,6 +14,7 @@ The following projects are built here (and can be found via [this Maven reposito
   * [Acteur](https://github.com/timboudreau/acteur) - A Netty+Guice framework using constructors as function objects to easily build scalable HTTP servers
   * [Acteur-Timetracker](https://github.com/timboudreau/acteur-timetracker) - A simple JSON web API for time tracking, abcked by Acteur and MongoDB
   * [Netty-Http-Client](https://github.com/timboudreau/netty-http-client) - A simple JSON web API for time tracking, abcked by Acteur and MongoDB
+  * A bunch of other stuff
 
 The following structure is used to allow child projects to remain independently buildable:
 
