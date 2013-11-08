@@ -6,7 +6,7 @@
     <artifactId>mastfrog-parent</artifactId>
     <!-- NOTE: Changing the version string here changes it for EVERYTHING -->
     <version>1.3.7-SNAPSHOT</version>
-    <name>Mastfrog Parent</name>
+    <name>Mastfrog Configuration</name>
     <description>Guice + Configuration tools, Acteur Framework</description>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <packaging>pom</packaging>
@@ -18,7 +18,7 @@
         <!--<netty.version>4.0.0.Final-SNAPSHOT</netty.version>-->
         <netty.version>4.1.0.Alpha1-SNAPSHOT</netty.version>
         <guice.version>4.0-beta</guice.version>
-        <netbeans.version>RELEASE73</netbeans.version>
+        <netbeans.version>RELEASE74</netbeans.version>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -473,7 +473,7 @@
             <dependency>
                 <groupId>com.kenai</groupId>
                 <artifactId>simplevalidation</artifactId>
-                <version>1.3</version>
+                <version>1.4</version>
                 <type>jar</type>
             </dependency>
             <dependency>
@@ -629,7 +629,7 @@
             <dependency>
                 <groupId>org.netbeans.api</groupId>
                 <artifactId>org-netbeans-libs-javacapi</artifactId>
-                <version>RELEASE721</version>
+                <version>${netbeans.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.netbeans.api</groupId>
@@ -643,13 +643,8 @@
             </dependency>
             <dependency>
                 <groupId>org.netbeans.external</groupId>
-                <artifactId>javac-impl-nb-7.0-b07</artifactId>
-                <version>${netbeans.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.netbeans.external</groupId>
                 <artifactId>nb-javac-impl</artifactId>
-                <version>RELEASE73</version>
+                <version>${netbeans.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.sonatype.aether</groupId>
@@ -684,7 +679,7 @@
             <dependency>
                 <groupId>org.scribe</groupId>
                 <artifactId>scribe</artifactId>
-                <version>1.3.3</version>
+                <version>1.3.5</version>
             </dependency>
             <dependency>
                 <groupId>com.google.http-client</groupId>
