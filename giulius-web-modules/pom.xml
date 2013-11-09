@@ -9,7 +9,7 @@
         <relativePath>../parent</relativePath>
     </parent>
     <artifactId>giulius-web-modules</artifactId>
-    <name>Scopes (modules)</name>
+    <name>Giulius-Web (modules)</name>
     <packaging>pom</packaging>
     <modules>
         <module>giulius-web-parent</module>

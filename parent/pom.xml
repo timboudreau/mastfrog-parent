@@ -4,21 +4,30 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <!--          WHEN UPDATING THE VERSION
+        Also update the mastfrog.version property below - we use that for
+        dependencies so that a project can use this as its parent, have
+        an independent version number and not accidentally try to import
+        mastfrog JARs with that version instead of the right one
+    -->
+
     <!-- NOTE: Changing the version string here changes it for EVERYTHING -->
     <version>1.3.7-SNAPSHOT</version>
     <name>Mastfrog Configuration</name>
-    <description>Guice + Configuration tools, Acteur Framework</description>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
-    <packaging>pom</packaging>
+    <description>
+        Shared configuration for Giulius, Acteur and
+        related projects
+    </description>
     <!-- Ant-style properties used in the build - subprojects may override -->
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.debug>true</maven.compiler.debug>
-        <!-- what still uses this?! -->
-        <!--<netty.version>4.0.0.Final-SNAPSHOT</netty.version>-->
         <netty.version>5.0.0.Alpha1-SNAPSHOT</netty.version>
         <guice.version>4.0-beta</guice.version>
         <netbeans.version>RELEASE74</netbeans.version>
+        <mastfrog.version>1.3.7-SNAPSHOT</mastfrog.version>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -50,7 +59,6 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
-                        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -72,14 +80,14 @@
                                 because there is no real standard for
                                 maven versions.  Uncommenting it does
                                 give some useful information though. -->
-                                <!--<DependencyConvergence/>-->
+                                <DependencyConvergence/>
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
                                         <!--<exclude>commons-logging:commons-logging</exclude>-->
                                         <!--<exclude>org.slf4j:slf4j-simple</exclude>-->
                                     </excludes>
-                                </bannedDependencies>                                
+                                </bannedDependencies>
                             </rules>
                         </configuration>
                     </execution>
@@ -198,6 +206,11 @@
             <name>Sonatype Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </pluginRepository>
+        <pluginRepository>
+            <id>timboudreau-plugins</id>
+            <name>timboudreau.com plugins</name>
+            <url>http://timboudreau.com/builds/plugin/repository/everything/</url>
+        </pluginRepository>
     </pluginRepositories>
     <!-- JUnit test dependency for all projects -->
     <dependencies>
@@ -212,162 +225,169 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-settings</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>embedded-jetty</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>encryption</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>folder-auth</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>generic-webapi-client</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-jaxws</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-servlet</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>io</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>localization</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-auth</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-facebook-auth</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-google-auth</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-linkedin</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-mongo</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-twitter</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-mongo-userstore</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-util</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-deprecated</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>resources</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>netty-http-client</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>netty-http-test-harness</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>scopes</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>structured-config</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>structured-config-annotations</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>testproject-a</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>testproject-b</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-tests</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>treadmill</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>url</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>util</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-mongo</artifactId>
+                <scope>test</scope>
+                <type>test-jar</type>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
@@ -422,47 +442,47 @@
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>giulius-jaxws</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>logging</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>jackson</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>structured-config</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>structured-config-annotations</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>structured-config-guice</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>tests.guice</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>util</artifactId>
-                <version>${project.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.kenai</groupId>
@@ -559,7 +579,7 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpasyncclient</artifactId>
-                <version>4.0-beta3</version>
+                <version>4.0-beta4</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
@@ -692,6 +712,21 @@
                 <artifactId>google-api-client</artifactId>
                 <version>1.17.0-rc</version>
                 <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.18.1-GA</version>
+            </dependency>
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-core</artifactId>
+                <version>3.0.5-hack</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jcraft</groupId>
+                <artifactId>jzlib</artifactId>
+                <version>1.1.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
