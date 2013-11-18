@@ -14,7 +14,7 @@
     -->
 
     <!-- NOTE: Changing the version string here changes it for EVERYTHING -->
-    <version>1.3.7</version>
+    <version>1.3.8-SNAPSHOT</version>
     <name>Mastfrog Configuration</name>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <description>
@@ -27,7 +27,7 @@
         <netty.version>5.0.0.Alpha1-SNAPSHOT</netty.version>
         <guice.version>4.0-beta</guice.version>
         <netbeans.version>RELEASE74</netbeans.version>
-        <mastfrog.version>1.3.7</mastfrog.version>
+        <mastfrog.version>1.3.8-SNAPSHOT</mastfrog.version>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
