@@ -34,3 +34,6 @@
 [submodule "generic-web-api"]
 	path = generic-web-api
 	url = https://github.com/timboudreau/generic-web-api.git
+[submodule "blurt"]
+	path = blurt
+	url = https://github.com/timboudreau/blurt.git

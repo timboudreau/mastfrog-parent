@@ -25,5 +25,6 @@
         <module>acteur-tutorial</module>
         <module>acteur-auth</module>
         <module>generic-web-api</module>
+        <module>blurt/Blurt</module>
     </modules>
 </project>
