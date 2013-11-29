@@ -13,8 +13,12 @@
         mastfrog JARs with that version instead of the right one
     -->
 
-    <!-- NOTE: Changing the version string here changes it for EVERYTHING -->
-    <version>1.3.9</version>
+    <!-- NOTE: Changing the version string here changes it for EVERYTHING.
+         Be SURE to also change mastfrog.version to match (and don't set it
+         to ${project.version} or this will break projects whose parent
+         is not this project
+    -->
+    <version>1.4.0-SNAPSHOT</version>
     <name>Mastfrog Configuration</name>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <description>
@@ -28,7 +32,7 @@
         <netty.version>4.0.12.Final</netty.version>
         <guice.version>4.0-beta</guice.version>
         <netbeans.version>RELEASE74</netbeans.version>
-        <mastfrog.version>1.3.9</mastfrog.version>
+        <mastfrog.version>1.4.0-SNAPSHOT</mastfrog.version>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
