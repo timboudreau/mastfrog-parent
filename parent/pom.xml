@@ -34,6 +34,7 @@
         <netbeans.version>RELEASE74</netbeans.version>
         <mastfrog.version>1.4.0</mastfrog.version>
         <simplevalidation.version>1.4</simplevalidation.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
