@@ -133,7 +133,7 @@
                 <plugin>
                     <groupId>com.googlecode.maven-overview-plugin</groupId>
                     <artifactId>maven-overview-plugin</artifactId>
-                    <version>2.12</version>
+                    <version>1.6</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-antrun-plugin</artifactId>
