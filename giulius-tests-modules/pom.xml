@@ -6,7 +6,7 @@
         <groupId>com.mastfrog</groupId>
         <artifactId>mastfrog-parent</artifactId>
         <version>1.4.0</version>
-        <relativePath>../parent</relativePath>
+        <relativePath/>
     </parent>
     <artifactId>giulius-tests-modules</artifactId>
     <name>Giulius Tests (modules)</name>
