@@ -28,8 +28,8 @@
     <!-- Ant-style properties used in the build - subprojects may override -->
     <properties>
         <maven.compiler.debug>true</maven.compiler.debug>
-        <netty.version>5.0.0.Alpha1</netty.version>
-        <!--<netty.version>4.0.12.Final</netty.version>-->
+        <!--<netty.version>5.0.0.Alpha1</netty.version>-->
+        <netty.version>4.0.12.Final</netty.version>
         <guice.version>4.0-beta</guice.version>
         <netbeans.version>RELEASE74</netbeans.version>
         <mastfrog.version>1.4.0</mastfrog.version>
