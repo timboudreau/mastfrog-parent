@@ -5,10 +5,9 @@
     <parent>
         <groupId>com.mastfrog</groupId>
         <artifactId>mastfrog-parent</artifactId>
-        <version>1.4.0</version>
+        <version>1.4.1</version>
         <relativePath>parent/</relativePath>
     </parent>
-    <version>1.4.0</version>
     <artifactId>mastfrog-modules</artifactId>
     <name>Mastfrog Modules</name>
     <packaging>pom</packaging>
@@ -26,8 +25,6 @@
         <module>acteur-auth</module>
         <module>generic-web-api</module>
         <module>blurt/Blurt</module>
+        <module>blurt/blurt-collector</module>
     </modules>
-    <dependencyManagement>
-        <dependencies/>
-    </dependencyManagement>
 </project>

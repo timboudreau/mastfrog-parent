@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
@@ -18,7 +18,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>1.4.0</version>
+    <version>1.4.1</version>
     <name>Mastfrog Configuration</name>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <description>
@@ -32,7 +32,7 @@
         <netty.version>4.0.12.Final</netty.version>
         <guice.version>4.0-beta</guice.version>
         <netbeans.version>RELEASE74</netbeans.version>
-        <mastfrog.version>1.4.0</mastfrog.version>
+        <mastfrog.version>1.4.1</mastfrog.version>
         <simplevalidation.version>1.4</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -749,6 +749,11 @@
                 <groupId>de.undercouch</groupId>
                 <artifactId>bson4jackson</artifactId>
                 <version>2.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>Blurt</artifactId>
+                <version>${mastfrog.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
