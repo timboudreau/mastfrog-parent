@@ -757,7 +757,7 @@
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
-                <artifactId>acteur-generic-app</artifactId>
+                <artifactId>acteur-annotations</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
