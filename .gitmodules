@@ -37,3 +37,6 @@
 [submodule "blurt"]
 	path = blurt
 	url = https://github.com/timboudreau/blurt.git
+[submodule "bunyan-java"]
+	path = bunyan-java
+	url = https://github.com/timboudreau/bunyan-java.git

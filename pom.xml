@@ -25,6 +25,7 @@
         <module>acteur-tutorial</module>
         <module>acteur-auth</module>
         <module>generic-web-api</module>
+        <module>bunyan-java</module>
         <module>blurt/Blurt</module>
         <module>blurt/blurt-collector</module>
     </modules>
