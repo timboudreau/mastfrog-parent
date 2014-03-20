@@ -14,6 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>util</module>
+        <module>jetcd</module>
         <module>scopes-modules</module>
         <module>giulius-modules</module>
         <module>giulius-tests-modules</module>

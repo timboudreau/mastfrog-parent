@@ -43,3 +43,6 @@
 [submodule "giulius-settings-etcd"]
 	path = giulius-settings-etcd
 	url = https://github.com/timboudreau/giulius-settings-etcd
+[submodule "jetcd"]
+	path = jetcd
+	url = https://github.com/timboudreau/jetcd.git
