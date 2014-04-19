@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
@@ -18,7 +18,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>1.4.15</version>
+    <version>1.4.16</version>
     <name>Mastfrog Configuration</name>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <description>
@@ -30,9 +30,10 @@
         <maven.compiler.debug>true</maven.compiler.debug>
         <!--<netty.version>5.0.0.Alpha1-SNAPSHOT</netty.version>-->
         <netty.version>4.0.17.Final</netty.version>
-        <guice.version>4.0-beta</guice.version>
-        <netbeans.version>RELEASE74</netbeans.version>
-        <mastfrog.version>1.4.15</mastfrog.version>
+        <guice.version>4.0-beta4</guice.version>
+        <netbeans.version>RELEASE80</netbeans.version>
+        <jackson.version>2.3.1</jackson.version>
+        <mastfrog.version>1.4.16</mastfrog.version>
         <simplevalidation.version>1.6</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -78,7 +79,7 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>>=3.1.1</version>
+                                    <version>&gt;=3.1.1</version>
                                 </requireMavenVersion>
                                 <!--                                <requireJavaVersion>
                                     <version>1.7</version>
@@ -409,22 +410,22 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>2.3.1</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>2.3.1</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>2.3.1</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-joda</artifactId>
-                <version>2.3.1</version>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.android</groupId>
@@ -527,17 +528,17 @@
             <dependency>
                 <groupId>com.sun.jersey.contribs</groupId>
                 <artifactId>jersey-guice</artifactId>
-                <version>1.18</version>
+                <version>1.18.1</version>
             </dependency>
             <dependency>
                 <groupId>com.sun.jersey</groupId>
                 <artifactId>jersey-grizzly2</artifactId>
-                <version>1.18</version>
+                <version>1.18.1</version>
             </dependency>
             <dependency>
                 <groupId>com.sun.jersey</groupId>
                 <artifactId>jersey-server</artifactId>
-                <version>1.18</version>
+                <version>1.18.1</version>
             </dependency>
             <dependency>
                 <groupId>com.sun.xml.ws</groupId>
@@ -602,22 +603,22 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.2</version>
+                <version>3.3.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpasyncclient</artifactId>
-                <version>4.0</version>
+                <version>4.0.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
-                <version>4.3.2</version>
+                <version>4.3.3</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
-                <version>4.3.1</version>
+                <version>4.3.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
@@ -627,12 +628,12 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-core</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-plugin-api</artifactId>
-                <version>3.1.1</version>
+                <version>3.2.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
@@ -672,7 +673,7 @@
             <dependency>
                 <groupId>org.jasypt</groupId>
                 <artifactId>jasypt</artifactId>
-                <version>1.9.1</version>
+                <version>1.9.2</version>
             </dependency>
             <dependency>
                 <groupId>org.netbeans.api</groupId>
@@ -707,17 +708,17 @@
             <dependency>
                 <groupId>org.eclipse.aether</groupId>
                 <artifactId>aether-api</artifactId>
-                <version>0.9.0.M3</version>
+                <version>0.9.0.M4</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.aether</groupId>
                 <artifactId>aether-util</artifactId>
-                <version>0.9.0.M3</version>
+                <version>0.9.0.M4</version>
             </dependency>
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>mongo-java-driver</artifactId>
-                <version>2.11.4</version>
+                <version>2.12.0</version>
             </dependency>
             <dependency>
                 <groupId>com.restfb</groupId>

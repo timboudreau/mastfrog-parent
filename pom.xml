@@ -5,10 +5,10 @@
     <parent>
         <groupId>com.mastfrog</groupId>
         <artifactId>mastfrog-parent</artifactId>
-        <version>1.4.15</version>
+        <version>1.4.16</version>
         <relativePath>parent/</relativePath>
     </parent>
-    <version>1.4.15</version>
+    <version>1.4.16</version>
     <artifactId>mastfrog-modules</artifactId>
     <name>Mastfrog Modules</name>
     <packaging>pom</packaging>
