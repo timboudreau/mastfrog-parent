@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
@@ -29,7 +29,7 @@
     <properties>
         <maven.compiler.debug>true</maven.compiler.debug>
         <!--<netty.version>5.0.0.Alpha1-SNAPSHOT</netty.version>-->
-        <netty.version>4.0.17.Final</netty.version>
+        <netty.version>4.0.18.Final</netty.version>
         <guice.version>4.0-beta4</guice.version>
         <netbeans.version>RELEASE80</netbeans.version>
         <jackson.version>2.3.1</jackson.version>
@@ -269,7 +269,7 @@
                 <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-java</artifactId>
                 <version>${mastfrog.version}</version>
-            </dependency>            
+            </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-servlet</artifactId>
@@ -288,6 +288,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>acteur-jdbc</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
@@ -476,7 +481,7 @@
                 <groupId>com.mastfrog</groupId>
                 <artifactId>giulius-jdbc</artifactId>
                 <version>${mastfrog.version}</version>
-            </dependency>            
+            </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>jackson</artifactId>
@@ -507,7 +512,7 @@
                 <artifactId>statistics</artifactId>
                 <version>${mastfrog.version}</version>
                 <type>jar</type>
-            </dependency>            
+            </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>util</artifactId>
@@ -564,6 +569,12 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty</artifactId>
                 <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-transport</artifactId>
+                <version>${netty.version}</version>
+                <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>io.netty</groupId>
@@ -786,7 +797,7 @@
                 <groupId>javax.inject</groupId>
                 <artifactId>javax.inject</artifactId>
                 <version>1</version>
-            </dependency>            
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <scm>
