@@ -29,12 +29,12 @@
     <properties>
         <maven.compiler.debug>true</maven.compiler.debug>
         <!--<netty.version>5.0.0.Alpha1-SNAPSHOT</netty.version>-->
-        <netty.version>4.0.18.Final</netty.version>
+        <netty.version>4.0.19.Final</netty.version>
         <guice.version>4.0-beta4</guice.version>
         <netbeans.version>RELEASE80</netbeans.version>
         <jackson.version>2.3.1</jackson.version>
         <mastfrog.version>1.4.16</mastfrog.version>
-        <simplevalidation.version>1.6</simplevalidation.version>
+        <simplevalidation.version>1.7</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
