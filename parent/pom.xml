@@ -125,7 +125,7 @@
                 <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
-                    <version>2.1.7</version>
+                    <version>2.1.9</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
@@ -445,7 +445,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>16.0.1</version>
+                <version>17.0</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
@@ -634,7 +634,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
                 <artifactId>maven-plugin-annotations</artifactId>
-                <version>3.2</version>
+                <version>3.3</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
@@ -649,7 +649,7 @@
             <dependency>
                 <groupId>org.apache.tomcat</groupId>
                 <artifactId>el-api</artifactId>
-                <version>6.0.39</version>
+                <version>6.0.41</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
@@ -744,19 +744,19 @@
             <dependency>
                 <groupId>com.google.http-client</groupId>
                 <artifactId>google-http-client-jackson2</artifactId>
-                <version>1.17.0-rc</version>
+                <version>1.18.0-rc</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>com.google.api-client</groupId>
                 <artifactId>google-api-client</artifactId>
-                <version>1.17.0-rc</version>
+                <version>1.18.0-rc</version>
                 <type>jar</type>
             </dependency>
             <dependency>
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.18.1-GA</version>
+                <version>3.18.2-GA</version>
             </dependency>
             <dependency>
                 <groupId>org.twitter4j</groupId>
