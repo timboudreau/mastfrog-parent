@@ -34,7 +34,7 @@
         <netbeans.version>RELEASE80</netbeans.version>
         <jackson.version>2.3.1</jackson.version>
         <mastfrog.version>1.4.17</mastfrog.version>
-        <simplevalidation.version>1.7</simplevalidation.version>
+        <simplevalidation.version>1.8</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
