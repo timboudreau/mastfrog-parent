@@ -33,7 +33,7 @@
         <netbeans.version>RELEASE80</netbeans.version>
         <jackson.version>2.4.3</jackson.version>
         <mastfrog.version>1.4.19</mastfrog.version>
-        <simplevalidation.version>1.8</simplevalidation.version>
+        <simplevalidation.version>1.9</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
@@ -529,6 +529,12 @@
             <dependency>
                 <groupId>com.kenai</groupId>
                 <artifactId>simplevalidation-standalone</artifactId>
+                <version>${simplevalidation.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.kenai</groupId>
+                <artifactId>simplevalidation-standalone-server</artifactId>
                 <version>${simplevalidation.version}</version>
                 <type>jar</type>
             </dependency>
