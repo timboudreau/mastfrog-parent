@@ -17,7 +17,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>1.4.19</version>
+    <version>1.5.0</version>
     <name>Mastfrog Configuration</name>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <description>
@@ -32,7 +32,7 @@
         <guice.version>4.0-beta5</guice.version>
         <netbeans.version>RELEASE80</netbeans.version>
         <jackson.version>2.4.3</jackson.version>
-        <mastfrog.version>1.4.19</mastfrog.version>
+        <mastfrog.version>1.5.0</mastfrog.version>
         <simplevalidation.version>1.9</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -44,8 +44,8 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <debug>true</debug>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <compilerArgument>${maven.compiler.argument}</compilerArgument>
@@ -266,6 +266,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>numble</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>

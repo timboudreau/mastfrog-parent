@@ -4,9 +4,10 @@
     <parent>
         <groupId>com.mastfrog</groupId>
         <artifactId>mastfrog-parent</artifactId>
-        <version>1.4.19</version>
+        <version>1.5.0</version>
         <relativePath>parent/</relativePath>
     </parent>
+    <version>1.5.0</version>
     <artifactId>mastfrog-modules</artifactId>
     <name>Mastfrog Modules</name>
     <packaging>pom</packaging>
@@ -28,5 +29,6 @@
         <module>bunyan-java</module>
         <module>blurt/Blurt</module>
         <module>blurt/blurt-collector</module>
+        <module>numble</module>
     </modules>
 </project>
