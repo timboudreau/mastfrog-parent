@@ -55,7 +55,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.1</version>
                 <configuration>
                     <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
@@ -63,7 +62,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.18</version>
                 <configuration>
                     <parallel>methods</parallel>
                     <parallelMavenExecution>true</parallelMavenExecution>
@@ -92,10 +90,6 @@
                                 <!--                                <requireJavaVersion>
                                     <version>1.7</version>
                                 </requireJavaVersion>-->
-                                <!-- This would be useful, but has problems
-                                because there is no real standard for
-                                maven versions.  Uncommenting it does
-                                give some useful information though. -->
                                 <DependencyConvergence/>
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
@@ -152,6 +146,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>2.18</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.10.1</version>
                 </plugin>
             </plugins>
         </pluginManagement>
