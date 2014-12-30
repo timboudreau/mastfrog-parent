@@ -17,7 +17,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>1.5.2</version>
+    <version>1.5.3</version>
     <name>Mastfrog Configuration</name>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <description>
@@ -32,7 +32,7 @@
         <guice.version>4.0-beta5</guice.version>
         <netbeans.version>RELEASE80</netbeans.version>
         <jackson.version>2.4.3</jackson.version>
-        <mastfrog.version>1.5.2</mastfrog.version>
+        <mastfrog.version>1.5.3</mastfrog.version>
         <simplevalidation.version>1.9</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
