@@ -28,10 +28,10 @@
     <properties>
         <maven.compiler.debug>true</maven.compiler.debug>
         <!--<netty.version>5.0.0.Alpha2-SNAPSHOT</netty.version>-->
-        <netty.version>4.0.24.Final</netty.version>
+        <netty.version>4.0.25.Final</netty.version>
         <guice.version>4.0-beta5</guice.version>
         <netbeans.version>RELEASE80</netbeans.version>
-        <jackson.version>2.4.3</jackson.version>
+        <jackson.version>2.4.4</jackson.version>
         <mastfrog.version>1.6.0-dev</mastfrog.version>
         <simplevalidation.version>1.9</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
