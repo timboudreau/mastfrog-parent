@@ -253,6 +253,11 @@
             </dependency>            
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>acteur-bunyan</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>            
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-settings</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
