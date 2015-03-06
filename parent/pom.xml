@@ -253,6 +253,22 @@
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>test-main</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>selenium</artifactId>
+                <version>${mastfrog.version}</version>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>video</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-bunyan</artifactId>
                 <version>${mastfrog.version}</version>
