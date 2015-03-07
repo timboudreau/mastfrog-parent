@@ -45,8 +45,8 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <debug>true</debug>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <compilerArgument>${maven.compiler.argument}</compilerArgument>
@@ -250,6 +250,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-base</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>jdk8-stubs</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
