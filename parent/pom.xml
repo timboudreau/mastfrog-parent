@@ -56,7 +56,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-<!--                <configuration>
+                <!--                <configuration>
                     <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration> -->
             </plugin>
@@ -247,6 +247,16 @@
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>jackson-mongodb</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>giulius-mongodb</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-base</artifactId>
