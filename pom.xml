@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.mastfrog</groupId>
+        <version>1.6.1.2-netty-5</version>
         <artifactId>mastfrog-parent</artifactId>
-        <version>1.6.1.2-dev</version>
         <relativePath>parent/</relativePath>
     </parent>
-    <version>1.6.1.2-dev</version><artifactId>mastfrog-modules</artifactId>
+    <artifactId>mastfrog-modules</artifactId>
     <name>Mastfrog Modules</name>
     <packaging>pom</packaging>
     <modules>
