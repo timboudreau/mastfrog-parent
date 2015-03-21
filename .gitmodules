@@ -37,3 +37,15 @@
 [submodule "blurt"]
 	path = blurt
 	url = https://github.com/timboudreau/blurt.git
+[submodule "bunyan-java"]
+	path = bunyan-java
+	url = https://github.com/timboudreau/bunyan-java.git
+[submodule "giulius-settings-etcd"]
+	path = giulius-settings-etcd
+	url = https://github.com/timboudreau/giulius-settings-etcd
+[submodule "jetcd"]
+	path = jetcd
+	url = https://github.com/timboudreau/jetcd.git
+[submodule "numble"]
+	path = numble
+	url = https://github.com/timboudreau/numble.git

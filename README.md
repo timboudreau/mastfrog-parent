@@ -30,7 +30,3 @@ as a group using the module-POM files that are part of this project.
 
 To build all of the above, clone this repo and the run the ``init`` script in the root of the repository, to populate the Git submodules and do an initial build
 
-You will see warnings that the POM in the parent directory of each project is not the parent POM
-referenced from the project, and the child projects don't specify a relative path to ``../parent``
-This is the price of having projects which can be checked out by themselves and build and work,
-but which can also be checked out as a set of git submodules and be built as a tree.
