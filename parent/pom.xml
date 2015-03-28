@@ -56,9 +56,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <!--                <configuration>
+                <configuration>
                     <additionalparam>-Xdoclint:none</additionalparam>
-                </configuration> -->
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
