@@ -464,6 +464,11 @@
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>netty-connection-pools</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>            
+            <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>jackson-jodatime</artifactId>
                 <version>${mastfrog.version}</version>
