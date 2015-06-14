@@ -487,6 +487,11 @@
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-resources</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
                 <artifactId>trackerapi</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
