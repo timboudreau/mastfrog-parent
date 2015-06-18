@@ -1,1 +1,5 @@
 /nb-configuration.xml
+*.orig
+*.class
+*.jar
+
