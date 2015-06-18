@@ -1,0 +1,4 @@
+#!/bin/sh
+git co $1
+git submodule foreach git co $1
+

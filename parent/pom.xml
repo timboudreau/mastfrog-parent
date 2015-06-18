@@ -17,7 +17,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>1.6.1.2-netty-5</version>
+    <version>1.6.2-netty-5</version>
     <name>Mastfrog Configuration</name>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <description>
@@ -26,14 +26,14 @@
     </description>
     <!-- Ant-style properties used in the build - subprojects may override -->
     <properties>
-        <mastfrog.version>1.6.1.2-netty-5</mastfrog.version>
         <maven.compiler.debug>true</maven.compiler.debug>
         <netty.version>5.0.0.Alpha3-SNAPSHOT</netty.version>
-        <!--<netty.version>4.0.26.Final</netty.version>-->
+        <!--<netty.version>4.0.28.Final</netty.version>-->
         <guice.version>4.0-beta5</guice.version>
         <netbeans.version>RELEASE80</netbeans.version>
         <jackson.version>2.4.4</jackson.version>
-        <simplevalidation.version>1.9</simplevalidation.version>
+        <mastfrog.version>1.6.2-netty-5</mastfrog.version>
+        <simplevalidation.version>1.10</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>2.45.0</selenium.version>
     </properties>
@@ -56,9 +56,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
+                <!--                <configuration>
                     <additionalparam>-Xdoclint:none</additionalparam>
-                </configuration>
+                </configuration> -->
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -464,6 +464,11 @@
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>netty-connection-pools</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>            
+            <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>jackson-jodatime</artifactId>
                 <version>${mastfrog.version}</version>
@@ -478,6 +483,11 @@
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>generic-web-api</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-resources</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
