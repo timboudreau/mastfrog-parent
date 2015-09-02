@@ -835,7 +835,7 @@
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>mongo-java-driver</artifactId>
-                <version>2.12.4</version>
+                <version>3.0.3</version>
             </dependency>
             <dependency>
                 <groupId>com.restfb</groupId>
