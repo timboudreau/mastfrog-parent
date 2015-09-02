@@ -353,6 +353,11 @@
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>netty-debug</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-auth</artifactId>
                 <version>${mastfrog.version}</version>
