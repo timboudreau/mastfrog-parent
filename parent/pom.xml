@@ -467,7 +467,7 @@
                 <groupId>${project.groupId}</groupId>
                 <artifactId>netty-connection-pools</artifactId>
                 <version>${mastfrog.version}</version>
-            </dependency>            
+            </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>jackson-jodatime</artifactId>
@@ -488,6 +488,11 @@
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-resources</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>giulius-mongodb-async</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
@@ -526,6 +531,11 @@
                 <groupId>com.google.android</groupId>
                 <artifactId>android</artifactId>
                 <version>4.1.1.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongodb-driver-async</artifactId>
+                <version>3.0.3</version>
             </dependency>
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
