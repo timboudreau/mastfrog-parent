@@ -24,6 +24,8 @@
         <module>netty-http-client</module>
         <module>acteur-tutorial</module>
         <module>acteur-auth</module>
+        <module>async-promises</module>
+        <module>mongo-promises</module>
         <module>generic-web-api</module>
         <module>bunyan-java</module>
         <module>blurt/Blurt</module>

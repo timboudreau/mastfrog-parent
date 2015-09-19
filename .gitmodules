@@ -49,3 +49,9 @@
 [submodule "numble"]
 	path = numble
 	url = https://github.com/timboudreau/numble.git
+[submodule "async-promises"]
+	path = async-promises
+	url = https://github.com/timboudreau/async-promises.git
+[submodule "mongo-promises"]
+	path = mongo-promises
+	url = https://github.com/timboudreau/mongo-promises.git
