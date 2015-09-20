@@ -26,6 +26,7 @@
         <module>acteur-auth</module>
         <module>async-promises</module>
         <module>mongo-promises</module>
+        <module>mongo-promises/mongo-promises-tests</module>
         <module>generic-web-api</module>
         <module>bunyan-java</module>
         <module>blurt/Blurt</module>
