@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
@@ -18,7 +17,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>1.6.5</version>
+    <version>1.7.0-dev</version>
     <name>Mastfrog Configuration</name>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <description>
@@ -29,16 +28,16 @@
     <properties>
         <maven.compiler.debug>true</maven.compiler.debug>
         <!--<netty.version>5.0.0.Alpha2-SNAPSHOT</netty.version>-->
-        <netty.version>4.0.31.Final</netty.version>
-        <guice.version>4.0</guice.version>
+        <netty.version>4.1.11.Final</netty.version>
+        <guice.version>4.1.0</guice.version>
         <netbeans.version>RELEASE81</netbeans.version>
-        <jackson.version>2.6.3</jackson.version>
-        <mastfrog.version>1.6.5</mastfrog.version>
+        <jackson.version>2.8.8</jackson.version>
+        <mastfrog.version>1.7.0-dev</mastfrog.version>
         <simplevalidation.version>1.10</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>2.47.1</selenium.version>
-        <jackson.version>2.6.3</jackson.version>
-        <trackerapi.version>1.0</trackerapi.version>        
+        <trackerapi.version>1.0</trackerapi.version>
+        <mongo.driver.version>3.4.2</mongo.driver.version>
     </properties>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -760,6 +759,11 @@
             </dependency>
             <dependency>
                 <groupId>io.netty</groupId>
+                <artifactId>netty-handler</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
                 <artifactId>netty-codec-http</artifactId>
                 <version>${netty.version}</version>
             </dependency>
@@ -921,12 +925,12 @@
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>mongo-java-driver</artifactId>
-                <version>3.1.1</version>
+                <version>${mongo.driver.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>mongodb-driver-async</artifactId>
-                <version>3.1.1</version>
+                <version>${mongo.driver.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mongojack</groupId>
