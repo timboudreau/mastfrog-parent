@@ -74,6 +74,7 @@
                     <perCoreThreadCount>4</perCoreThreadCount>
                     <threadCount>8</threadCount>
                     <reuseForks>true</reuseForks>
+                    <trimStackTrace>false</trimStackTrace>
                     <systemPropertyVariables>
                         <forkNumber>${surefire.forkNumber}</forkNumber>
                         <io.netty.leakDetection.level>advanced</io.netty.leakDetection.level>
