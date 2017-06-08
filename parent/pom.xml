@@ -430,6 +430,11 @@
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
+                <artifactId>acteur-headers-jodatime</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
                 <artifactId>acteur-facebook-auth</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
