@@ -1,0 +1,137 @@
+#!/usr/bin/env node
+
+var child_process = require('child_process'), 
+	util = require('util'), Stream = require('stream')
+	path = require('path');
+
+var status = child_process.exec('git status', function(err, out, stderr) {
+	if (err) {
+		console.log(err);
+		console.log(stderr);
+		process.exit(1);
+	}
+});
+
+var pretend = false;
+
+var msg = process.argv.slice(2);
+if (msg == null || msg.length == 0) {
+	console.log("No commit message passed");
+	process.exit(2);
+}
+msg = msg.join(' ');
+
+var lines = newLineStream();
+
+status.stdout.pipe(lines);
+
+var needsCommit = [];
+var needsCommitRex = /\s+modified:\s+(.*)\s+\(.*modified\scontent/;
+var needsPush = {};
+var needsPushRex = /\s+modified:\s+(.*)\s+\(.*new\scommits/;
+
+lines.on('data', function(line) {
+	if (needsCommitRex.test(line)) {
+		var project = needsCommitRex.exec(line)[1];
+		console.log("Needs commit: " + project);
+		needsCommit.push(project);
+		needsPush[project] = true;
+	}
+	if (needsPushRex.test(line)) {
+		var pushme = needsPushRex.exec(line)[1];
+		console.log("Needs push: " + project);
+		needsPush[project] = true;
+	}
+});
+lines.on('end', function() {
+	setImmediate(commit);
+});
+
+function commit() {
+	function commitOne() {
+		if (needsCommit.length == 0) {
+			return setImmediate(push);
+		}
+		var toCommit = needsCommit.pop();
+		var addCmd = 'git add -A';
+		var cmdline = 'git commit -m "' + msg + '"';
+		var opts = { cwd : path.join(process.cwd(), toCommit) };
+		console.log(addCmd + "\t" + opts.cwd);
+		console.log(cmdline + "\t" + opts.cwd);
+		if (!pretend) {
+			child_process.exec(addCmd, opts, function(err, out, stderr) {
+				if (err) console.log(err);
+				console.log(out);
+				if (stderr) {
+					console.log(stderr);
+				}
+				child_process.exec(cmdline, opts, function (err, out, stderr) {
+					if (err) console.log(err);
+					console.log(out);
+					if (stderr) {
+						console.log(stderr);
+					}
+					setImmediate(commitOne);
+				});
+			});
+		} else {
+			setImmediate(commitOne);
+		}
+	}
+	commitOne();
+}
+
+function push() {
+	console.log("Begin push");
+	var pushes = [];
+	for (key in needsPush) {
+		pushes.push(key);
+	}
+	function pushOne() {
+		if (pushes.length == 0) {
+			console.log("Done.");
+			return process.exit(0);
+		}
+		var toPush = pushes.pop();
+		var cmdline = 'git push';
+		var opts = { cwd : path.join(process.cwd(), toPush) };
+		console.log(cmdline + "\t" + opts.cwd);
+		if (pretend) {
+			setImmediate(pushOne);
+		} else {
+			child_process.exec(cmdline, opts, function(err, out, stderr) {
+				if (err) console.log(err);
+				console.log(out);
+				if (stderr) {
+					console.log(stderr);
+				}
+				setImmediate(pushOne);
+			});
+		}
+	}
+	pushOne();
+}
+
+function newLineStream() {
+    var liner = new Stream.Transform({objectMode: true});
+
+    liner._transform = function (chunk, encoding, done) {
+        var data = chunk.toString();
+        if (this._lastLineData) {
+            data = this._lastLineData + data;
+        }
+        var lines = data.split('\n');
+        this._lastLineData = lines.splice(lines.length - 1, 1)[0];
+        lines.forEach(this.push.bind(this));
+        done();
+    };
+    liner._flush = function (done) {
+        if (this._lastLineData)
+            this.push(this._lastLineData);
+        this._lastLineData = null;
+        done();
+    };
+    return liner;
+}
+
+
