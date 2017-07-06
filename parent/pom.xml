@@ -33,7 +33,7 @@
         <netbeans.version>RELEASE81</netbeans.version>
         <jackson.version>2.8.8</jackson.version>
         <mastfrog.version>2.0.0-dev</mastfrog.version>
-        <simplevalidation.version>1.10</simplevalidation.version>
+        <simplevalidation.version>1.11</simplevalidation.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <selenium.version>3.4.0</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
