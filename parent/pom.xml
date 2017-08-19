@@ -79,6 +79,7 @@
                         <acteur.debug>true</acteur.debug>
                         <forkNumber>${surefire.forkNumber}</forkNumber>
                         <io.netty.leakDetection.level>advanced</io.netty.leakDetection.level>
+                        <system.exit.on.bind.failure>false</system.exit.on.bind.failure>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
@@ -274,36 +275,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>async-promises</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>giulius-mongodb-async</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>giulius-tests</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>mongo-promises</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>marshaller-registry</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>numble</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
                 <version>${jackson.version}</version>
@@ -392,6 +363,16 @@
                 <groupId>com.kenai</groupId>
                 <artifactId>simplevalidation-standalone-server</artifactId>
                 <version>${simplevalidation.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>marshaller-registry</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>netty-websocket-pubsub</artifactId>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
