@@ -475,6 +475,11 @@
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
+                <artifactId>blather</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>            
+            <dependency>
+                <groupId>com.mastfrog</groupId>
                 <artifactId>bunyan-java</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
