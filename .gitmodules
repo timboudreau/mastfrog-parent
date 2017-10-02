@@ -55,3 +55,6 @@
 [submodule "mongo-promises"]
 	path = mongo-promises
 	url = https://github.com/timboudreau/mongo-promises.git
+[submodule "blather"]
+	path = blather
+	url = https://github.com/timboudreau/blather.git
