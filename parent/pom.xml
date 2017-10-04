@@ -485,6 +485,11 @@
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
+                <artifactId>bunyan-parse</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
                 <artifactId>cluster</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
