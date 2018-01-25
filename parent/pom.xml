@@ -564,6 +564,18 @@
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
+                <artifactId>giulius-mongodb-async</artifactId>
+                <version>${mastfrog.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>giulius-mongodb-async-init</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
                 <artifactId>giulius-servlet</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
@@ -576,6 +588,13 @@
                 <groupId>com.mastfrog</groupId>
                 <artifactId>giulius-tests</artifactId>
                 <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>giulius-tests</artifactId>
+                <version>${mastfrog.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>com.mastfrog</groupId>
