@@ -4,3 +4,4 @@ parent/nb-configuration.xml
 *.class
 *.jar
 
+/target/
