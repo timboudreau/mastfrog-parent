@@ -58,3 +58,6 @@
 [submodule "blather"]
 	path = blather
 	url = https://github.com/timboudreau/blather.git
+[submodule "portable-crypto"]
+	path = portable-crypto
+	url = https://github.com/timboudreau/portable-crypto.git

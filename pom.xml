@@ -34,6 +34,7 @@
         <module>blurt/Blurt</module>
         <module>blurt/blurt-collector</module>
         <module>numble</module>
+        <module>portable-crypto/portable-crypto</module>
     </modules>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <scm>
