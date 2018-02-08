@@ -170,6 +170,17 @@
     </build>
     <repositories>
         <repository>
+            <!-- this repo no longer exists and wreaks havoc with jenkins -->
+            <id>dead.netty.repo</id>
+            <url>http://clinker.netty.io/nexus/content/groups/public</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>timboudreau-builds</id>
             <name>timboudreau.com builds</name>
             <url>http://timboudreau.com/builds/plugin/repository/everything/</url>
