@@ -2,4 +2,5 @@
 git pull
 git submodule foreach git pull origin master
 mvn -f parent/pom.xml install
+mvn -f parent-indexed/pom.xml install
 
