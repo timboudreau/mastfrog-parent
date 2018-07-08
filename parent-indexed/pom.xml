@@ -17,7 +17,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
-                    <fork>true</fork>
+                    <!--<fork>true</fork>-->
                     <source>1.8</source>
                     <target>1.8</target>
                     <debug>true</debug>
@@ -31,8 +31,13 @@
                     <compilerArgument>-Xdiags:verbose</compilerArgument>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
-                    <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                    <!--<forceJavacCompilerUse>true</forceJavacCompilerUse>-->
                     <annotationProcessorPaths>
+                        <annotationProcessorPath>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>annotation-processors</artifactId>
+                            <version>${mastfrog.version}</version>
+                        </annotationProcessorPath>
                         <annotationProcessorPath>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>injection-reflection-indexer</artifactId>
@@ -40,33 +45,18 @@
                         </annotationProcessorPath>
                         <annotationProcessorPath>
                             <groupId>${project.groupId}</groupId>
-                            <artifactId>acteur</artifactId>
+                            <artifactId>giulius-annotation-processors</artifactId>
                             <version>${mastfrog.version}</version>
                         </annotationProcessorPath>
-                        <annotationProcessorPath>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>giulius</artifactId>
-                            <version>${mastfrog.version}</version>
-                        </annotationProcessorPath>
-                        <annotationProcessorPath>
+<!--                        <annotationProcessorPath>
                             <groupId>${project.groupId}</groupId>
                             <artifactId>numble</artifactId>
                             <version>${mastfrog.version}</version>
                         </annotationProcessorPath>
-                        <annotationProcessorPath>
-                            <groupId>com.fasterxml.jackson.core</groupId>
-                            <artifactId>jackson-annotations</artifactId>
-                            <version>${jackson.version}</version>
-                        </annotationProcessorPath>
-                        <annotationProcessorPath>
-                            <groupId>com.fasterxml.jackson.core</groupId>
-                            <artifactId>jackson-core</artifactId>
-                            <version>${jackson.version}</version>
-                        </annotationProcessorPath>
-                        <annotationProcessorPath>
-                            <groupId>com.fasterxml.jackson.core</groupId>
-                            <artifactId>jackson-databind</artifactId>
-                            <version>${jackson.version}</version>
+-->                        <annotationProcessorPath>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>acteur-annotation-processors</artifactId>
+                            <version>${mastfrog.version}</version>
                         </annotationProcessorPath>
                     </annotationProcessorPaths>
                 </configuration>
