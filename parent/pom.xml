@@ -182,20 +182,20 @@
             </snapshots>
         </repository>
         <!--
-        <repository>
-            <id>timboudreau-builds</id>
-            <name>timboudreau.com builds</name>
-            <url>https://timboudreau.com/maven/</url>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-            </snapshots>
-        </repository>
-            -->
+    <repository>
+        <id>timboudreau-builds</id>
+        <name>timboudreau.com builds</name>
+        <url>https://timboudreau.com/maven/</url>
+        <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+        </snapshots>
+    </repository>
+        -->
         <repository>
             <id>java.net-Public</id>
             <name>Maven Java Net Snapshots and Releases</name>
@@ -705,6 +705,11 @@
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>numble</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>numble-acteur</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
