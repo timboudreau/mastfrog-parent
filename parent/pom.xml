@@ -27,9 +27,13 @@
     <!-- Ant-style properties used in the build - subprojects may override -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.fork>false</maven.compiler.fork>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.debug>true</maven.compiler.debug>
+        <maven.compiler.force.javac>false</maven.compiler.force.javac>
+        <maven.compiler.deprecation>false</maven.compiler.deprecation>
+        <maven.compiler.warnings>false</maven.compiler.warnings>
         <netty.version>4.1.25.dns-dev</netty.version>
         <guice.version>4.2.0</guice.version>
         <netbeans.version>RELEASE81</netbeans.version>
@@ -41,7 +45,72 @@
         <mongo.driver.version>3.6.3</mongo.driver.version>
         <jetty.version>9.4.5.v20170502</jetty.version>
         <log4j2.version>2.9.1</log4j2.version>
+        <index.reflection>false</index.reflection>
     </properties>
+    <profiles>
+        <profile>
+            <id>reflection-indexing</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <file>
+                    <exists>${basedir}/index-reflection-on</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.7.0</version>
+                        <configuration>
+                            <fork>${maven.compiler.fork}</fork>
+                            <source>${maven.compiler.source}</source>
+                            <target>${maven.compiler.target}</target>
+                            <debug>${maven.compiler.debug}</debug>
+                            <encoding>${project.build.sourceEncoding}</encoding>
+                            <showWarnings>${maven.compiler.warnings}</showWarnings>
+                            <forceJavacCompilerUse>${maven.compiler.force.javac}</forceJavacCompilerUse>
+                            <compilerArgument>${maven.compiler.argument}</compilerArgument>
+                            <compilerArgument>-Xlint:unchecked</compilerArgument>
+                            <compilerArgument>-Xdoclint:none</compilerArgument>
+                            <compilerArgument>-verbose</compilerArgument>
+                            <compilerArgument>-XprintRounds</compilerArgument>
+                            <compilerArgument>-XprintProcessorInfo</compilerArgument>
+                            <compilerArgument>-Xdiags:verbose</compilerArgument>
+                            <showDeprecation>${maven.compiler.deprecation}</showDeprecation>
+                            <annotationProcessorPaths>
+                                <annotationProcessorPath>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>annotation-processors</artifactId>
+                                    <version>${mastfrog.version}</version>
+                                </annotationProcessorPath>
+                                <annotationProcessorPath>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>injection-reflection-indexer</artifactId>
+                                    <version>${mastfrog.version}</version>
+                                </annotationProcessorPath>
+                                <annotationProcessorPath>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>giulius-annotation-processors</artifactId>
+                                    <version>${mastfrog.version}</version>
+                                </annotationProcessorPath>
+                                <!--                        <annotationProcessorPath>
+                                                            <groupId>${project.groupId}</groupId>
+                                                            <artifactId>numble</artifactId>
+                                                            <version>${mastfrog.version}</version>
+                                                        </annotationProcessorPath>
+                                -->                        
+                                <annotationProcessorPath>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>acteur-annotation-processors</artifactId>
+                                    <version>${mastfrog.version}</version>
+                                </annotationProcessorPath>
+                            </annotationProcessorPaths>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
     <build>
@@ -50,10 +119,13 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <fork>true</fork>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <debug>true</debug>
+                    <fork>${maven.compiler.fork}</fork>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <debug>${maven.compiler.debug}</debug>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showWarnings>${maven.compiler.warnings}</showWarnings>
+                    <forceJavacCompilerUse>${maven.compiler.force.javac}</forceJavacCompilerUse>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <compilerArgument>${maven.compiler.argument}</compilerArgument>
                     <compilerArgument>-Xlint:unchecked</compilerArgument>

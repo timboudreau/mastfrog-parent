@@ -17,12 +17,12 @@
         <module>jetcd</module>
         <module>blather</module>
         <module>scopes-modules</module>
-        <module>giulius-modules</module>
+<!--        <module>giulius-modules</module> -->
         <module>giulius-tests-modules</module>
         <module>giulius-selenium-tests-modules</module>
         <module>giulius-web-modules</module>
         <module>giulius-settings-etcd</module>
-        <module>acteur-modules</module>
+<!--        <module>acteur-modules</module> -->
         <module>acteur-timetracker</module>
         <module>netty-http-client</module>
         <module>acteur-tutorial</module>
@@ -36,7 +36,40 @@
         <module>blurt/blurt-collector</module>
         <module>numble</module>
         <module>portable-crypto/portable-crypto</module>
-	<module>util/annotation-processors</module>
+<!--	<module>util/annotation-processors</module> -->
+
+	<module>giulius-modules/giulius-parent/giulius</module>
+        <module>giulius-modules/giulius-parent/giulius-settings</module>
+        <module>giulius-modules/giulius-parent/maven-merge-configuration</module>
+        <module>giulius-modules/giulius-parent/cluster</module>
+        <module>giulius-modules/giulius-parent/signalreload</module>
+        <module>giulius-modules/giulius-parent/giulius-jdbc</module>
+        <module>giulius-modules/giulius-parent/giulius-mongodb</module>
+        <module>giulius-modules/giulius-parent/giulius-mongojack</module>
+	<module>giulius-modules/giulius-parent/giulius-mongodb-async</module>
+        <module>giulius-modules/giulius-parent/giulius-threadpool</module>
+        <module>giulius-modules/giulius-parent/giulius-mongodb-async-init</module>
+        <module>giulius-modules/giulius-parent/giulius-annotations</module>
+
+
+	<module>acteur-modules/acteur-parent/url</module>
+        <module>acteur-modules/acteur-parent/acteur</module>
+        <module>acteur-modules/acteur-parent/acteur-util</module>
+        <module>acteur-modules/acteur-parent/acteur-resources</module>
+        <module>acteur-modules/acteur-parent/acteur-mongo</module>
+        <module>acteur-modules/acteur-parent/deprecated</module>
+        <module>acteur-modules/acteur-parent/acteur-headers</module>
+        <module>acteur-modules/acteur-parent/acteur-jdbc</module>
+        <module>acteur-modules/acteur-parent/acteur-cookie-auth</module>
+        <module>acteur-modules/acteur-parent/acteur-base</module>
+        <module>acteur-modules/acteur-parent/acteur-mongo-async</module>
+        <module>acteur-modules/acteur-parent/marshaller-registry</module>
+        <module>acteur-modules/acteur-parent/acteur-headers-jodatime</module>
+        <module>acteur-modules/acteur-parent/netty-websocket-pubsub</module>
+        <module>acteur-modules/acteur-parent/acteur-annotations</module>
+<!--        <module>acteur-modules/acteur-parent/acteur-annotation-processors</module> -->
+        <module>acteur-modules/acteur-parent/acteur-server-sent-events</module>
+
     </modules>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <scm>

@@ -8,6 +8,12 @@
         <relativePath>..</relativePath>
     </parent>
     <packaging>pom</packaging>
+    <modules>
+    	<module>../util/annotation-processors</module>
+        <module>../acteur-modules/acteur-parent/acteur-annotation-processors</module>
+        <module>../giulius-modules/giulius-parent/injection-reflection-indexer</module>
+        <module>../giulius-modules/giulius-parent/giulius-annotation-processors</module>
+    </modules>
     <artifactId>mastfrog-parent-indexed</artifactId>
     <name>Parent-Indexed</name>
     <description>Inherits from mastfrog-parent and adds reflection indexing for Graal and similar</description>
