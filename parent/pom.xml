@@ -53,62 +53,98 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
                 <file>
-                    <exists>${basedir}/index-reflection-on</exists>
+                    <exists>${basedir}/index-reflection.marker</exists>
                 </file>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.7.0</version>
-                        <configuration>
-                            <fork>${maven.compiler.fork}</fork>
-                            <source>${maven.compiler.source}</source>
-                            <target>${maven.compiler.target}</target>
-                            <debug>${maven.compiler.debug}</debug>
-                            <encoding>${project.build.sourceEncoding}</encoding>
-                            <showWarnings>${maven.compiler.warnings}</showWarnings>
-                            <forceJavacCompilerUse>${maven.compiler.force.javac}</forceJavacCompilerUse>
-                            <compilerArgument>${maven.compiler.argument}</compilerArgument>
-                            <compilerArgument>-Xlint:unchecked</compilerArgument>
-                            <compilerArgument>-Xdoclint:none</compilerArgument>
-                            <compilerArgument>-verbose</compilerArgument>
-                            <compilerArgument>-XprintRounds</compilerArgument>
-                            <compilerArgument>-XprintProcessorInfo</compilerArgument>
-                            <compilerArgument>-Xdiags:verbose</compilerArgument>
-                            <showDeprecation>${maven.compiler.deprecation}</showDeprecation>
-                            <annotationProcessorPaths>
-                                <annotationProcessorPath>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>annotation-processors</artifactId>
-                                    <version>${mastfrog.version}</version>
-                                </annotationProcessorPath>
-                                <annotationProcessorPath>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>injection-reflection-indexer</artifactId>
-                                    <version>${mastfrog.version}</version>
-                                </annotationProcessorPath>
-                                <annotationProcessorPath>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>giulius-annotation-processors</artifactId>
-                                    <version>${mastfrog.version}</version>
-                                </annotationProcessorPath>
-                                <!--                        <annotationProcessorPath>
-                                                            <groupId>${project.groupId}</groupId>
-                                                            <artifactId>numble</artifactId>
-                                                            <version>${mastfrog.version}</version>
-                                                        </annotationProcessorPath>
-                                -->                        
-                                <annotationProcessorPath>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>acteur-annotation-processors</artifactId>
-                                    <version>${mastfrog.version}</version>
-                                </annotationProcessorPath>
-                            </annotationProcessorPaths>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <maven.compiler.force.javac>true</maven.compiler.force.javac>
+            </properties>
+            <dependencies>
+                <dependency>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>annotation-processors</artifactId>
+                    <version>${mastfrog.version}</version>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>util-fileformat</artifactId>
+                    <version>${mastfrog.version}</version>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>injection-reflection-indexer</artifactId>
+                    <version>${mastfrog.version}</version>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>giulius-annotation-processors</artifactId>
+                    <version>${mastfrog.version}</version>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+                <dependency>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>acteur-annotation-processors</artifactId>
+                    <version>${mastfrog.version}</version>
+                    <scope>provided</scope>
+                    <optional>true</optional>
+                </dependency>
+            </dependencies>
+            <!--
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <fork>${maven.compiler.fork}</fork>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <debug>${maven.compiler.debug}</debug>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showWarnings>${maven.compiler.warnings}</showWarnings>
+                    <forceJavacCompilerUse>${maven.compiler.force.javac}</forceJavacCompilerUse>
+                    <compilerArgument>${maven.compiler.argument}</compilerArgument>
+                    <compilerArgument>-Xlint:unchecked</compilerArgument>
+                    <compilerArgument>-Xdoclint:none</compilerArgument>
+                    <compilerArgument>-verbose</compilerArgument>
+                    <compilerArgument>-XprintRounds</compilerArgument>
+                    <compilerArgument>-XprintProcessorInfo</compilerArgument>
+                    <compilerArgument>-Xdiags:verbose</compilerArgument>
+                    <showDeprecation>${maven.compiler.deprecation}</showDeprecation>
+                    <annotationProcessorPaths>
+                        <annotationProcessorPath>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>annotation-processors</artifactId>
+                            <version>${mastfrog.version}</version>
+                        </annotationProcessorPath>
+                        <annotationProcessorPath>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>injection-reflection-indexer</artifactId>
+                            <version>${mastfrog.version}</version>
+                        </annotationProcessorPath>
+                        <annotationProcessorPath>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>giulius-annotation-processors</artifactId>
+                            <version>${mastfrog.version}</version>
+                        </annotationProcessorPath>
+                        <annotationProcessorPath>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>acteur-annotation-processors</artifactId>
+                            <version>${mastfrog.version}</version>
+                        </annotationProcessorPath>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+            -->
         </profile>
     </profiles>
     <!-- Global build configuration - changes here affect how EVERYTHING is
@@ -253,21 +289,19 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <!--
-    <repository>
-        <id>timboudreau-builds</id>
-        <name>timboudreau.com builds</name>
-        <url>https://timboudreau.com/maven/</url>
-        <releases>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-        </releases>
-        <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-        </snapshots>
-    </repository>
-        -->
+        <repository>
+            <id>timboudreau-builds</id>
+            <name>timboudreau.com builds</name>
+            <url>https://timboudreau.com/maven/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+        </repository>
         <repository>
             <id>java.net-Public</id>
             <name>Maven Java Net Snapshots and Releases</name>
@@ -359,6 +393,7 @@
             <id>tim</id>
             <name>Tim Boudreau</name>
             <url>http://timboudreau.com</url>
+            <email>tim@timboudreau.com</email>
         </developer>
     </developers>
     <dependencyManagement>
@@ -857,6 +892,56 @@
             <dependency>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>util</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-strings</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-fileformat</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-net</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-misc</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-streams</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-preconditions</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-collections</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-time</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-function</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>util-thread</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
