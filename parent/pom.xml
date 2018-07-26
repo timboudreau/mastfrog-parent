@@ -34,7 +34,7 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.25.dns-dev</netty.version>
+        <netty.version>4.1.27</netty.version>
         <guice.version>4.2.0</guice.version>
         <netbeans.version>RELEASE81</netbeans.version>
         <jackson.version>2.9.5</jackson.version>
