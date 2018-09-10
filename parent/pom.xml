@@ -188,6 +188,7 @@
                     <reuseForks>true</reuseForks>
                     <trimStackTrace>false</trimStackTrace>
                     <systemPropertyVariables>
+                        <unit.test>true</unit.test>
                         <acteur.debug>false</acteur.debug>
                         <forkNumber>${surefire.forkNumber}</forkNumber>
                         <!--<io.netty.leakDetection.level>advanced</io.netty.leakDetection.level>-->
