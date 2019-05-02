@@ -389,6 +389,17 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>3.0.1</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>nbm-maven-plugin</artifactId>
+                    <version>4.1</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <useOSGiDependencies>false</useOSGiDependencies>
+                        <author>Tim Boudreau</author>
+                        <requiresRestart>false</requiresRestart>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -445,6 +456,11 @@
         <url>https://github.com/timboudreau/mastfrog-parent</url>
         <developerConnection>scm:git:git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
+    <organization>
+        <name>Mastfrog</name>
+        <url>http://mastfrog.com</url>
+    </organization>
+    <inceptionYear>2010</inceptionYear>
     <licenses>
         <license>
             <name>MIT</name>
@@ -453,7 +469,7 @@
     </licenses>
     <developers>
         <developer>
-            <id>tim</id>
+            <id>timboudreau</id>
             <name>Tim Boudreau</name>
             <url>http://timboudreau.com</url>
             <email>tim@timboudreau.com</email>
@@ -561,6 +577,36 @@
                 <artifactId>netty-websocket-pubsub</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>abstractions</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>bits</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>graph</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>predicates</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>            
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>annotation-tools</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>            
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>java-vogon</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>            
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>annotation-processors</artifactId>
@@ -1108,7 +1154,7 @@
             </dependency>
             <dependency>
                 <groupId>io.netty</groupId>
-                <artifactId>netty</artifactId>
+                <artifactId>netty-all</artifactId>
                 <version>${netty.version}</version>
             </dependency>
             <dependency>
@@ -1295,6 +1341,12 @@
                 <groupId>org.mongojack</groupId>
                 <artifactId>mongojack</artifactId>
                 <version>2.10.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.netbeans.api</groupId>
+                <artifactId>org-netbeans-api-annotations-common</artifactId>
+                <version>${netbeans.version}</version>
+                <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.netbeans.api</groupId>

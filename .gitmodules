@@ -61,3 +61,6 @@
 [submodule "portable-crypto"]
 	path = portable-crypto
 	url = https://github.com/timboudreau/portable-crypto.git
+[submodule "annotation-tools"]
+	path = annotation-tools
+	url = https://github.com/timboudreau/annotation-tools.git

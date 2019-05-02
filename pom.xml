@@ -9,9 +9,10 @@
     </parent>
     <version>2.5.0-dev</version>
     <artifactId>mastfrog-modules</artifactId>
-    <name>Mastfrog Modules</name>
+    <name>Mastfrog Modules Parent</name>
     <packaging>pom</packaging>
     <modules>
+        <module>annotation-tools</module>
         <module>util</module>
         <module>jetcd</module>
         <module>blather</module>
@@ -37,6 +38,7 @@
         <module>portable-crypto/portable-crypto</module>
     </modules>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
+    <inceptionYear>2010</inceptionYear>
     <scm>
         <url>https://github.com/timboudreau/mastfrog-parent</url>
         <connection>scm:git:https://github.com/timboudreau/mastfrog-parent.git</connection>
@@ -55,6 +57,10 @@
             <url>https://timboudreau.com</url>
         </developer>
     </developers>
+    <organization>
+        <name>Mastfrog</name>
+        <url>http://mastfrog.com</url>
+    </organization>
     <!--
 XXX PENDING
 <build>
