@@ -12,6 +12,7 @@
     <name>Mastfrog Modules Parent</name>
     <packaging>pom</packaging>
     <modules>
+        <module>revision-info-plugin</module>
         <module>annotation-tools</module>
         <module>util</module>
         <module>jetcd</module>
