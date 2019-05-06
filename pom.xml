@@ -1,5 +1,6 @@
-<?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.mastfrog</groupId>
@@ -19,12 +20,12 @@
         <module>jetcd</module>
         <module>blather</module>
         <module>scopes-modules</module>
-        <module>giulius-modules</module> 
+        <module>giulius-modules</module>
         <module>giulius-tests-modules</module>
         <module>giulius-selenium-tests-modules</module>
         <module>giulius-web-modules</module>
         <module>giulius-settings-etcd</module>
-        <module>acteur-modules</module> 
+        <module>acteur-modules</module>
         <module>acteur-timetracker</module>
         <module>netty-http-client</module>
         <module>acteur-tutorial</module>
@@ -49,7 +50,6 @@
         <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
         <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
-    
     <licenses>
         <license>
             <name>MIT</name>
