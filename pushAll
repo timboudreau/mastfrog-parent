@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 git submodule foreach git push &
 git add -A
 git ci -m 'Sync'

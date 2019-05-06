@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 git submodule foreach git add -A
 git submodule foreach "git ci -m '$1'" 
 git add -A

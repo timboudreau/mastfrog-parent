@@ -8,6 +8,7 @@
         <relativePath/>
     </parent>
     <artifactId>giulius-tests-modules</artifactId>
+    <url>https://github.com:timboudreau/mastfrog-parent</url>
     <name>Giulius Tests (modules)</name>
     <packaging>pom</packaging>
     <modules>
@@ -18,14 +19,20 @@
         <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
     </issueManagement>
     <scm>
-        <url>https://github.com/timboudreau/mastfrog-parent</url>
-        <connection>scm:git:https://github.com/timboudreau/mastfrog-parent.git</connection>
-        <developerConnection>git@github.com/timboudreau/mastfrog-parent.git</developerConnection>
+        <url>git@github.com:timboudreau/mastfrog-parent.git</url>
+        <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
+        <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
+    
+    <organization>
+        <name>Mastfrog Technologies</name>
+        <url>https://mastfrog.com</url>
+    </organization>
     <licenses>
         <license>
             <name>MIT</name>
-            <url>http://opensource.org/licenses/MIT</url>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
     <developers>

@@ -9,6 +9,7 @@
     </parent>
     <version>2.5.0-dev</version>
     <artifactId>mastfrog-modules</artifactId>
+    <url>https://github.com:timboudreau/mastfrog-parent</url>
     <name>Mastfrog Modules Parent</name>
     <packaging>pom</packaging>
     <modules>
@@ -44,14 +45,16 @@
     </issueManagement>
     <inceptionYear>2010</inceptionYear>
     <scm>
-        <url>https://github.com/timboudreau/mastfrog-parent</url>
-        <connection>scm:git:https://github.com/timboudreau/mastfrog-parent.git</connection>
-        <developerConnection>git@github.com/timboudreau/mastfrog-parent.git</developerConnection>
+        <url>git@github.com:timboudreau/mastfrog-parent.git</url>
+        <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
+        <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
+    
     <licenses>
         <license>
             <name>MIT</name>
-            <url>http://opensource.org/licenses/MIT</url>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
     <developers>
@@ -62,8 +65,8 @@
         </developer>
     </developers>
     <organization>
-        <name>Mastfrog</name>
-        <url>http://mastfrog.com</url>
+        <name>Mastfrog Technologies</name>
+        <url>https://mastfrog.com</url>
     </organization>
     <!--
 XXX PENDING

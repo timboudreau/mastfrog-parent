@@ -10,16 +10,33 @@
     
     <groupId>com.mastfrog</groupId>
     <artifactId>revision-info-plugin</artifactId>
+    <url>https://github.com:timboudreau/mastfrog-parent</url>
+    <scm>
+        <url>git@github.com:timboudreau/mastfrog-parent.git</url>
+        <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
+        <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
+    </scm>
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
+    </issueManagement>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses><organization>
+        <name>Mastfrog Technologies</name>
+        <url>https://mastfrog.com</url>
+    </organization>
     <version>0.8</version>
     <packaging>maven-plugin</packaging>
 
     <name>Revision Info Maven Plugin</name>
 
     <!-- FIXME change it to the project's website -->
-    <issueManagement>
-        <system>Github</system>
-        <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
-    </issueManagement>
+    
 
     <prerequisites>
         <maven>${maven.version}</maven>

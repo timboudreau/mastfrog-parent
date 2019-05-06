@@ -1,6 +1,5 @@
 #!/bin/bash
 git pull
 git submodule foreach git pull origin master
+mvn -f revision-info-plugin install
 mvn -f parent/pom.xml install
-mvn -f parent-indexed/pom.xml install
-

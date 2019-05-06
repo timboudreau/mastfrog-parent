@@ -4,11 +4,28 @@
 
   <groupId>com.mastfrog</groupId>
   <artifactId>revision-info-plugin</artifactId>
-  <issueManagement>
+  <url>https://github.com:timboudreau/mastfrog-parent</url>
+    <scm>
+        <url>git@github.com:timboudreau/mastfrog-parent.git</url>
+        <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
+        <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
+    </scm>
+    <issueManagement>
         <system>Github</system>
         <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
-    </issueManagement><version>2.5.0-dev</version>
-  <packaging>jar</packaging>
+    </issueManagement>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses><organization>
+        <name>Mastfrog Technologies</name>
+        <url>https://mastfrog.com</url>
+    </organization>
+    <version>2.5.0-dev</version>
+  
   <name>Test MyMojo</name>
 
   <build>

@@ -4,10 +4,27 @@
 
   <groupId>com.mastfrog.it</groupId>
   <artifactId>simple-it</artifactId>
-  <issueManagement>
+  <url>https://github.com:timboudreau/mastfrog-parent</url>
+    <scm>
+        <url>git@github.com:timboudreau/mastfrog-parent.git</url>
+        <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
+        <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
+    </scm>
+    <issueManagement>
         <system>Github</system>
         <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
-    </issueManagement><version>1.0-SNAPSHOT</version>
+    </issueManagement>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses><organization>
+        <name>Mastfrog Technologies</name>
+        <url>https://mastfrog.com</url>
+    </organization>
+    <version>1.0-SNAPSHOT</version>
 
   <description>A simple IT verifying the basic use case.</description>
 
