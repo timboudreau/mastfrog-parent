@@ -46,7 +46,7 @@
         <netbeans.version>RELEASE81</netbeans.version>
         <jackson.version>2.9.8</jackson.version>
         <mastfrog.version>2.5.0</mastfrog.version>
-        <simplevalidation.version>1.12</simplevalidation.version>
+        <simplevalidation.version>1.13</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
         <mongo.driver.version>3.10.2</mongo.driver.version>
@@ -412,7 +412,6 @@
         <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
         <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
-    
     <organization>
         <name>Mastfrog Technologies</name>
         <url>https://mastfrog.com</url>
@@ -513,15 +512,30 @@
             <dependency>
                 <groupId>com.kenai</groupId>
                 <artifactId>simplevalidation</artifactId>
+                <version>1.12</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>simplevalidation</artifactId>
                 <version>${simplevalidation.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.kenai</groupId>
                 <artifactId>simplevalidation-standalone</artifactId>
+                <version>1.12</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
+                <artifactId>simplevalidation-standalone</artifactId>
                 <version>${simplevalidation.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.kenai</groupId>
+                <artifactId>simplevalidation-standalone-server</artifactId>
+                <version>1.12</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog</groupId>
                 <artifactId>simplevalidation-standalone-server</artifactId>
                 <version>${simplevalidation.version}</version>
             </dependency>
@@ -1459,7 +1473,7 @@
                 <groupId>org.netbeans.api</groupId>
                 <artifactId>org-openide-filesystems</artifactId>
                 <version>${netbeans.version}</version>
-            </dependency>            
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
