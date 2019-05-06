@@ -1,5 +1,5 @@
 #!/bin/sh
-git submodule foreach git checkout master
+#git submodule foreach git checkout master
 git submodule foreach git tag $1
 git tag $1
 git add -A
