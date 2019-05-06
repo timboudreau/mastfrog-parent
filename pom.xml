@@ -38,7 +38,10 @@
         <module>numble</module>
         <module>portable-crypto/portable-crypto</module>
     </modules>
-    <url>https://github.com/timboudreau/mastfrog-parent</url>
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
+    </issueManagement>
     <inceptionYear>2010</inceptionYear>
     <scm>
         <url>https://github.com/timboudreau/mastfrog-parent</url>

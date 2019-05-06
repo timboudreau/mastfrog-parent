@@ -18,7 +18,10 @@
         <connection>scm:git:https://github.com/timboudreau/mastfrog-parent.git</connection>
         <developerConnection>git@github.com/timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
-    <licenses>
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
+    </issueManagement><licenses>
         <license>
             <name>MIT</name>
             <url>http://opensource.org/licenses/MIT</url>

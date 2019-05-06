@@ -19,7 +19,12 @@
     -->
     <version>2.5.0-dev</version>
     <name>Mastfrog Configuration</name>
-    <url>https://github.com/timboudreau/mastfrog-parent</url>
+    <!-- Global build configuration - changes here affect how EVERYTHING is
+    built -->
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
+    </issueManagement>
     <description>
         Shared configuration for Giulius, Acteur and
         related projects
@@ -27,6 +32,7 @@
     <!-- Ant-style properties used in the build - subprojects may override -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.fork>false</maven.compiler.fork>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -96,59 +102,79 @@
                     <optional>true</optional>
                 </dependency>
             </dependencies>
-            <!--
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
-                <configuration>
-                    <fork>${maven.compiler.fork}</fork>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                    <debug>${maven.compiler.debug}</debug>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                    <showWarnings>${maven.compiler.warnings}</showWarnings>
-                    <forceJavacCompilerUse>${maven.compiler.force.javac}</forceJavacCompilerUse>
-                    <compilerArgument>${maven.compiler.argument}</compilerArgument>
-                    <compilerArgument>-Xlint:unchecked</compilerArgument>
-                    <compilerArgument>-Xdoclint:none</compilerArgument>
-                    <compilerArgument>-verbose</compilerArgument>
-                    <compilerArgument>-XprintRounds</compilerArgument>
-                    <compilerArgument>-XprintProcessorInfo</compilerArgument>
-                    <compilerArgument>-Xdiags:verbose</compilerArgument>
-                    <showDeprecation>${maven.compiler.deprecation}</showDeprecation>
-                    <annotationProcessorPaths>
-                        <annotationProcessorPath>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>annotation-processors</artifactId>
-                            <version>${mastfrog.version}</version>
-                        </annotationProcessorPath>
-                        <annotationProcessorPath>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>injection-reflection-indexer</artifactId>
-                            <version>${mastfrog.version}</version>
-                        </annotationProcessorPath>
-                        <annotationProcessorPath>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>giulius-annotation-processors</artifactId>
-                            <version>${mastfrog.version}</version>
-                        </annotationProcessorPath>
-                        <annotationProcessorPath>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>acteur-annotation-processors</artifactId>
-                            <version>${mastfrog.version}</version>
-                        </annotationProcessorPath>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-            -->
+        </profile>
+        <profile>
+            <id>release</id>
+            <distributionManagement>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <configuration>
+                            <autoVersionSubmodules>true</autoVersionSubmodules>
+                            <useReleaseProfile>false</useReleaseProfile>
+                            <releaseProfiles>release</releaseProfiles>
+                            <goals>deploy</goals>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            <!--<skipStagingRepositoryClose>true</skipStagingRepositoryClose>-->
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
-    <!-- Global build configuration - changes here affect how EVERYTHING is
-    built -->
     <build>
         <plugins>
             <!-- Sets source level and source encoding for all projects -->
@@ -211,9 +237,9 @@
                                 <requireMavenVersion>
                                     <version>&gt;=3.1.1</version>
                                 </requireMavenVersion>
-                                <!--                                <requireJavaVersion>
-                                    <version>1.7</version>
-                                </requireJavaVersion>-->
+                                <requireJavaVersion>
+                                    <version>&gt;=1.8</version>
+                                </requireJavaVersion>
                                 <DependencyConvergence/>
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
@@ -230,7 +256,6 @@
             <plugin>
                 <groupId>com.mastfrog</groupId>
                 <artifactId>revision-info-plugin</artifactId>
-                <version>0.8</version>
                 <executions>
                     <execution>
                         <id>revision-info-plugin</id>
@@ -248,6 +273,36 @@
         <!-- Global management of what *version* of each Maven plugin here -->
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>com.mastfrog</groupId>
+                    <artifactId>mastfrog-parent</artifactId>
+                    <version>${mastfrog.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>3.0.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.mastfrog</groupId>
+                    <artifactId>revision-info-plugin</artifactId>
+                    <version>0.8</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.8</version>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
@@ -277,7 +332,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.0.1</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -293,6 +348,16 @@
             </plugins>
         </pluginManagement>
     </build>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
     <repositories>
         <repository>
             <id>timboudreau-builds</id>
@@ -347,7 +412,7 @@
         <developerConnection>scm:git:git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
     <organization>
-        <name>Mastfrog</name>
+        <name>Mastfrog Technologies</name>
         <url>http://mastfrog.com</url>
     </organization>
     <inceptionYear>2010</inceptionYear>

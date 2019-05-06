@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
     <!--
@@ -17,7 +16,10 @@
     <name>Revision Info Maven Plugin</name>
 
     <!-- FIXME change it to the project's website -->
-    <url>http://mastfrog.com</url>
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
+    </issueManagement>
 
     <prerequisites>
         <maven>${maven.version}</maven>

@@ -13,7 +13,10 @@
     <modules>
         <module>giulius-web-parent</module>
     </modules>
-    <url>https://github.com/timboudreau/mastfrog-parent</url>
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
+    </issueManagement>
     <scm>
         <url>https://github.com/timboudreau/mastfrog-parent</url>
         <connection>scm:git:https://github.com/timboudreau/mastfrog-parent.git</connection>
