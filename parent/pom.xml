@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
-    <url>https://github.com:timboudreau/mastfrog-parent</url>
+    <url>https://github.com/timboudreau/mastfrog-parent</url>
     <packaging>pom</packaging>
 
     <!--          WHEN UPDATING THE VERSION

@@ -9,6 +9,9 @@
     -->
     <groupId>com.mastfrog</groupId>
     <artifactId>revision-info-plugin</artifactId>
+    <description>A maven plugin which embeds the git checkout hash and
+    commit date and dirty status in a file in META-INF/ and optionally
+    generates a Java class with the same information</description>
     <url>https://github.com:timboudreau/mastfrog-parent</url>
     <scm>
         <url>git@github.com:timboudreau/mastfrog-parent.git</url>
@@ -30,6 +33,13 @@
         <name>Mastfrog Technologies</name>
         <url>https://mastfrog.com</url>
     </organization>
+    <developers>
+        <developer>
+            <name>Tim Boudreau</name>
+            <email>tim@timboudreau.com</email>
+            <url>https://timboudreau.com</url>
+        </developer>
+    </developers>
     <version>0.8</version>
     <packaging>maven-plugin</packaging>
     <name>Revision Info Maven Plugin</name>
