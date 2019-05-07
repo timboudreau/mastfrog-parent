@@ -23,7 +23,7 @@
         <module>giulius-tests-modules</module>
         <module>giulius-selenium-tests-modules</module>
         <module>giulius-web-modules</module>
-        <!--<module>giulius-settings-etcd</module>-->
+        <module>giulius-settings-etcd</module>
         <module>acteur-modules</module>
         <module>acteur-timetracker</module>
         <module>netty-http-client</module>
