@@ -40,7 +40,7 @@
             <url>https://timboudreau.com</url>
         </developer>
     </developers>
-    <version>0.8</version>
+    <version>0.9</version>
     <packaging>maven-plugin</packaging>
     <name>Revision Info Maven Plugin</name>
     <prerequisites>
@@ -51,7 +51,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.version>3.5.0</maven.version>
-        <mastfrog.version>2.5.0</mastfrog.version>
+        <mastfrog.version>2.5.1</mastfrog.version>
         <!-- Ugh, Maven's own APIs depend on inconsistent versions of each 
         other - maven-plugin-api drags in older versions of several others -->
         <enforcer.skip>true</enforcer.skip>
