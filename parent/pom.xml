@@ -53,6 +53,7 @@
         <jetty.version>[9.4.17.v20190418,)</jetty.version>
         <log4j2.version>2.11.2</log4j2.version>
         <index.reflection>false</index.reflection>
+        <junit5.version>5.4.2</junit5.version>
     </properties>
     <profiles>
         <profile>
@@ -70,35 +71,30 @@
                 <dependency>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>annotation-processors</artifactId>
-                    <version>${mastfrog.version}</version>
                     <scope>provided</scope>
                     <optional>true</optional>
                 </dependency>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>util-fileformat</artifactId>
-                    <version>${mastfrog.version}</version>
                     <scope>provided</scope>
                     <optional>true</optional>
                 </dependency>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>injection-reflection-indexer</artifactId>
-                    <version>${mastfrog.version}</version>
                     <scope>provided</scope>
                     <optional>true</optional>
                 </dependency>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>giulius-annotation-processors</artifactId>
-                    <version>${mastfrog.version}</version>
                     <scope>provided</scope>
                     <optional>true</optional>
                 </dependency>
                 <dependency>
                     <groupId>${project.groupId}</groupId>
                     <artifactId>acteur-annotation-processors</artifactId>
-                    <version>${mastfrog.version}</version>
                     <scope>provided</scope>
                     <optional>true</optional>
                 </dependency>
@@ -236,7 +232,7 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>&gt;=3.1.1</version>
+                                    <version>&gt;=3.5.0</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
                                     <version>&gt;=1.8</version>
@@ -274,11 +270,6 @@
         <!-- Global management of what *version* of each Maven plugin here -->
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>com.mastfrog</groupId>
-                    <artifactId>mastfrog-parent</artifactId>
-                    <version>${mastfrog.version}</version>
-                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
@@ -386,6 +377,17 @@
                 <updatePolicy>never</updatePolicy>
             </snapshots>
         </repository>
+        <!-- blacklist dead transitive repositories -->
+        <repository>
+            <id>java.net</id>
+            <url>https://maven-repository.dev.java.net/nonav/repository</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -455,6 +457,11 @@
                 <version>${jackson.version}</version>
             </dependency>
             <dependency>
+                <groupId>com.ibm.etcd</groupId>
+                <artifactId>etcd-java</artifactId>
+                <version>0.0.10</version>
+            </dependency>
+            <dependency>
                 <groupId>com.google.android</groupId>
                 <artifactId>android</artifactId>
                 <version>4.1.1.4</version>
@@ -515,7 +522,7 @@
                 <version>1.12</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>simplevalidation</artifactId>
                 <version>${simplevalidation.version}</version>
             </dependency>
@@ -525,7 +532,7 @@
                 <version>1.12</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>simplevalidation-standalone</artifactId>
                 <version>${simplevalidation.version}</version>
             </dependency>
@@ -535,47 +542,47 @@
                 <version>1.12</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>simplevalidation-standalone-server</artifactId>
                 <version>${simplevalidation.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>marshaller-registry</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>netty-websocket-pubsub</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>abstractions</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>bits</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>graph</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>predicates</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>annotation-tools</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>java-vogon</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
@@ -617,92 +624,99 @@
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>acteur-annotations</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-auth</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-base</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-bunyan</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-cookie-auth</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-deprecated</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-headers-jodatime</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-facebook-auth</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-google-auth</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-headers</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-jdbc</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-linkedin</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-mongo</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-mongo-userstore</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>acteur-mongo-async</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>acteur-mongo-async</artifactId>
+                <version>${mastfrog.version}</version>
+                <scope>test</scope>
+                <classifier>test-jar</classifier>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-resources</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-twitter</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-util</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
@@ -712,355 +726,343 @@
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>async-promises</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>Blurt</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>blather</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-java</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-parse</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>cluster</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>email-base</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>embedded-jetty</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>encryption</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>folder-auth</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>function</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>generic-web-api</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>generic-webapi-client</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-threadpool</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-jaxws</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-jdbc</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.mastfrog</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-mongodb</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>giulius-mongodb-async</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>giulius-mongodb-async</artifactId>
-                <version>${mastfrog.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>giulius-mongodb-async-init</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>giulius-servlet</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>portable-crypto</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>giulius-settings</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>giulius-tests</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>giulius-tests</artifactId>
-                <version>${mastfrog.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>io</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>jackson</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>jackson-jodatime</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>jackson-mongodb</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>localization</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>logging</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>mongo-promises</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>netty-connection-pools</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>netty-http-client</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>netty-http-test-harness</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>numble</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>numble-acteur</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>resources</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>scopes</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>selenium</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>statistics</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>structured-config</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>structured-config-annotations</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>structured-config-guice</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>test-main</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>testproject-a</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>testproject-b</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>tests.guice</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>trackerapi</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>treadmill</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>url</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-strings</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-fileformat</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-net</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-misc</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-streams</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-preconditions</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-collections</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-time</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-function</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>util-thread</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>video</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>bunyan-java-log4j-appender</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>bunyan-java-mongodb-sink</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>bunyan-java-util-logging</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mastfrog</groupId>
-                <artifactId>bunyan-log4j2-appender</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-mongodb-async</artifactId>
                 <version>${mastfrog.version}</version>
-                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-mongodb-async</artifactId>
+                <version>${mastfrog.version}</version>
                 <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-servlet</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>portable-crypto</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-settings</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-tests</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-tests</artifactId>
+                <version>${mastfrog.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>io</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>jackson</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>jackson-jodatime</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>jackson-mongodb</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>localization</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>logging</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>mongo-promises</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>netty-connection-pools</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>netty-http-client</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>netty-http-test-harness</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>numble</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>numble-acteur</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>resources</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>scopes</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>selenium</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>statistics</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>structured-config</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>structured-config-annotations</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>structured-config-guice</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>test-main</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>testproject-a</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>testproject-b</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>tests.guice</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>trackerapi</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>treadmill</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>url</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-strings</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-fileformat</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-net</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-misc</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-streams</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-preconditions</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-collections</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-time</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-function</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>util-thread</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>video</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>bunyan-java-log4j-appender</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>bunyan-java-mongodb-sink</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>bunyan-java-util-logging</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>bunyan-log4j2-appender</artifactId>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
@@ -1399,40 +1401,20 @@
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
-                <version>5.4.2</version>
+                <version>${junit5.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-params</artifactId>
-                <version>5.4.2</version>
+                <version>${junit5.version}</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-engine</artifactId>
-                <version>5.4.2</version>
+                <version>${junit5.version}</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>acteur</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>acteur-mongo-async</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>function</artifactId>
-                <version>${mastfrog.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>giulius-tests</artifactId>
-                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.assertthat</groupId>
