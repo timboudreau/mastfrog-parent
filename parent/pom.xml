@@ -401,14 +401,6 @@
             <url>https://timboudreau.com/maven/</url>
         </pluginRepository>
     </pluginRepositories>
-    <!-- JUnit test dependency for all projects -->
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
     <scm>
         <url>git@github.com:timboudreau/mastfrog-parent.git</url>
         <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
