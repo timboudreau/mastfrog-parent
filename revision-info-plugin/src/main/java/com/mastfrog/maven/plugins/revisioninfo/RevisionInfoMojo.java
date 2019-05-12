@@ -208,6 +208,7 @@ public class RevisionInfoMojo extends AbstractMojo {
                 } else {
                     getLog().warn("Failed to get git revision info and did not "
                             + "write properties file");
+                    return;
                 }
             }
             File f = outputDirectory;
