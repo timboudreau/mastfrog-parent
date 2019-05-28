@@ -44,7 +44,7 @@
         <netty.version>4.1.36.Final</netty.version>
         <guice.version>4.2.2</guice.version>
         <netbeans.version>RELEASE81</netbeans.version>
-        <jackson.version>2.9.8</jackson.version>
+        <jackson.version>2.9.9</jackson.version>
         <mastfrog.version>2.5.1-dev</mastfrog.version>
         <simplevalidation.version>1.13</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
