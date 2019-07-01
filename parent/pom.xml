@@ -54,6 +54,7 @@
         <log4j2.version>2.11.2</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.4.2</junit5.version>
+        <vertx-pg-client.version>3.8.0-SNAPSHOT</vertx-pg-client.version>
     </properties>
     <profiles>
         <profile>
@@ -479,6 +480,11 @@
                 <version>27.1-jre</version>
             </dependency>
             <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-pg-client</artifactId>
+                <version>${vertx-pg-client.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.google.http-client</groupId>
                 <artifactId>google-http-client-jackson2</artifactId>
                 <version>1.29.0</version>
@@ -541,6 +547,18 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>marshaller-registry</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-postgres-async</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-postgres-async</artifactId>
+                <type>test-jar</type>
+                <scope>test</scope>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
