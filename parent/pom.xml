@@ -54,7 +54,7 @@
         <log4j2.version>2.11.2</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.4.2</junit5.version>
-        <vertx-pg-client.version>3.8.0-SNAPSHOT</vertx-pg-client.version>
+        <vertx-pg-client.version>3.8.0</vertx-pg-client.version>
     </properties>
     <profiles>
         <profile>
