@@ -50,7 +50,7 @@
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
         <mongo.driver.version>3.10.2</mongo.driver.version>
-        <jetty.version>[9.4.17.v20190418,)</jetty.version>
+        <jetty.version>9.4.17.v20190418</jetty.version>
         <log4j2.version>2.11.2</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.4.2</junit5.version>
