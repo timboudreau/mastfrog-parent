@@ -34,6 +34,7 @@
         <module>mongo-promises/mongo-promises-tests</module>
         <module>generic-web-api</module>
         <module>bunyan-java</module>
+        <module>bunyan-java-v2</module>
         <module>blurt/Blurt</module>
         <module>blurt/blurt-collector</module>
         <module>numble</module>

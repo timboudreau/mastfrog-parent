@@ -64,3 +64,6 @@
 [submodule "annotation-tools"]
 	path = annotation-tools
 	url = https://github.com/timboudreau/annotation-tools.git
+[submodule "bunyan-java-v2"]
+	path = bunyan-java-v2
+	url = https://github.com/timboudreau/bunyan-java-v2.git
