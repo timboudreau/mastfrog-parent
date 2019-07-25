@@ -556,6 +556,16 @@
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>log-structured-storage</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>file-channel-pool</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-postgres-async</artifactId>
                 <type>test-jar</type>
                 <scope>test</scope>
