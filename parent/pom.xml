@@ -102,6 +102,25 @@
             </dependencies>
         </profile>
         <profile>
+            <id>javadoc-html5</id>
+            <activation>
+                <jdk>[1.9,)</jdk>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <configuration>
+                                <additionalOptions>-html5</additionalOptions>
+                                <source>8</source>
+                            </configuration>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>        
+        <profile>
             <id>release</id>
             <distributionManagement>
                 <repository>
