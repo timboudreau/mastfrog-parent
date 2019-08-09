@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!--
     This project MUST NOT have mastfrog-parent as its parent, because that
@@ -10,8 +10,8 @@
     <groupId>com.mastfrog</groupId>
     <artifactId>revision-info-plugin</artifactId>
     <description>A maven plugin which embeds the git checkout hash and
-    commit date and dirty status in a file in META-INF/ and optionally
-    generates a Java class with the same information</description>
+        commit date and dirty status in a file in META-INF/ and optionally
+        generates a Java class with the same information</description>
     <url>https://github.com:timboudreau/mastfrog-parent</url>
     <scm>
         <url>git@github.com:timboudreau/mastfrog-parent.git</url>
@@ -107,12 +107,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.0.1</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <groupId>com.mastfrog</groupId>
                     <artifactId>revision-info-plugin</artifactId>
-                    <version>0.8</version>
+                    <version>${project.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -140,7 +140,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
+                    <version>3.8.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-plugin-plugin</artifactId>
@@ -152,11 +152,11 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <version>3.1.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
+                    <version>3.0.0-M1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
@@ -165,6 +165,17 @@
                 <plugin>
                     <artifactId>maven-invoker-plugin</artifactId>
                     <version>3.1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>3.1.1</version>
+                    <configuration>
+                        <docencoding>UTF-8</docencoding>
+                        <source>8</source>
+                        <additionalparam>-Xdoclint:none</additionalparam>
+                        <!--<additionalOptions>-html5</additionalOptions>-->
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -216,6 +227,28 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.8.1</version>
+                        <configuration>
+                            <fork>true</fork>
+                            <source>1.8</source>
+                            <target>1.8</target>
+                            <release>8</release>
+                            <debug>true</debug>
+                            <encoding>UTF-8</encoding>
+                            <showWarnings>false</showWarnings>
+                            <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                            <compilerArgument>-Xlint:unchecked</compilerArgument>
+                            <showDeprecation>false</showDeprecation>
+                            <jdkToolchain>
+                                <version>1.8</version>
+                            </jdkToolchain>
+                            <excludes>
+                                <exclude>module-info.java</exclude>
+                            </excludes>                            
+                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
