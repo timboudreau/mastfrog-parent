@@ -41,19 +41,19 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.36.Final</netty.version>
+        <netty.version>4.1.42.Final</netty.version>
         <guice.version>4.2.2</guice.version>
-        <netbeans.version>RELEASE81</netbeans.version>
-        <jackson.version>2.10.0.pr1</jackson.version>
+        <netbeans.version>RELEASE111</netbeans.version>
+        <jackson.version>2.10.0.pr3</jackson.version>
         <mastfrog.version>2.5.1-dev</mastfrog.version>
         <simplevalidation.version>1.13</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
-        <mongo.driver.version>3.10.2</mongo.driver.version>
+        <mongo.driver.version>3.11.1</mongo.driver.version>
         <jetty.version>9.4.17.v20190418</jetty.version>
         <log4j2.version>2.11.2</log4j2.version>
         <index.reflection>false</index.reflection>
-        <junit5.version>5.4.2</junit5.version>
+        <junit5.version>5.5.2</junit5.version>
         <vertx-pg-client.version>3.8.0</vertx-pg-client.version>
     </properties>
     <profiles>
@@ -1231,7 +1231,7 @@
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>2.10.1</version>
+                <version>2.10.4</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -1271,12 +1271,12 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpclient</artifactId>
-                <version>4.5.8</version>
+                <version>4.5.10</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
-                <version>4.4.11</version>
+                <version>4.4.12</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
@@ -1286,32 +1286,32 @@
             <dependency>
                 <groupId>org.apache.maven.surefire</groupId>
                 <artifactId>maven-surefire-common</artifactId>
-                <version>2.22.1</version>
+                <version>2.22.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-artifact</artifactId>
-                <version>3.6.1</version>
+                <version>3.6.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-core</artifactId>
-                <version>3.6.1</version>
+                <version>3.6.2</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-plugin-api</artifactId>
-                <version>3.6.1</version>
+                <version>3.6.2</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
-                <version>2.5.6</version>
+                <version>2.5.8</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-utils</artifactId>
-                <version>3.2.0</version>
+                <version>3.3.0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.aether</groupId>
@@ -1341,7 +1341,7 @@
             <dependency>
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
-                <version>2.3.28</version>
+                <version>2.3.29</version>
             </dependency>
             <dependency>
                 <groupId>org.glassfish</groupId>
@@ -1351,7 +1351,7 @@
             <dependency>
                 <groupId>org.jasypt</groupId>
                 <artifactId>jasypt</artifactId>
-                <version>1.9.2</version>
+                <version>1.9.3</version>
             </dependency>
             <dependency>
                 <groupId>org.javassist</groupId>
@@ -1417,7 +1417,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>htmlunit-driver</artifactId>
-                <version>2.35.1</version>
+                <version>2.36.0</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.seleniumhq.selenium</groupId>
@@ -1481,7 +1481,7 @@
             <dependency>
                 <groupId>com.assertthat</groupId>
                 <artifactId>selenium-shutterbug</artifactId>
-                <version>0.9</version>
+                <version>0.9.3</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugin-testing</groupId>
