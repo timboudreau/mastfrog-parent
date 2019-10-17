@@ -18,7 +18,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.5.1-dev</version>
+    <version>2.6.0</version>
     <name>Mastfrog Configuration</name>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -45,7 +45,7 @@
         <guice.version>4.2.2</guice.version>
         <netbeans.version>RELEASE111</netbeans.version>
         <jackson.version>2.10.0.pr3</jackson.version>
-        <mastfrog.version>2.5.1-dev</mastfrog.version>
+        <mastfrog.version>2.6.0</mastfrog.version>
         <simplevalidation.version>1.13</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>

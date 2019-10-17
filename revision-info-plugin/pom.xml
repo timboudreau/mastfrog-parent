@@ -51,7 +51,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.version>3.5.0</maven.version>
-        <mastfrog.version>2.5.1</mastfrog.version>
+        <mastfrog.version>2.6.0</mastfrog.version>
         <!-- Ugh, Maven's own APIs depend on inconsistent versions of each 
         other - maven-plugin-api drags in older versions of several others -->
         <enforcer.skip>true</enforcer.skip>
@@ -220,6 +220,26 @@
                                 <additionalOptions>-html5</additionalOptions>
                             </configuration>
                         </plugin>
+                        <plugin>
+                            <artifactId>maven-compiler-plugin</artifactId>
+                            <version>3.8.1</version>
+                            <configuration>
+                                <fork>true</fork>
+                                <release>8</release>
+                                <debug>true</debug>
+                                <encoding>UTF-8</encoding>
+                                <showWarnings>false</showWarnings>
+                                <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                                <compilerArgument>-Xlint:unchecked</compilerArgument>
+                                <showDeprecation>false</showDeprecation>
+                                <jdkToolchain>
+                                    <version>1.8</version>
+                                </jdkToolchain>
+                                <excludes>
+                                    <exclude>module-info.java</exclude>
+                                </excludes>                            
+                            </configuration>
+                        </plugin>                        
                     </plugins>
                 </pluginManagement>
             </build>
@@ -253,7 +273,6 @@
                             <fork>true</fork>
                             <source>1.8</source>
                             <target>1.8</target>
-                            <release>8</release>
                             <debug>true</debug>
                             <encoding>UTF-8</encoding>
                             <showWarnings>false</showWarnings>
