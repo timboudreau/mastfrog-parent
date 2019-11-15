@@ -1,10 +1,10 @@
-<?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.mastfrog</groupId>
-  <artifactId>revision-info-plugin</artifactId>
-  <url>https://github.com:timboudreau/mastfrog-parent</url>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mastfrog</groupId>
+    <artifactId>revision-info-plugin</artifactId>
+    <url>https://github.com:timboudreau/mastfrog-parent</url>
     <scm>
         <url>git@github.com:timboudreau/mastfrog-parent.git</url>
         <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
@@ -20,23 +20,22 @@
             <url>https://opensource.org/licenses/MIT</url>
             <distribution>repo</distribution>
         </license>
-    </licenses><organization>
+    </licenses>
+    <organization>
         <name>Mastfrog Technologies</name>
         <url>https://mastfrog.com</url>
     </organization>
-    <version>2.6.0</version>
-  
-  <name>Test MyMojo</name>
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-my-plugin</artifactId>
-        <configuration>
-          <!-- Specify the MyMojo parameter -->
-          <outputDirectory>target/test-harness/project-to-test</outputDirectory>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <version>2.6.1</version>
+    <name>Test MyMojo</name>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-my-plugin</artifactId>
+                <configuration>
+                    <!-- Specify the MyMojo parameter -->
+                    <outputDirectory>target/test-harness/project-to-test</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -1,24 +1,23 @@
-<?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <packaging>pom</packaging>
-
     <!--          WHEN UPDATING THE VERSION
         Also update the mastfrog.version property below - we use that for
         dependencies so that a project can use this as its parent, have
         an independent version number and not accidentally try to import
         mastfrog JARs with that version instead of the right one
     -->
-
     <!-- NOTE: Changing the version string here changes it for EVERYTHING.
          Be SURE to also change mastfrog.version to match (and don't set it
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.6.0</version>
+    <version>2.6.1</version>
     <name>Mastfrog Configuration</name>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -41,15 +40,15 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.42.Final</netty.version>
+        <netty.version>4.1.43.Final</netty.version>
         <guice.version>4.2.2</guice.version>
         <netbeans.version>RELEASE111</netbeans.version>
-        <jackson.version>2.10.0.pr3</jackson.version>
-        <mastfrog.version>2.6.0</mastfrog.version>
+        <jackson.version>2.10.1</jackson.version>
+        <mastfrog.version>2.6.1</mastfrog.version>
         <simplevalidation.version>1.13</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
-        <mongo.driver.version>3.11.1</mongo.driver.version>
+        <mongo.driver.version>3.11.2</mongo.driver.version>
         <jetty.version>9.4.17.v20190418</jetty.version>
         <log4j2.version>2.11.2</log4j2.version>
         <index.reflection>false</index.reflection>
@@ -119,7 +118,7 @@
                     </plugins>
                 </pluginManagement>
             </build>
-        </profile>        
+        </profile>
         <profile>
             <id>release</id>
             <distributionManagement>
@@ -301,7 +300,7 @@
                 <plugin>
                     <groupId>com.mastfrog</groupId>
                     <artifactId>revision-info-plugin</artifactId>
-                    <version>0.10</version>
+                    <version>0.11</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1166,12 +1165,12 @@
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
-                <version>3.3.1</version>
+                <version>3.4.1</version>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.12</version>
+                <version>1.13</version>
             </dependency>
             <dependency>
                 <groupId>commons-configuration</groupId>
@@ -1231,7 +1230,7 @@
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>2.10.4</version>
+                <version>2.10.5</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -1356,7 +1355,7 @@
             <dependency>
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.25.0-GA</version>
+                <version>3.26.0-GA</version>
             </dependency>
             <dependency>
                 <groupId>org.mongodb</groupId>

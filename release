@@ -1,5 +1,6 @@
 #!/bin/sh
 
+set -e
 mvn --activate-profiles release -f revision-info-plugin/pom.xml clean install javadoc:jar source:jar gpg:sign nexus-staging:deploy
 mvn --activate-profiles release -f parent/pom.xml clean install gpg:sign nexus-staging:deploy
 mvn -Dmaven.test.skip.exec=true --activate-profiles release install javadoc:jar source:jar gpg:sign nexus-staging:deploy
