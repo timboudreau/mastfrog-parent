@@ -40,7 +40,7 @@
             <url>https://timboudreau.com</url>
         </developer>
     </developers>
-    <version>0.13</version>
+    <version>0.14</version>
     <packaging>maven-plugin</packaging>
     <name>Revision Info Maven Plugin</name>
     <prerequisites>
@@ -51,7 +51,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.version>3.5.0</maven.version>
-        <mastfrog.version>2.6.3</mastfrog.version>
         <!-- Ugh, Maven's own APIs depend on inconsistent versions of each 
         other - maven-plugin-api drags in older versions of several others -->
         <enforcer.skip>true</enforcer.skip>
@@ -107,7 +106,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>com.mastfrog</groupId>
@@ -152,7 +151,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
@@ -164,7 +163,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-invoker-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -343,7 +342,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-invoker-plugin</artifactId>
-                        <version>3.1.0</version>
+                        <version>3.2.1</version>
                         <configuration>
                             <debug>true</debug>
                             <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>

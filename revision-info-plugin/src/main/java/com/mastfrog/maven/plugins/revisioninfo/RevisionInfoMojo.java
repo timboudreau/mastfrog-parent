@@ -23,7 +23,6 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.project.MavenProject;
 
 /**
@@ -55,7 +54,8 @@ public class RevisionInfoMojo extends AbstractMojo {
     /**
      * The dest dir for generated classes.
      */
-    @Parameter(defaultValue = "${project.build.directory}/generated-sources/annotations", readonly = true)
+    @Parameter(defaultValue = "${project.build.directory}/generated-sources/annotations", 
+            readonly = false, property="classDir")
     File genSourcesDir;
 
     /**
@@ -67,7 +67,7 @@ public class RevisionInfoMojo extends AbstractMojo {
     @Parameter(property = "auto", defaultValue = "true", alias = "autoGenerate")
     boolean auto;
 
-    @Component
+    @Parameter( defaultValue = "${project}", readonly = true )
     MavenProject project;
 
     /**
@@ -211,6 +211,7 @@ public class RevisionInfoMojo extends AbstractMojo {
                     return;
                 }
             }
+            props.setProperty("version", project.getVersion());
             File f = outputDirectory;
             if (!f.exists()) {
                 f.mkdirs();
