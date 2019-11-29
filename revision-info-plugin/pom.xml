@@ -40,7 +40,7 @@
             <url>https://timboudreau.com</url>
         </developer>
     </developers>
-    <version>0.14</version>
+    <version>0.15</version>
     <packaging>maven-plugin</packaging>
     <name>Revision Info Maven Plugin</name>
     <prerequisites>
