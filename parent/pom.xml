@@ -17,7 +17,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.6.7</version>
+    <version>2.6.8</version>
     <name>Mastfrog Configuration</name>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -40,11 +40,11 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.43.Final</netty.version>
+        <netty.version>4.1.46.Final</netty.version>
         <guice.version>4.2.2</guice.version>
         <netbeans.version>RELEASE111</netbeans.version>
         <jackson.version>2.10.1</jackson.version>
-        <mastfrog.version>2.6.7</mastfrog.version>
+        <mastfrog.version>2.6.8</mastfrog.version>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
@@ -301,7 +301,7 @@
                 <plugin>
                     <groupId>com.mastfrog</groupId>
                     <artifactId>revision-info-plugin</artifactId>
-                    <version>0.17</version>
+                    <version>0.18</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
