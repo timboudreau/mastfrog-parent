@@ -25,7 +25,7 @@
         <name>Mastfrog Technologies</name>
         <url>https://mastfrog.com</url>
     </organization>
-    <version>2.6.11</version>
+    <version>2.6.12</version>
     <name>Test MyMojo</name>
     <build>
         <plugins>
