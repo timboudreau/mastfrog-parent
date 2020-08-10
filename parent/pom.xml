@@ -17,7 +17,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.6.13</version>
+    <version>2.7.0</version>
     <name>Mastfrog Configuration</name>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -40,21 +40,22 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.50.Final</netty.version>
+        <netty.version>4.1.51.Final</netty.version>
         <guice.version>4.2.3</guice.version>
         <netbeans.version>RELEASE113</netbeans.version>
-        <jackson.version>2.11.0</jackson.version>
-        <mastfrog.version>2.6.13</mastfrog.version>
+        <jackson.version>2.11.2</jackson.version>
+        <mastfrog.version>2.7.0</mastfrog.version>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
-        <mongo.driver.version>3.12.4</mongo.driver.version>
-        <jetty.version>9.4.28.v20200408</jetty.version>
+        <mongo.driver.version>3.12.7</mongo.driver.version>
+        <jetty.version>9.4.31.v20200723</jetty.version>
         <log4j2.version>2.13.3</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.6.2</junit5.version>
         <vertx-pg-client.version>3.9.1</vertx-pg-client.version>
         <surefire.version>3.0.0-M4</surefire.version>
+        <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
     </properties>
     <profiles>
         <profile>
@@ -321,7 +322,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.0.0-M2</version>
+                    <version>3.0.0-M3</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
@@ -337,7 +338,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-antrun-plugin</artifactId>
-                    <version>1.8</version>
+                    <version>3.0.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -366,6 +367,8 @@
                     <version>4.5</version>
                     <extensions>true</extensions>
                     <configuration>
+                        <useOSGiDependencies>false</useOSGiDependencies>
+                        <author>Tim Boudreau</author>                        
                         <branding.token>${nbcluster}</branding.token>
                         <brandingToken>${nbcluster}</brandingToken>
                         <cluster>${nbcluster}</cluster>
@@ -461,7 +464,7 @@
         <developer>
             <id>timboudreau</id>
             <name>Tim Boudreau</name>
-            <url>http://timboudreau.com</url>
+            <url>https://timboudreau.com</url>
             <email>tim@timboudreau.com</email>
         </developer>
     </developers>
@@ -490,7 +493,7 @@
             <dependency>
                 <groupId>com.ibm.etcd</groupId>
                 <artifactId>etcd-java</artifactId>
-                <version>0.0.10</version>
+                <version>0.0.16</version>
             </dependency>
             <dependency>
                 <groupId>com.google.android</groupId>
@@ -500,7 +503,7 @@
             <dependency>
                 <groupId>com.google.api-client</groupId>
                 <artifactId>google-api-client</artifactId>
-                <version>1.28.0</version>
+                <version>1.30.10</version>
             </dependency>
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
@@ -515,7 +518,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>28.2-jre</version>
+                <version>29.0-jre</version>
             </dependency>
             <dependency>
                 <groupId>io.vertx</groupId>
@@ -590,6 +593,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-postgres-async</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>subscriptions</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
@@ -821,17 +829,17 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-java</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${obsolete.bunyan-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-parse</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${obsolete.bunyan-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>cluster</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${obsolete.bunyan-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
@@ -1125,22 +1133,22 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-java-log4j-appender</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${obsolete.bunyan-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-java-mongodb-sink</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${obsolete.bunyan-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-java-util-logging</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${obsolete.bunyan-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-log4j2-appender</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${obsolete.bunyan-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
@@ -1202,7 +1210,7 @@
             <dependency>
                 <groupId>de.undercouch</groupId>
                 <artifactId>bson4jackson</artifactId>
-                <version>2.9.2</version>
+                <version>2.11.0</version>
             </dependency>
             <dependency>
                 <groupId>io.netty</groupId>
@@ -1277,7 +1285,7 @@
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.9</version>
+                <version>3.11</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
@@ -1322,7 +1330,7 @@
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
-                <version>3.0.3</version>
+                <version>3.0.5</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
@@ -1372,7 +1380,7 @@
             <dependency>
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.26.0-GA</version>
+                <version>3.27.0-GA</version>
             </dependency>
             <dependency>
                 <groupId>org.mongodb</groupId>
@@ -1387,7 +1395,8 @@
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>bson</artifactId>
-                <version>${mongo.driver.version}</version>
+                <version>4.1.0</version>
+                <!--<version>${mongo.driver.version}</version>-->
             </dependency>
             <dependency>
                 <groupId>org.mongojack</groupId>
@@ -1433,7 +1442,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>htmlunit-driver</artifactId>
-                <version>2.40.0</version>
+                <version>2.42.0</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.seleniumhq.selenium</groupId>
@@ -1497,7 +1506,7 @@
             <dependency>
                 <groupId>com.assertthat</groupId>
                 <artifactId>selenium-shutterbug</artifactId>
-                <version>0.9.3</version>
+                <version>0.9.5</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugin-testing</groupId>

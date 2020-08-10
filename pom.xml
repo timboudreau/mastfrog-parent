@@ -5,19 +5,17 @@
     <parent>
         <groupId>com.mastfrog</groupId>
         <artifactId>mastfrog-parent</artifactId>
-        <version>2.6.13</version>
+        <version>2.7.0</version>
         <relativePath>parent/</relativePath>
     </parent>
-    <version>2.6.13</version>
+    <version>2.7.0</version>
     <artifactId>mastfrog-modules</artifactId>
     <url>https://github.com:timboudreau/mastfrog-parent</url>
     <name>Mastfrog Maven Modules</name>
     <packaging>pom</packaging>
     <modules>
-        <!--        <module>revision-info-plugin</module> -->
         <module>annotation-tools</module>
         <module>util</module>
-        <!--<module>jetcd</module>-->
         <module>blather</module>
         <module>scopes-modules</module>
         <module>giulius-modules</module>
@@ -34,7 +32,6 @@
         <module>mongo-promises</module>
         <module>mongo-promises/mongo-promises-tests</module>
         <module>generic-web-api</module>
-        <module>bunyan-java</module>
         <module>bunyan-java-v2</module>
         <module>blurt/Blurt</module>
         <module>blurt/blurt-collector</module>
