@@ -666,7 +666,7 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-annotation-processors</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${mastfrog.version}.1</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
