@@ -64,3 +64,6 @@
 [submodule "bunyan-java-v2"]
 	path = bunyan-java-v2
 	url = https://github.com/timboudreau/bunyan-java-v2.git
+[submodule "desktop"]
+	path = desktop
+	url = https://github.com/timboudreau/desktop.git

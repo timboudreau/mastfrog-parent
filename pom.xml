@@ -17,6 +17,7 @@
         <module>annotation-tools</module>
         <module>util</module>
         <module>blather</module>
+        <module>desktop</module>
         <module>scopes-modules</module>
         <module>giulius-modules</module>
         <module>giulius-tests-modules</module>
