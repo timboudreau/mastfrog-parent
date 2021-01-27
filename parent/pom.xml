@@ -47,7 +47,7 @@
         <mastfrog.version>2.7.1</mastfrog.version>
         <mastfrog.graph.version>2.7.1.1</mastfrog.graph.version>
         <mastfrog.java-vogon.version>2.7.1.4</mastfrog.java-vogon.version>
-        <mastfrog.function.version>2.7.1.5</mastfrog.function.version>
+        <mastfrog.function.version>2.7.1.6</mastfrog.function.version>
         <mastfrog.collections.version>2.7.1.2</mastfrog.collections.version>
         <mastfrog.bits.version>2.7.1.1</mastfrog.bits.version>
         <simplevalidation.version>1.14</simplevalidation.version>
