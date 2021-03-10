@@ -45,11 +45,12 @@
         <netbeans.version>RELEASE113</netbeans.version>
         <jackson.version>2.12.1</jackson.version>
         <mastfrog.version>2.7.1</mastfrog.version>
-        <mastfrog.graph.version>2.7.1.1</mastfrog.graph.version>
+        <mastfrog.graph.version>2.7.1.3</mastfrog.graph.version>
         <mastfrog.java-vogon.version>2.7.1.4</mastfrog.java-vogon.version>
-        <mastfrog.function.version>2.7.1.6</mastfrog.function.version>
-        <mastfrog.collections.version>2.7.1.4</mastfrog.collections.version>
-        <mastfrog.bits.version>2.7.1.1</mastfrog.bits.version>
+        <mastfrog.function.version>2.7.1.8</mastfrog.function.version>
+        <mastfrog.collections.version>2.7.1.5</mastfrog.collections.version>
+        <mastfrog.bits.version>2.7.1.2</mastfrog.bits.version>
+        <mastfrog.streams.version>2.7.1.2</mastfrog.streams.version>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
@@ -1104,7 +1105,7 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>util-streams</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${mastfrog.streams.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
