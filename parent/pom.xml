@@ -17,7 +17,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.7.1</version>
+    <version>2.7.2</version>
     <name>Mastfrog Configuration</name>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -45,13 +45,13 @@
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
         <netbeans.version>RELEASE113</netbeans.version>
         <jackson.version>2.12.2</jackson.version>
-        <mastfrog.version>2.7.1</mastfrog.version>
-        <mastfrog.graph.version>2.7.1.3</mastfrog.graph.version>
-        <mastfrog.java-vogon.version>2.7.1.4</mastfrog.java-vogon.version>
-        <mastfrog.function.version>2.7.1.8</mastfrog.function.version>
-        <mastfrog.collections.version>2.7.1.5</mastfrog.collections.version>
-        <mastfrog.bits.version>2.7.1.3</mastfrog.bits.version>
-        <mastfrog.streams.version>2.7.1.2</mastfrog.streams.version>
+        <mastfrog.version>2.7.2</mastfrog.version>
+        <mastfrog.graph.version>2.7.2</mastfrog.graph.version>
+        <mastfrog.java-vogon.version>2.7.2</mastfrog.java-vogon.version>
+        <mastfrog.function.version>2.7.2</mastfrog.function.version>
+        <mastfrog.collections.version>2.7.2</mastfrog.collections.version>
+        <mastfrog.bits.version>2.7.2</mastfrog.bits.version>
+        <mastfrog.streams.version>2.7.2</mastfrog.streams.version>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
@@ -674,7 +674,7 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>acteur-annotation-processors</artifactId>
-                <version>${mastfrog.version}.1</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
