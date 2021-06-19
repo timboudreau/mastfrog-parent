@@ -48,10 +48,12 @@
         <mastfrog.version>2.7.2</mastfrog.version>
         <mastfrog.graph.version>2.7.2</mastfrog.graph.version>
         <mastfrog.java-vogon.version>2.7.2</mastfrog.java-vogon.version>
-        <mastfrog.function.version>2.7.2</mastfrog.function.version>
+        <mastfrog.function.version>2.7.2.1</mastfrog.function.version>
+        <mastfrog.strings.version>2.7.2.1</mastfrog.strings.version>
         <mastfrog.collections.version>2.7.2</mastfrog.collections.version>
         <mastfrog.bits.version>2.7.2</mastfrog.bits.version>
         <mastfrog.streams.version>2.7.2</mastfrog.streams.version>
+        <mastfrog.concurrent.version>2.7.2.2</mastfrog.concurrent.version>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
@@ -621,6 +623,11 @@
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>concurrent</artifactId>
+                <version>${mastfrog.concurrent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-postgres-async</artifactId>
                 <type>test-jar</type>
                 <scope>test</scope>
@@ -1087,7 +1094,7 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>util-strings</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${mastfrog.strings.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
