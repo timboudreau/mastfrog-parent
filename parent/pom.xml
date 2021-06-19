@@ -58,8 +58,7 @@
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
         <mongo.driver.version>3.12.7</mongo.driver.version>
-        <!--<jetty.version>[9.4.37,)</jetty.version>-->
-        <jetty.version>9.4.38.v20210224</jetty.version>
+        <jetty.version>9.4.42.v20210604</jetty.version>
         <log4j2.version>2.14.0</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.7.1</junit5.version>
@@ -404,6 +403,7 @@
         </repository>
     </distributionManagement>
     <repositories>
+<!--
         <repository>
             <id>timboudreau-builds</id>
             <name>timboudreau.com builds</name>
@@ -417,6 +417,7 @@
                 <updatePolicy>never</updatePolicy>
             </snapshots>
         </repository>
+-->
         <!-- blacklist dead transitive repositories -->
         <repository>
             <id>netbeans</id>
@@ -1365,12 +1366,22 @@
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-io</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-servlet</artifactId>
                 <version>${jetty.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-webapp</artifactId>
+                <version>${jetty.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-http</artifactId>
                 <version>${jetty.version}</version>
             </dependency>
             <dependency>
