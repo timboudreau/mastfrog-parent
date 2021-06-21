@@ -49,7 +49,7 @@
         <mastfrog.graph.version>2.7.2</mastfrog.graph.version>
         <mastfrog.java-vogon.version>2.7.2</mastfrog.java-vogon.version>
         <mastfrog.function.version>2.7.2.1</mastfrog.function.version>
-        <mastfrog.strings.version>2.7.2.1</mastfrog.strings.version>
+        <mastfrog.strings.version>2.7.2.2</mastfrog.strings.version>
         <mastfrog.collections.version>2.7.2</mastfrog.collections.version>
         <mastfrog.bits.version>2.7.2</mastfrog.bits.version>
         <mastfrog.streams.version>2.7.2</mastfrog.streams.version>
@@ -61,7 +61,7 @@
         <jetty.version>9.4.42.v20210604</jetty.version>
         <log4j2.version>2.14.0</log4j2.version>
         <index.reflection>false</index.reflection>
-        <junit5.version>5.7.1</junit5.version>
+        <junit5.version>5.7.2</junit5.version>
         <vertx-pg-client.version>4.0.2</vertx-pg-client.version>
         <surefire.version>3.0.0-M5</surefire.version>
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
@@ -530,7 +530,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>30.1-jre</version>
+                <version>30.1.1-jre</version>
             </dependency>
             <dependency>
                 <groupId>io.vertx</groupId>
