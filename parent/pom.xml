@@ -51,7 +51,7 @@
         <mastfrog.function.version>2.7.2.1</mastfrog.function.version>
         <mastfrog.strings.version>2.7.2.3</mastfrog.strings.version>
         <mastfrog.collections.version>2.7.2.1</mastfrog.collections.version>
-        <mastfrog.bits.version>2.7.2.3</mastfrog.bits.version>
+        <mastfrog.bits.version>2.7.2.4</mastfrog.bits.version>
         <mastfrog.streams.version>2.7.2</mastfrog.streams.version>
         <mastfrog.concurrent.version>2.7.2.3</mastfrog.concurrent.version>
         <simplevalidation.version>1.14</simplevalidation.version>
