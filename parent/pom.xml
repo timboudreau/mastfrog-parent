@@ -46,12 +46,12 @@
         <netbeans.version>RELEASE125</netbeans.version>
         <jackson.version>2.13.0</jackson.version>
         <mastfrog.version>2.7.3</mastfrog.version>
-        <mastfrog.graph.version>2.7.3</mastfrog.graph.version>
+        <mastfrog.graph.version>2.7.3.2</mastfrog.graph.version>
         <mastfrog.java-vogon.version>2.7.3</mastfrog.java-vogon.version>
         <mastfrog.function.version>2.7.3</mastfrog.function.version>
         <mastfrog.strings.version>2.7.3</mastfrog.strings.version>
-        <mastfrog.collections.version>2.7.3</mastfrog.collections.version>
-        <mastfrog.bits.version>2.7.3</mastfrog.bits.version>
+        <mastfrog.collections.version>2.7.3.1</mastfrog.collections.version>
+        <mastfrog.bits.version>2.7.3.2</mastfrog.bits.version>
         <mastfrog.streams.version>2.7.3</mastfrog.streams.version>
         <mastfrog.concurrent.version>2.7.3</mastfrog.concurrent.version>
         <simplevalidation.version>1.14</simplevalidation.version>
@@ -657,17 +657,17 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>sort</artifactId>
-                <version>${mastfrog.graph.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>cache</artifactId>
-                <version>${mastfrog.graph.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>search</artifactId>
-                <version>${mastfrog.graph.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
