@@ -59,7 +59,7 @@
         <trackerapi.version>1.0</trackerapi.version>
         <mongo.driver.version>3.12.10</mongo.driver.version>
         <jetty.version>9.4.43.v20210629</jetty.version>
-        <log4j2.version>2.14.1</log4j2.version>
+        <log4j2.version>2.16.0</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.8.1</junit5.version>
         <vertx-pg-client.version>4.2.1</vertx-pg-client.version>
