@@ -55,7 +55,7 @@ public class RevisionInfoMojo extends AbstractMojo {
      * The dest dir for generated classes.
      */
     @Parameter(defaultValue = "${project.build.directory}/generated-sources/annotations", 
-            readonly = false, property="classDir")
+            readonly = false, property="classDir", alias = "destDir")
     File genSourcesDir;
 
     /**
@@ -85,11 +85,20 @@ public class RevisionInfoMojo extends AbstractMojo {
                 + project.getArtifactId() + ".versions.properties");
     }
 
+    private void log(String what) {
+        this.getLog().debug(what);
+    }
+
     Path sourceOutputFile() throws IOException {
         String genClass = generatedClassFqn();
+        log("GENCLASS " + genClass + " in " + genSourcesDir);
         if (genClass != null) {
             String sourceRelativePath = Utils.fqnToSourcePath(genClass);
-            return genSourcesDir.toPath().resolve(sourceRelativePath);
+            Path genFile = genSourcesDir.toPath().resolve(sourceRelativePath);
+            log("Will generate " + genFile);
+            return genFile;
+        } else {
+            log("no class fqn to generate");
         }
         return null;
     }
@@ -182,6 +191,7 @@ public class RevisionInfoMojo extends AbstractMojo {
 
     @Override
     public void execute() throws MojoExecutionException {
+        log("RevInfo exec classDir " + genSourcesDir);
         if ("pom".equals(project.getPackaging())) {
             // we ignore pom projects - no classes, nothing to do
             getLog().debug("revision-info-plugin ignoring POM project");
@@ -227,6 +237,7 @@ public class RevisionInfoMojo extends AbstractMojo {
             Path sourceFilePath = sourceOutputFile();
             String fqn = generatedClassFqn();
             if (sourceFilePath != null && fqn != null) {
+                log("Generate class " + fqn + " in " + sourceFilePath);
                 String source = Utils.javaSourceFromProperties(fqn, props, project);
                 getLog().info("Generating class " + fqn + " in " + project.getBasedir().toPath().relativize(sourceFilePath));
                 Path sourceFilePackage = sourceFilePath.getParent();

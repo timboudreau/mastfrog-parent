@@ -17,7 +17,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.7.3</version>
+    <version>2.8.0</version>
     <name>Mastfrog Configuration</name>
     <!-- Global build configuration - changes here affect how EVERYTHING is
     built -->
@@ -40,20 +40,20 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.70.Final</netty.version>
+        <netty.version>4.1.72.Final</netty.version>
         <guice.version>5.0.1</guice.version>
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
-        <netbeans.version>RELEASE125</netbeans.version>
+        <netbeans.version>RELEASE126</netbeans.version>
         <jackson.version>2.13.0</jackson.version>
-        <mastfrog.version>2.7.3</mastfrog.version>
-        <mastfrog.graph.version>2.7.3.2</mastfrog.graph.version>
-        <mastfrog.java-vogon.version>2.7.3</mastfrog.java-vogon.version>
-        <mastfrog.function.version>2.7.3</mastfrog.function.version>
-        <mastfrog.strings.version>2.7.3</mastfrog.strings.version>
-        <mastfrog.collections.version>2.7.3.1</mastfrog.collections.version>
-        <mastfrog.bits.version>2.7.3.2</mastfrog.bits.version>
-        <mastfrog.streams.version>2.7.3</mastfrog.streams.version>
-        <mastfrog.concurrent.version>2.7.3</mastfrog.concurrent.version>
+        <mastfrog.version>2.8.0</mastfrog.version>
+        <mastfrog.graph.version>${mastfrog.version}</mastfrog.graph.version>
+        <mastfrog.java-vogon.version>${mastfrog.version}</mastfrog.java-vogon.version>
+        <mastfrog.function.version>${mastfrog.version}</mastfrog.function.version>
+        <mastfrog.strings.version>${mastfrog.version}</mastfrog.strings.version>
+        <mastfrog.collections.version>${mastfrog.version}</mastfrog.collections.version>
+        <mastfrog.bits.version>${mastfrog.version}</mastfrog.bits.version>
+        <mastfrog.streams.version>${mastfrog.version}</mastfrog.streams.version>
+        <mastfrog.concurrent.version>${mastfrog.version}</mastfrog.concurrent.version>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
@@ -62,7 +62,7 @@
         <log4j2.version>2.14.1</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.8.1</junit5.version>
-        <vertx-pg-client.version>4.2.1</vertx-pg-client.version>
+        <vertx-pg-client.version>4.2.2</vertx-pg-client.version>
         <surefire.version>3.0.0-M5</surefire.version>
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
     </properties>
@@ -240,9 +240,9 @@
                 <configuration>
                     <parallel>all</parallel>
                     <parallelMavenExecution>true</parallelMavenExecution>
-                    <perCoreThreadCount>4</perCoreThreadCount>
-                    <threadCount>16</threadCount>
-                    <forkCount>8</forkCount>
+                    <perCoreThreadCount>6</perCoreThreadCount>
+                    <threadCount>20</threadCount>
+                    <forkCount>16</forkCount>
                     <reuseForks>true</reuseForks>
                     <trimStackTrace>false</trimStackTrace>
                     <systemPropertyVariables>
@@ -312,7 +312,7 @@
                 <plugin>
                     <groupId>com.mastfrog</groupId>
                     <artifactId>revision-info-plugin</artifactId>
-                    <version>0.20</version>
+                    <version>0.21</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
