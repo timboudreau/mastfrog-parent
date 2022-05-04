@@ -52,10 +52,11 @@
         <mastfrog.function.version>${mastfrog.version}</mastfrog.function.version>
         <mastfrog.strings.version>${mastfrog.version}</mastfrog.strings.version>
         <mastfrog.collections.version>${mastfrog.version}</mastfrog.collections.version>
+        <mastfrog.predicates.version>${mastfrog.version}.1</mastfrog.predicates.version>
         <mastfrog.geometry.version>${mastfrog.version}.1</mastfrog.geometry.version>
         <mastfrog.bits.version>${mastfrog.version}</mastfrog.bits.version>
         <mastfrog.streams.version>${mastfrog.version}</mastfrog.streams.version>
-        <mastfrog.concurrent.version>${mastfrog.version}</mastfrog.concurrent.version>
+        <mastfrog.concurrent.version>${mastfrog.version}.1</mastfrog.concurrent.version>
         <!-- Bootstrapping in SmartJarMerge - we need the previous release or
              we wind up with a cyclic dependency, since it builds itself as 
              a CLI application -->
@@ -689,7 +690,7 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>predicates</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${mastfrog.predicates.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
