@@ -57,6 +57,7 @@
         <mastfrog.bits.version>${mastfrog.version}</mastfrog.bits.version>
         <mastfrog.streams.version>${mastfrog.version}</mastfrog.streams.version>
         <mastfrog.concurrent.version>${mastfrog.version}.1</mastfrog.concurrent.version>
+        <mastfrog.misc.version>${mastfrog.version}.1</mastfrog.misc.version>
         <!-- Bootstrapping in SmartJarMerge - we need the previous release or
              we wind up with a cyclic dependency, since it builds itself as 
              a CLI application -->
@@ -68,7 +69,7 @@
         <jetty.version>9.4.44.v20210927</jetty.version>
         <log4j2.version>2.17.2</log4j2.version>
         <index.reflection>false</index.reflection>
-        <junit5.version>5.8.1</junit5.version>
+        <junit5.version>5.8.2</junit5.version>
         <vertx-pg-client.version>4.2.2</vertx-pg-client.version>
         <surefire.version>3.0.0-M5</surefire.version>
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
@@ -1098,7 +1099,7 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>util-misc</artifactId>
-                <version>${mastfrog.version}</version>
+                <version>${mastfrog.misc.version}</version>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
