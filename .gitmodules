@@ -1,69 +1,92 @@
 [submodule "giulius-web-modules/giulius-web-parent"]
 	path = giulius-web-modules/giulius-web-parent
 	url = https://github.com/timboudreau/giulius-web.git
+	branch = v3.x
 [submodule "giulius-modules/giulius-parent"]
 	path = giulius-modules/giulius-parent
 	url = https://github.com/timboudreau/giulius.git
+	branch = v3.x
 [submodule "scopes-modules/scopes-parent"]
 	path = scopes-modules/scopes-parent
 	url = https://github.com/timboudreau/scopes.git
+	branch = v3.x
 [submodule "util"]
 	path = util
 	url = https://github.com/timboudreau/util
+	branch = v3.x
 [submodule "acteur-modules/acteur-parent"]
 	path = acteur-modules/acteur-parent
 	url = https://github.com/timboudreau/acteur.git
+	branch = v3.x
 [submodule "giulius-tests-modules/giulius-tests-parent"]
 	path = giulius-tests-modules/giulius-tests-parent
 	url = https://github.com/timboudreau/giulius-tests.git
+	branch = v3.x
 [submodule "giulius-selenium-tests-modules/giulius-selenium-tests-parent"]
 	path = giulius-selenium-tests-modules/giulius-selenium-tests-parent
 	url = https://github.com/timboudreau/giulius-selenium-tests.git
+	branch = v3.x
 [submodule "acteur-timetracker"]
 	path = acteur-timetracker
 	url = https://github.com/timboudreau/acteur-timetracker.git
+	branch = v3.x
 [submodule "netty-http-client"]
 	path = netty-http-client
 	url = https://github.com/timboudreau/netty-http-client.git
+	branch = v3.x
 [submodule "acteur-tutorial"]
 	path = acteur-tutorial
 	url = https://github.com/timboudreau/acteur-tutorial.git
+	branch = v3.x
 [submodule "acteur-auth"]
 	path = acteur-auth
 	url = https://github.com/timboudreau/acteur-auth.git
+	branch = v3.x
 [submodule "generic-web-api"]
 	path = generic-web-api
 	url = https://github.com/timboudreau/generic-web-api.git
+	branch = v3.x
 [submodule "blurt"]
 	path = blurt
 	url = https://github.com/timboudreau/blurt.git
+	branch = v3.x
 [submodule "giulius-settings-etcd"]
 	path = giulius-settings-etcd
 	url = https://github.com/timboudreau/giulius-settings-etcd
+	branch = v3.x
 [submodule "jetcd"]
 	path = jetcd
 	url = https://github.com/timboudreau/jetcd.git
+	branch = v3.x
 [submodule "numble"]
 	path = numble
 	url = https://github.com/timboudreau/numble.git
+	branch = v3.x
 [submodule "async-promises"]
 	path = async-promises
 	url = https://github.com/timboudreau/async-promises.git
+	branch = v3.x
 [submodule "mongo-promises"]
 	path = mongo-promises
 	url = https://github.com/timboudreau/mongo-promises.git
+	branch = v3.x
 [submodule "blather"]
 	path = blather
 	url = https://github.com/timboudreau/blather.git
+	branch = v3.x
 [submodule "portable-crypto"]
 	path = portable-crypto
 	url = https://github.com/timboudreau/portable-crypto.git
+	branch = v3.x
 [submodule "annotation-tools"]
 	path = annotation-tools
 	url = https://github.com/timboudreau/annotation-tools.git
+	branch = v3.x
 [submodule "bunyan-java-v2"]
 	path = bunyan-java-v2
 	url = https://github.com/timboudreau/bunyan-java-v2.git
+	branch = v3.x
 [submodule "desktop"]
 	path = desktop
 	url = https://github.com/timboudreau/desktop.git
+	branch = v3.x

@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <packaging>pom</packaging>
-    <!--          WHEN UPDATING THE VERSION
-        Also update the mastfrog.version property below - we use that for
-        dependencies so that a project can use this as its parent, have
-        an independent version number and not accidentally try to import
-        mastfrog JARs with that version instead of the right one
+<!-- WHEN UPDATING THE VERSION
+         Also update the mastfrog.version property below - we use that for
+         dependencies so that a project can use this as its parent, have
+         an independent version number and not accidentally try to import
+         mastfrog JARs with that version instead of the right one
     -->
-    <!-- NOTE: Changing the version string here changes it for EVERYTHING.
+<!-- NOTE: Changing the version string here changes it for EVERYTHING.
          Be SURE to also change mastfrog.version to match (and don't set it
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.8.1</version>
+    <version>3.0.0-dev</version>
     <name>Mastfrog Configuration</name>
-    <!-- Global build configuration - changes here affect how EVERYTHING is
-    built -->
+<!-- Global build configuration - changes here affect how EVERYTHING is
+         built -->
     <issueManagement>
         <system>Github</system>
         <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
     </issueManagement>
-    <description>
-        Shared configuration for Giulius, Acteur and
-        related projects
-    </description>
-    <!-- Ant-style properties used in the build - subprojects may override -->
+    <description>Shared configuration for Giulius, Acteur and
+        related projects</description>
+<!-- Ant-style properties used in the build - subprojects may override -->
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.fork>false</maven.compiler.fork>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
         <maven.compiler.debug>true</maven.compiler.debug>
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
@@ -46,7 +47,7 @@
         <netbeans.version>RELEASE126</netbeans.version>
         <jackson.databind.version>2.13.2.2</jackson.databind.version>
         <jackson.version>2.13.2</jackson.version>
-        <mastfrog.version>2.8.1</mastfrog.version>
+        <mastfrog.version>3.0.0-dev</mastfrog.version>
         <mastfrog.graph.version>${mastfrog.version}</mastfrog.graph.version>
         <mastfrog.java-vogon.version>${mastfrog.version}</mastfrog.java-vogon.version>
         <mastfrog.function.version>${mastfrog.version}</mastfrog.function.version>
@@ -58,8 +59,8 @@
         <mastfrog.streams.version>${mastfrog.version}</mastfrog.streams.version>
         <mastfrog.concurrent.version>${mastfrog.version}\</mastfrog.concurrent.version>
         <mastfrog.misc.version>${mastfrog.version}</mastfrog.misc.version>
-        <!-- Bootstrapping in SmartJarMerge - we need the previous release or
-             we wind up with a cyclic dependency, since it builds itself as 
+<!-- Bootstrapping in SmartJarMerge - we need the previous release or
+             we wind up with a cyclic dependency, since it builds itself as
              a CLI application -->
         <maven.merge.configuration.previous>2.8.0</maven.merge.configuration.previous>
         <simplevalidation.version>1.14</simplevalidation.version>
@@ -76,6 +77,7 @@
         <bouncycastle.version>1.70</bouncycastle.version>
         <maven.deps.version>3.8.5</maven.deps.version>
     </properties>
+
     <profiles>
         <profile>
             <id>reflection-indexing</id>
@@ -85,6 +87,7 @@
                     <exists>${basedir}/index-reflection.marker</exists>
                 </file>
             </activation>
+
             <properties>
                 <maven.compiler.force.javac>true</maven.compiler.force.javac>
             </properties>
@@ -126,6 +129,7 @@
             <activation>
                 <jdk>[1.9,)</jdk>
             </activation>
+
             <build>
                 <pluginManagement>
                     <plugins>
@@ -148,6 +152,7 @@
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
+
             <build>
                 <plugins>
                     <plugin>
@@ -174,7 +179,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <source>8</source>
+                            <source>16</source>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -196,7 +201,7 @@
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                             <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
-                            <!--<skipStagingRepositoryClose>true</skipStagingRepositoryClose>-->
+<!-- <skipStagingRepositoryClose>true</skipStagingRepositoryClose> -->
                         </configuration>
                     </plugin>
                     <plugin>
@@ -216,6 +221,7 @@
             </build>
         </profile>
     </profiles>
+
     <build>
         <plugins>
             <!-- Sets source level and source encoding for all projects -->
@@ -259,9 +265,10 @@
                         <unit.test>true</unit.test>
                         <acteur.debug>false</acteur.debug>
                         <forkNumber>${surefire.forkNumber}</forkNumber>
-                        <!--<io.netty.leakDetection.level>advanced</io.netty.leakDetection.level>-->
+<!-- <io.netty.leakDetection.level>advanced</io.netty.leakDetection.level> -->
                         <system.exit.on.bind.failure>false</system.exit.on.bind.failure>
                     </systemPropertyVariables>
+
                     <properties>
                         <configurationParameters>
                             <junit.jupiter.execution.parallel.enabled>true</junit.jupiter.execution.parallel.enabled>
@@ -284,17 +291,17 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>&gt;=3.5.0</version>
+                                    <version>>=3.6.0</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>&gt;=1.8</version>
+                                    <version>>=16</version>
                                 </requireJavaVersion>
                                 <DependencyConvergence/>
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
-                                        <!--<exclude>commons-logging:commons-logging</exclude>-->
-                                        <!--<exclude>org.slf4j:slf4j-simple</exclude>-->
+                                        <!-- <exclude>commons-logging:commons-logging</exclude> -->
+<!-- <exclude>org.slf4j:slf4j-simple</exclude> -->
                                     </excludes>
                                 </bannedDependencies>
                             </rules>
@@ -319,7 +326,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <!-- Global management of what *version* of each Maven plugin here -->
+<!-- Global management of what *version* of each Maven plugin here -->
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -400,10 +407,10 @@
                         <branding.token>${nbcluster}</branding.token>
                         <brandingToken>${nbcluster}</brandingToken>
                         <cluster>${nbcluster}</cluster>
-                        <!--                        <licenseName>Apache-2.0</licenseName>
-                        <licenseFile>${project.parent.relativePath}/../LICENSE</licenseFile>-->
+<!--                         <licenseName>Apache-2.0</licenseName>
+                        <licenseFile>${project.parent.relativePath}/../LICENSE</licenseFile> -->
                         <requiresRestart>false</requiresRestart>
-                        <!--<finalName>${project.artifactId}</finalName>-->
+<!-- <finalName>${project.artifactId}</finalName> -->
                         <moduleType>autoload</moduleType>
                     </configuration>
                 </plugin>
@@ -420,6 +427,7 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
     <repositories>
         <!-- blacklist dead transitive repositories -->
         <repository>
@@ -446,6 +454,7 @@
             </snapshots>
         </repository>
     </repositories>
+
     <pluginRepositories>
         <pluginRepository>
             <id>sonatype-snapshots</id>
@@ -458,16 +467,19 @@
             <url>https://timboudreau.com/maven/</url>
         </pluginRepository>
     </pluginRepositories>
+
     <scm>
         <url>git@github.com:timboudreau/mastfrog-parent.git</url>
         <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
         <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
+
     <organization>
         <name>Mastfrog Technologies</name>
         <url>https://mastfrog.com</url>
     </organization>
     <inceptionYear>2010</inceptionYear>
+
     <licenses>
         <license>
             <name>MIT</name>
@@ -475,6 +487,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <developers>
         <developer>
             <id>timboudreau</id>
@@ -489,7 +502,7 @@
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bcpkix-jdk15on</artifactId>
                 <version>${bouncycastle.version}</version>
-            </dependency>            
+            </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
@@ -1171,9 +1184,11 @@
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>4.0.3</version>
-                <!-- 
+<!--
+                     
                 Requires > JDK 8
                 <version>5.0.1</version>
+                
                 -->
             </dependency>
             <dependency>
