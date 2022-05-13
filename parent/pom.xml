@@ -64,7 +64,7 @@
         a CLI application -->
         <maven.merge.configuration.previous>2.8.0</maven.merge.configuration.previous>
         <simplevalidation.version>1.14</simplevalidation.version>
-        <selenium.version>3.141.59</selenium.version>
+        <selenium.version>4.1.4</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
         <mongo.driver.version>3.12.10</mongo.driver.version>
         <jetty.version>9.4.44.v20210927</jetty.version>
@@ -350,7 +350,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.6</version>
+                    <version>3.0.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -1191,13 +1191,7 @@
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
-                <version>4.0.3</version>
-                <!--
-                     
-                Requires > JDK 8
                 <version>5.0.1</version>
-                
-                -->
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
@@ -1327,7 +1321,7 @@
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-utils</artifactId>
-                <version>3.3.0</version>
+                <version>3.4.1</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.aether</groupId>
@@ -1443,7 +1437,7 @@
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>htmlunit-driver</artifactId>
-                <version>2.54.0</version>
+                <version>3.61.0</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.seleniumhq.selenium</groupId>
