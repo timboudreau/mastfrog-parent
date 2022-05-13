@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <packaging>pom</packaging>
-<!-- WHEN UPDATING THE VERSION
+    <!-- WHEN UPDATING THE VERSION
          Also update the mastfrog.version property below - we use that for
          dependencies so that a project can use this as its parent, have
          an independent version number and not accidentally try to import
          mastfrog JARs with that version instead of the right one
     -->
-<!-- NOTE: Changing the version string here changes it for EVERYTHING.
+    <!-- NOTE: Changing the version string here changes it for EVERYTHING.
          Be SURE to also change mastfrog.version to match (and don't set it
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
     <version>3.0.0-dev</version>
     <name>Mastfrog Configuration</name>
-<!-- Global build configuration - changes here affect how EVERYTHING is
-         built -->
+    <!-- Global build configuration - changes here affect how EVERYTHING is
+    built -->
     <issueManagement>
         <system>Github</system>
         <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
     </issueManagement>
     <description>Shared configuration for Giulius, Acteur and
         related projects</description>
-<!-- Ant-style properties used in the build - subprojects may override -->
+    <!-- Ant-style properties used in the build - subprojects may override -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -59,9 +59,9 @@
         <mastfrog.streams.version>${mastfrog.version}</mastfrog.streams.version>
         <mastfrog.concurrent.version>${mastfrog.version}\</mastfrog.concurrent.version>
         <mastfrog.misc.version>${mastfrog.version}</mastfrog.misc.version>
-<!-- Bootstrapping in SmartJarMerge - we need the previous release or
-             we wind up with a cyclic dependency, since it builds itself as
-             a CLI application -->
+        <!-- Bootstrapping in SmartJarMerge - we need the previous release or
+        we wind up with a cyclic dependency, since it builds itself as
+        a CLI application -->
         <maven.merge.configuration.previous>2.8.0</maven.merge.configuration.previous>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
@@ -201,7 +201,7 @@
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                             <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
-<!-- <skipStagingRepositoryClose>true</skipStagingRepositoryClose> -->
+                            <!-- <skipStagingRepositoryClose>true</skipStagingRepositoryClose> -->
                         </configuration>
                     </plugin>
                     <plugin>
@@ -265,7 +265,7 @@
                         <unit.test>true</unit.test>
                         <acteur.debug>false</acteur.debug>
                         <forkNumber>${surefire.forkNumber}</forkNumber>
-<!-- <io.netty.leakDetection.level>advanced</io.netty.leakDetection.level> -->
+                        <!-- <io.netty.leakDetection.level>advanced</io.netty.leakDetection.level> -->
                         <system.exit.on.bind.failure>false</system.exit.on.bind.failure>
                     </systemPropertyVariables>
 
@@ -301,7 +301,7 @@
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
                                         <!-- <exclude>commons-logging:commons-logging</exclude> -->
-<!-- <exclude>org.slf4j:slf4j-simple</exclude> -->
+                                        <!-- <exclude>org.slf4j:slf4j-simple</exclude> -->
                                     </excludes>
                                 </bannedDependencies>
                             </rules>
@@ -326,9 +326,17 @@
                 </configuration>
             </plugin>
         </plugins>
-<!-- Global management of what *version* of each Maven plugin here -->
+        <!-- Global management of what *version* of each Maven plugin here -->
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <artifactId>maven-plugin-plugin</artifactId>
+                    <version>3.6.4</version>
+                    <configuration>
+                        <!-- Utterly non-obvious: http://bit.ly/WwuNiJ -->
+                        <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+                    </configuration>
+                </plugin>                
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
@@ -407,10 +415,10 @@
                         <branding.token>${nbcluster}</branding.token>
                         <brandingToken>${nbcluster}</brandingToken>
                         <cluster>${nbcluster}</cluster>
-<!--                         <licenseName>Apache-2.0</licenseName>
+                        <!--                         <licenseName>Apache-2.0</licenseName>
                         <licenseFile>${project.parent.relativePath}/../LICENSE</licenseFile> -->
                         <requiresRestart>false</requiresRestart>
-<!-- <finalName>${project.artifactId}</finalName> -->
+                        <!-- <finalName>${project.artifactId}</finalName> -->
                         <moduleType>autoload</moduleType>
                     </configuration>
                 </plugin>
@@ -1184,7 +1192,7 @@
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>4.0.3</version>
-<!--
+                <!--
                      
                 Requires > JDK 8
                 <version>5.0.1</version>
