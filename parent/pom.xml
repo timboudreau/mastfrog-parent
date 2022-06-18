@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+     xmlns="http://maven.apache.org/POM/4.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.mastfrog</groupId>
     <artifactId>mastfrog-parent</artifactId>
+
     <url>https://github.com/timboudreau/mastfrog-parent</url>
     <packaging>pom</packaging>
-    <!--          WHEN UPDATING THE VERSION
-        Also update the mastfrog.version property below - we use that for
-        dependencies so that a project can use this as its parent, have
-        an independent version number and not accidentally try to import
-        mastfrog JARs with that version instead of the right one
+
+    <!-- WHEN UPDATING THE VERSION
+         Also update the mastfrog.version property below - we use that for
+         dependencies so that a project can use this as its parent, have
+         an independent version number and not accidentally try to import
+         mastfrog JARs with that version instead of the right one
     -->
     <!-- NOTE: Changing the version string here changes it for EVERYTHING.
          Be SURE to also change mastfrog.version to match (and don't set it
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.8.1</version>
+    <version>2.8.2</version>
+
     <name>Mastfrog Configuration</name>
+
     <!-- Global build configuration - changes here affect how EVERYTHING is
-    built -->
+         built -->
     <issueManagement>
         <system>Github</system>
         <url>https://github.com:timboudreau/mastfrog-parent/issues</url>
@@ -29,8 +37,11 @@
         Shared configuration for Giulius, Acteur and
         related projects
     </description>
+
     <!-- Ant-style properties used in the build - subprojects may override -->
+
     <properties>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.fork>false</maven.compiler.fork>
@@ -46,10 +57,10 @@
         <netbeans.version>RELEASE126</netbeans.version>
         <jackson.databind.version>2.13.2.2</jackson.databind.version>
         <jackson.version>2.13.2</jackson.version>
-        <mastfrog.version>2.8.1</mastfrog.version>
+        <mastfrog.version>2.8.2</mastfrog.version>
         <mastfrog.graph.version>${mastfrog.version}</mastfrog.graph.version>
-        <mastfrog.java-vogon.version>${mastfrog.version}.1</mastfrog.java-vogon.version>
-        <mastfrog.function.version>${mastfrog.version}.1</mastfrog.function.version>
+        <mastfrog.java-vogon.version>${mastfrog.version}</mastfrog.java-vogon.version>
+        <mastfrog.function.version>${mastfrog.version}</mastfrog.function.version>
         <mastfrog.strings.version>${mastfrog.version}</mastfrog.strings.version>
         <mastfrog.collections.version>${mastfrog.version}</mastfrog.collections.version>
         <mastfrog.predicates.version>${mastfrog.version}</mastfrog.predicates.version>
@@ -58,9 +69,10 @@
         <mastfrog.streams.version>${mastfrog.version}</mastfrog.streams.version>
         <mastfrog.concurrent.version>${mastfrog.version}.1</mastfrog.concurrent.version>
         <mastfrog.misc.version>${mastfrog.version}</mastfrog.misc.version>
+
         <!-- Bootstrapping in SmartJarMerge - we need the previous release or
-        we wind up with a cyclic dependency, since it builds itself as
-        a CLI application -->
+             we wind up with a cyclic dependency, since it builds itself as
+             a CLI application -->
         <maven.merge.configuration.previous>2.8.0</maven.merge.configuration.previous>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
@@ -75,9 +87,13 @@
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
         <bouncycastle.version>1.70</bouncycastle.version>
         <maven.deps.version>3.8.5</maven.deps.version>
+
     </properties>
+
     <profiles>
+
         <profile>
+
             <id>reflection-indexing</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -120,8 +136,11 @@
                     <optional>true</optional>
                 </dependency>
             </dependencies>
+
         </profile>
+
         <profile>
+
             <id>javadoc-html5</id>
             <activation>
                 <jdk>[1.9,)</jdk>
@@ -137,10 +156,14 @@
                             </configuration>
                         </plugin>
                     </plugins>
+
                 </pluginManagement>
             </build>
+
         </profile>
+
         <profile>
+
             <id>release</id>
             <distributionManagement>
                 <repository>
@@ -150,7 +173,9 @@
             </distributionManagement>
             <build>
                 <plugins>
+
                     <plugin>
+
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
                         <executions>
@@ -161,9 +186,11 @@
                                 </goals>
                             </execution>
                         </executions>
+
                     </plugin>
 
                     <plugin>
+
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <executions>
@@ -177,7 +204,9 @@
                         <configuration>
                             <source>8</source>
                         </configuration>
+
                     </plugin>
+
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-release-plugin</artifactId>
@@ -188,6 +217,7 @@
                             <goals>deploy</goals>
                         </configuration>
                     </plugin>
+
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -197,10 +227,14 @@
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                             <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
-                            <!--<skipStagingRepositoryClose>true</skipStagingRepositoryClose>-->
+
+                            <!-- <skipStagingRepositoryClose>true</skipStagingRepositoryClose> -->
+
                         </configuration>
                     </plugin>
+
                     <plugin>
+
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <executions>
@@ -212,17 +246,26 @@
                                 </goals>
                             </execution>
                         </executions>
+
                     </plugin>
+
                 </plugins>
+
             </build>
+
         </profile>
+
     </profiles>
+
     <build>
         <plugins>
+
             <!-- Sets source level and source encoding for all projects -->
+
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
+
                     <fork>${maven.compiler.fork}</fork>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
@@ -235,10 +278,12 @@
                     <compilerArgument>-Xlint:unchecked</compilerArgument>
                     <showDeprecation>true</showDeprecation>
                     <showWarnings>true</showWarnings>
+
                 </configuration>
             </plugin>
 
             <plugin>
+
                 <groupId>com.mastfrog</groupId>
                 <artifactId>automodule-inject</artifactId>
                 <version>1.0</version>
@@ -253,9 +298,11 @@
                         </goals>
                     </execution>
                 </executions>
+
             </plugin>
 
             <plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
@@ -265,6 +312,7 @@
                         </manifestEntries>
                     </archive>
                 </configuration>
+
             </plugin>
 
             <plugin>
@@ -275,10 +323,13 @@
                     <doclint>none</doclint>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+
                 <configuration>
+
                     <parallel>all</parallel>
                     <parallelMavenExecution>true</parallelMavenExecution>
                     <perCoreThreadCount>6</perCoreThreadCount>
@@ -286,11 +337,14 @@
                     <forkCount>16</forkCount>
                     <reuseForks>true</reuseForks>
                     <trimStackTrace>false</trimStackTrace>
+
                     <systemPropertyVariables>
                         <unit.test>true</unit.test>
                         <acteur.debug>false</acteur.debug>
                         <forkNumber>${surefire.forkNumber}</forkNumber>
-                        <!--<io.netty.leakDetection.level>advanced</io.netty.leakDetection.level>-->
+
+                        <!-- <io.netty.leakDetection.level>advanced</io.netty.leakDetection.level> -->
+
                         <system.exit.on.bind.failure>false</system.exit.on.bind.failure>
                     </systemPropertyVariables>
                     <properties>
@@ -301,13 +355,19 @@
                             <junit.jupiter.execution.parallel.config.strategy>dynamic</junit.jupiter.execution.parallel.config.strategy>
                         </configurationParameters>
                     </properties>
+
                 </configuration>
+
             </plugin>
+
             <plugin>
+
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <executions>
+
                     <execution>
+
                         <id>enforce-versions</id>
                         <goals>
                             <goal>enforce</goal>
@@ -315,25 +375,32 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>&gt;=3.5.0</version>
+                                    <version>>=3.5.0</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
-                                    <version>&gt;=1.8</version>
+                                    <version>>=1.8</version>
                                 </requireJavaVersion>
                                 <DependencyConvergence/>
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
-                                        <!--<exclude>commons-logging:commons-logging</exclude>-->
-                                        <!--<exclude>org.slf4j:slf4j-simple</exclude>-->
+
+                                        <!-- <exclude>commons-logging:commons-logging</exclude> -->
+                                        <!-- <exclude>org.slf4j:slf4j-simple</exclude> -->
+
                                     </excludes>
                                 </bannedDependencies>
                             </rules>
                         </configuration>
+
                     </execution>
+
                 </executions>
+
             </plugin>
+
             <plugin>
+
                 <groupId>com.mastfrog</groupId>
                 <artifactId>revision-info-plugin</artifactId>
                 <executions>
@@ -348,67 +415,85 @@
                 <configuration>
                     <auto>false</auto>
                 </configuration>
+
             </plugin>
+
         </plugins>
+
         <!-- Global management of what *version* of each Maven plugin here -->
+
         <pluginManagement>
+
             <plugins>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
                     <version>3.2.1</version>
                 </plugin>
+
                 <plugin>
                     <groupId>com.mastfrog</groupId>
                     <artifactId>revision-info-plugin</artifactId>
                     <version>0.21</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>1.6</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
                     <version>2.5.3</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>1.6.13</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
+
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.10.1</version>
                 </plugin>
+
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.2.2</version>
                 </plugin>
+
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>3.2.0</version>
                 </plugin>
+
                 <plugin>
                     <artifactId>maven-antrun-plugin</artifactId>
                     <version>3.1.0</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${surefire.version}</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>3.4.0</version>
                 </plugin>
+
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>nbm-maven-plugin</artifactId>
@@ -420,25 +505,33 @@
                         <requiresRestart>false</requiresRestart>
                     </configuration>
                 </plugin>
+
                 <plugin>
                     <groupId>org.apache.netbeans.utilities</groupId>
                     <artifactId>nbm-maven-plugin</artifactId>
                     <version>4.7</version>
                     <extensions>true</extensions>
                     <configuration>
+
                         <useOSGiDependencies>false</useOSGiDependencies>
                         <author>Tim Boudreau</author>
                         <branding.token>${nbcluster}</branding.token>
                         <brandingToken>${nbcluster}</brandingToken>
                         <cluster>${nbcluster}</cluster>
-                        <!--                        <licenseName>Apache-2.0</licenseName>
-                        <licenseFile>${project.parent.relativePath}/../LICENSE</licenseFile>-->
+
+                        <!-- <licenseName>Apache-2.0</licenseName>
+                             <licenseFile>${project.parent.relativePath}/../LICENSE</licenseFile> -->
                         <requiresRestart>false</requiresRestart>
-                        <!--<finalName>${project.artifactId}</finalName>-->
+
+                        <!-- <finalName>${project.artifactId}</finalName> -->
+
                         <moduleType>autoload</moduleType>
+
                     </configuration>
                 </plugin>
+
             </plugins>
+
         </pluginManagement>
     </build>
     <distributionManagement>
@@ -446,13 +539,17 @@
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+
         <repository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
     <repositories>
+
         <!-- blacklist dead transitive repositories -->
+
         <repository>
             <id>netbeans</id>
             <name>NetBeans</name>
@@ -466,6 +563,7 @@
                 <updatePolicy>never</updatePolicy>
             </snapshots>
         </repository>
+
         <repository>
             <id>java.net</id>
             <url>https://maven-repository.dev.java.net/nonav/repository</url>
@@ -477,28 +575,35 @@
             </snapshots>
         </repository>
     </repositories>
+
     <pluginRepositories>
+
         <pluginRepository>
             <id>sonatype-snapshots</id>
             <name>Sonatype Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </pluginRepository>
+
         <pluginRepository>
             <id>timboudreau-plugins</id>
             <name>timboudreau.com plugins</name>
             <url>https://timboudreau.com/maven/</url>
         </pluginRepository>
     </pluginRepositories>
+
     <scm>
         <url>git@github.com:timboudreau/mastfrog-parent.git</url>
         <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
         <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
     </scm>
+
     <organization>
         <name>Mastfrog Technologies</name>
         <url>https://mastfrog.com</url>
     </organization>
+
     <inceptionYear>2010</inceptionYear>
+
     <licenses>
         <license>
             <name>MIT</name>
@@ -506,6 +611,7 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <developers>
         <developer>
             <id>timboudreau</id>
@@ -516,6 +622,7 @@
     </developers>
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.bouncycastle</groupId>
                 <artifactId>bcpkix-jdk15on</artifactId>
@@ -1202,9 +1309,10 @@
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>4.0.3</version>
-                <!--
-                Requires > JDK 8
-                <version>5.0.1</version>
+
+<!--
+                    Requires > JDK 8
+                    <version>5.0.1</version>
                 -->
             </dependency>
             <dependency>
@@ -1448,7 +1556,9 @@
                 <artifactId>selenium-chrome-driver</artifactId>
                 <version>${selenium.version}</version>
             </dependency>
+
             <dependency>
+
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>htmlunit-driver</artifactId>
                 <version>2.54.0</version>
@@ -1458,7 +1568,9 @@
                         <artifactId>selenium-api</artifactId>
                     </exclusion>
                 </exclusions>
+
             </dependency>
+
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
                 <artifactId>selenium-firefox-driver</artifactId>
@@ -1552,6 +1664,8 @@
                 <artifactId>org-openide-filesystems</artifactId>
                 <version>${netbeans.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
+
 </project>
