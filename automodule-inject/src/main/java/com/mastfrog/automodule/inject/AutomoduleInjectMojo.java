@@ -76,6 +76,7 @@ public class AutomoduleInjectMojo extends AbstractMojo {
                 artifactId = artifactId.substring(5);
             }
         }
+        artifactId = artifactId.replace('-', '.');
         String result = splitAndConvert(gid) + '.' + splitAndConvert(artifactId);
         if (verbose) {
             System.out.println("Generated Automatic-Module-Name for " + gid
