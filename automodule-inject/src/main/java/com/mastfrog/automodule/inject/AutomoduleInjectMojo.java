@@ -23,7 +23,8 @@
  */
 package com.mastfrog.automodule.inject;
 
-import org.apache.maven.execution.MavenSession;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -59,14 +60,24 @@ public class AutomoduleInjectMojo extends AbstractMojo {
     @Parameter(property = "verbose", defaultValue = "false")
     private boolean verbose;
 
+    /**
+     * If true, skip execution.
+     */
+    @Parameter(property = "automodule.skip", defaultValue = "false")
+    private boolean skip;
+
     @Parameter(defaultValue = "${project}", readonly = true)
     private MavenProject project;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        if (!"pom".equals(project.getPackaging())) {
-            project.getProperties().setProperty(autoModuleNameProperty,
-                    autoModuleName(project.getGroupId(), project.getArtifactId()));
+        if (!skip && !"pom".equals(project.getPackaging())) {
+            Path moduleInfo = project.getBasedir().toPath().resolve("src")
+                    .resolve("main").resolve("java").resolve("module-info.java");
+            if (!Files.exists(moduleInfo)) {
+                project.getProperties().setProperty(autoModuleNameProperty,
+                        autoModuleName(project.getGroupId(), project.getArtifactId()));
+            }
         }
     }
 
