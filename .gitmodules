@@ -67,3 +67,5 @@
 [submodule "desktop"]
 	path = desktop
 	url = https://github.com/timboudreau/desktop.git
+        branch = main
+
