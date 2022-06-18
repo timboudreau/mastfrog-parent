@@ -5,6 +5,15 @@
     <artifactId>automodule-inject</artifactId>
     <version>1.0</version>
     <packaging>maven-plugin</packaging>
+    
+    <description>
+        A maven plugin which injects a property - by default autoAutoModuleName
+        into each project which will always be a *valid* Java identifier and
+        is usable in a manifestEntries section by the maven-jar-plugin - frequently
+        Maven artifact IDs contain hyphens or numbers which are illegal in
+        module names.
+    </description>
+    
     <properties>
         <maven.plugin.plugin.version>3.6.4</maven.plugin.plugin.version>
         <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
@@ -222,4 +231,37 @@
             </build>
         </profile>
     </profiles>
+    
+    <url>https://github.com:timboudreau/mastfrog-parent</url>
+    
+    <scm>
+        <url>git@github.com:timboudreau/mastfrog-parent.git</url>
+        <connection>scm:git:https://github.com:timboudreau/mastfrog-parent.git</connection>
+        <developerConnection>git@github.com:timboudreau/mastfrog-parent.git</developerConnection>
+    </scm>
+
+    <organization>
+        <name>Mastfrog Technologies</name>
+        <url>https://mastfrog.com</url>
+    </organization>
+
+    <inceptionYear>2010</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>timboudreau</id>
+            <name>Tim Boudreau</name>
+            <url>https://timboudreau.com</url>
+            <email>tim@timboudreau.com</email>
+        </developer>
+    </developers>
+    
 </project>
