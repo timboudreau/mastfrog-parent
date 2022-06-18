@@ -5,6 +5,7 @@
     <artifactId>automodule-inject</artifactId>
     <version>1.0</version>
     <packaging>maven-plugin</packaging>
+    <name>automodule-inject</name>
     
     <description>
         A maven plugin which injects a property - by default autoAutoModuleName
