@@ -69,7 +69,7 @@
         <mastfrog.streams.version>${mastfrog.version}</mastfrog.streams.version>
         <mastfrog.concurrent.version>${mastfrog.version}</mastfrog.concurrent.version>
         <mastfrog.misc.version>${mastfrog.version}</mastfrog.misc.version>
-        <mastfrog.shutdown.hooks.version>${mastfrog.version}.1</mastfrog.shutdown.hooks.version>
+        <mastfrog.shutdown.hooks.version>${mastfrog.version}.2</mastfrog.shutdown.hooks.version>
 
         <!-- Bootstrapping in SmartJarMerge - we need the previous release or
              we wind up with a cyclic dependency, since it builds itself as
