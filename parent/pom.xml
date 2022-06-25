@@ -654,7 +654,7 @@
             <dependency>
                 <groupId>com.ibm.etcd</groupId>
                 <artifactId>etcd-java</artifactId>
-                <version>0.0.18</version>
+                <version>0.0.20</version>
             </dependency>
             <dependency>
                 <groupId>com.google.android</groupId>
@@ -1306,7 +1306,7 @@
             <dependency>
                 <groupId>com.restfb</groupId>
                 <artifactId>restfb</artifactId>
-                <version>2022.4.0</version>
+                <version>2022.7.0</version>
             </dependency>
             <dependency>
                 <groupId>com.timgroup</groupId>
@@ -1446,12 +1446,12 @@
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
-                <version>3.0.10</version>
+                <version>3.0.11</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-utils</artifactId>
-                <version>3.3.0</version>
+                <version>3.4.2</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.aether</groupId>

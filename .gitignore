@@ -3,6 +3,7 @@ parent/nb-configuration.xml
 *.orig
 *.class
 *.jar
+*.versionsBackup
 nb-configuration.xml
 
 target/
