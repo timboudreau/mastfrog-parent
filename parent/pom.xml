@@ -66,7 +66,7 @@
         <mastfrog.collections.version>${mastfrog.version}</mastfrog.collections.version>
         <mastfrog.predicates.version>${mastfrog.version}</mastfrog.predicates.version>
         <mastfrog.geometry.version>${mastfrog.version}</mastfrog.geometry.version>
-        <mastfrog.desktop.version>${mastfrog.version}.1</mastfrog.desktop.version>
+        <mastfrog.desktop.version>${mastfrog.version}.2</mastfrog.desktop.version>
         <mastfrog.bits.version>${mastfrog.version}</mastfrog.bits.version>
         <mastfrog.streams.version>${mastfrog.version}</mastfrog.streams.version>
         <mastfrog.concurrent.version>${mastfrog.version}</mastfrog.concurrent.version>
