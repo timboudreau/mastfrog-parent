@@ -78,7 +78,7 @@
         <!-- Bootstrapping in SmartJarMerge - we need the previous release or
              we wind up with a cyclic dependency, since it builds itself as
              a CLI application -->
-        <maven.merge.configuration.previous>2.8.2</maven.merge.configuration.previous>
+        <maven.merge.configuration.previous>2.8.3</maven.merge.configuration.previous>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
