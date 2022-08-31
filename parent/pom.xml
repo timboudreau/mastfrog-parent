@@ -904,6 +904,11 @@
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>character-functions</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>bunyan-java-v2</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
