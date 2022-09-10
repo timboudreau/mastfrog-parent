@@ -589,11 +589,6 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </pluginRepository>
 
-        <pluginRepository>
-            <id>timboudreau-plugins</id>
-            <name>timboudreau.com plugins</name>
-            <url>https://timboudreau.com/maven/</url>
-        </pluginRepository>
     </pluginRepositories>
 
     <scm>
