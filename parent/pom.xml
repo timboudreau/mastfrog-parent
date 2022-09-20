@@ -82,7 +82,7 @@
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
-        <mongo.driver.version>3.12.10</mongo.driver.version>
+        <mongo.driver.version>3.12.11</mongo.driver.version>
         <jetty.version>9.4.48.v20220622</jetty.version>
         <log4j2.version>2.18.0</log4j2.version>
         <index.reflection>false</index.reflection>
@@ -436,7 +436,7 @@
                     <artifactId>maven-plugin-plugin</artifactId>
                     <version>3.6.4</version>
                 </plugin>
-                
+
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
@@ -792,6 +792,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>shutdown-hooks</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>jackson-configuration</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
@@ -1539,7 +1544,7 @@
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>bson</artifactId>
-                <version>4.7.1</version>
+                <version>${mongo.driver.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mongojack</groupId>
