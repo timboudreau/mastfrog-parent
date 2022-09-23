@@ -83,6 +83,7 @@
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
         <mongo.driver.version>3.12.11</mongo.driver.version>
+        <mongo.reactive.driver.version>4.7.1</mongo.reactive.driver.version>
         <jetty.version>9.4.48.v20220622</jetty.version>
         <log4j2.version>2.18.0</log4j2.version>
         <index.reflection>false</index.reflection>
@@ -1124,6 +1125,33 @@
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-mongodb-async-init</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>acteur-mongo-reactive</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-mongodb-reactive</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-mongodb-reactive</artifactId>
+                <version>${mastfrog.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>giulius-mongodb-reactive-init</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>giulius-servlet</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
@@ -1544,8 +1572,14 @@
             <dependency>
                 <groupId>org.mongodb</groupId>
                 <artifactId>bson</artifactId>
-                <version>${mongo.driver.version}</version>
+                <version>${mongo.reactive.driver.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongodb-driver-reactivestreams</artifactId>
+                <version>${mongo.reactive.driver.version}</version>
+            </dependency>
+            
             <dependency>
                 <groupId>org.mongojack</groupId>
                 <artifactId>mongojack</artifactId>
