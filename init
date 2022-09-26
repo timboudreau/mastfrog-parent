@@ -3,5 +3,4 @@ git submodule init
 git submodule update
 mvn -f revision-info-plugin/pom.xml install
 mvn -f parent/pom.xml install
-mvn clean install
-
+mvn -Dmaven.test.skip.exec=true clean install
