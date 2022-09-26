@@ -854,6 +854,11 @@
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>code-generation-common</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>java-vogon</artifactId>
                 <version>${mastfrog.java-vogon.version}</version>
             </dependency>
