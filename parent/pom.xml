@@ -792,6 +792,11 @@
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>reference</artifactId>
+                <version>${mastfrog.concurrent.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>shutdown-hooks</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>

@@ -45,7 +45,6 @@
         <module>blurt/blurt-collector</module>
         <module>numble</module>
         <module>portable-crypto/portable-crypto</module>
-
     </modules>
     <issueManagement>
         <system>Github</system>
