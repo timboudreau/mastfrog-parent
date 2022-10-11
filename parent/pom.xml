@@ -51,7 +51,7 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.81.Final</netty.version>
+        <netty.version>4.1.82.Final</netty.version>
         <guice.version>5.1.0</guice.version>
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
         <netbeans.version>RELEASE126</netbeans.version>
@@ -78,7 +78,7 @@
         <!-- Bootstrapping in SmartJarMerge - we need the previous release or
         we wind up with a cyclic dependency, since it builds itself as
         a CLI application -->
-        <maven.merge.configuration.previous>2.8.3</maven.merge.configuration.previous>
+        <maven.merge.configuration.previous>2.8.5</maven.merge.configuration.previous>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium.version>3.141.59</selenium.version>
         <trackerapi.version>1.0</trackerapi.version>
@@ -87,7 +87,7 @@
         <jetty.version>9.4.48.v20220622</jetty.version>
         <log4j2.version>2.18.0</log4j2.version>
         <index.reflection>false</index.reflection>
-        <junit5.version>5.9.0</junit5.version>
+        <junit5.version>5.9.1</junit5.version>
         <vertx-pg-client.version>4.3.3</vertx-pg-client.version>
         <surefire.version>3.0.0-M7</surefire.version>
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
@@ -633,7 +633,7 @@
             <dependency>
                 <groupId>com.telenav.cactus</groupId>
                 <artifactId>cactus-maven-xml</artifactId>
-                <version>1.5.31</version>
+                <version>1.5.32</version>
             </dependency>
             <dependency>
                 <groupId>org.bouncycastle</groupId>
@@ -1442,7 +1442,7 @@
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>2.11.1</version>
+                <version>2.11.2</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
