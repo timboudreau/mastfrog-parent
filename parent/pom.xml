@@ -23,7 +23,7 @@
          to ${project.version} or this will break projects whose parent
          is not this project
     -->
-    <version>2.8.6</version>
+    <version>2.8.7</version>
 
     <name>Mastfrog Configuration</name>
 
@@ -41,7 +41,6 @@
     <!-- Ant-style properties used in the build - subprojects may override -->
 
     <properties>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.fork>false</maven.compiler.fork>
@@ -57,7 +56,7 @@
         <netbeans.version>RELEASE126</netbeans.version>
         <jackson.version>2.13.4</jackson.version>
         <jackson.databind.version>${jackson.version}</jackson.databind.version>
-        <mastfrog.version>2.8.6</mastfrog.version>
+        <mastfrog.version>2.8.7</mastfrog.version>
         <mastfrog.graph.version>${mastfrog.version}</mastfrog.graph.version>
         <mastfrog.java-vogon.version>${mastfrog.version}</mastfrog.java-vogon.version>
         <mastfrog.function.version>${mastfrog.version}</mastfrog.function.version>
@@ -1589,7 +1588,7 @@
                 <artifactId>mongodb-driver-reactivestreams</artifactId>
                 <version>${mongo.reactive.driver.version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>org.mongojack</groupId>
                 <artifactId>mongojack</artifactId>
