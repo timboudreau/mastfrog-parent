@@ -50,12 +50,12 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.82.Final</netty.version>
+        <netty.version>4.1.84.Final</netty.version>
         <guice.version>5.1.0</guice.version>
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
         <netbeans.version>RELEASE126</netbeans.version>
-        <jackson.version>2.13.4</jackson.version>
-        <jackson.databind.version>${jackson.version}</jackson.databind.version>
+        <jackson-lib.version>2.13.4</jackson-lib.version>
+        <jackson-databind.version>${jackson-lib.version}.2</jackson-databind.version>
         <mastfrog.version>2.9.0</mastfrog.version>
         <mastfrog.graph.version>${mastfrog.version}</mastfrog.graph.version>
         <mastfrog.java-vogon.version>${mastfrog.version}</mastfrog.java-vogon.version>
@@ -642,22 +642,22 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-annotations</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson-lib.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson-lib.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>${jackson.databind.version}</version>
+                <version>${jackson-databind.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
                 <artifactId>jackson-datatype-joda</artifactId>
-                <version>${jackson.version}</version>
+                <version>${jackson-lib.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.ibm.etcd</groupId>
