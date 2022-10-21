@@ -1,2 +1,0 @@
-#!/bin/sh
-mvn -Dmaven.test.skip.exec=true --activate-profiles nexus-staging:deploy-staged
