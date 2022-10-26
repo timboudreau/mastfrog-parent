@@ -35,8 +35,19 @@ import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.apache.maven.project.MavenProject;
 
 /**
- * Injects a property into all projects in the session which is the combination
- * of the group id and artifact id, converted into a valid Java identifier.
+ * Injects a property into each projects in the session which is the combination
+ * of the group id and artifact id, converted into a valid Java identifier, to
+ * generate an automatic module name for that project.
+ * <p>
+ * To make use of it, add a &lt;plugin&gt; entry to your pom or parent pom that
+ * adds a manifest entry for
+ * <code>Automatic-Module-Name: ${automaticModuleName}</code>. This allows an
+ * entire tree of projects to get usable automatic module names generated into
+ * their manifests without custom configuration in every project.
+ * </p><p>
+ * If a module-info.java file exists in <code>src/main/java</code>, then the
+ * property will remain unset.
+ * </p>
  *
  * @author Tim Boudreau
  */
@@ -66,6 +77,18 @@ public class AutomoduleInjectMojo extends AbstractMojo {
     @Parameter(property = "automodule.skip", defaultValue = "false")
     private boolean skip;
 
+    /**
+     * Optional prefix to prepend to the generated automatic module name.
+     */
+    @Parameter(property = "automodule.prefix", required = false)
+    private String prefix;
+
+    /**
+     * Optional suffix to append to the generated automatic module name.
+     */
+    @Parameter(property = "automodule.suffix", required = false)
+    private String suffix;
+
     @Parameter(defaultValue = "${project}", readonly = true)
     private MavenProject project;
 
@@ -82,6 +105,7 @@ public class AutomoduleInjectMojo extends AbstractMojo {
     }
 
     private String autoModuleName(String gid, String artifactId) {
+        // A few special cases from converting mastfrog
         if ("com.mastfrog".equals(gid) && artifactId.startsWith("util-")) {
             if (!"util-function".equals(artifactId)) {
                 artifactId = artifactId.substring(5);
@@ -89,6 +113,12 @@ public class AutomoduleInjectMojo extends AbstractMojo {
         }
         artifactId = artifactId.replace('-', '.');
         String result = splitAndConvert(gid) + '.' + splitAndConvert(artifactId);
+        if (prefix != null) {
+            result = prefix + result;
+        }
+        if (suffix != null) {
+            result = result + suffix;
+        }
         if (verbose) {
             System.out.println("Generated Automatic-Module-Name for " + gid
                     + ":" + artifactId + " is " + result);
