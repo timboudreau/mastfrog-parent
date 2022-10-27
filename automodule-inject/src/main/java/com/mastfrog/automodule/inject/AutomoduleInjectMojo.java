@@ -84,6 +84,15 @@ public class AutomoduleInjectMojo extends AbstractMojo {
     private String prefix;
 
     /**
+     * If true (the default), include the group id when constructing an
+     * automatic module name. Unless you are very sure the artifact id by itself
+     * is unambiguous, or you are using templated values for a prefix or suffix,
+     * it is a good idea to include it.
+     */
+    @Parameter(property = "automodule.include.groupid", defaultValue = "true")
+    private boolean includeGroupId;
+
+    /**
      * Optional suffix to append to the generated automatic module name.
      */
     @Parameter(property = "automodule.suffix", required = false)
@@ -112,7 +121,8 @@ public class AutomoduleInjectMojo extends AbstractMojo {
             }
         }
         artifactId = artifactId.replace('-', '.');
-        String result = splitAndConvert(gid) + '.' + splitAndConvert(artifactId);
+        String gidPortion = includeGroupId ? splitAndConvert(gid) + "." : "";
+        String result = gidPortion + splitAndConvert(artifactId);
         if (prefix != null) {
             result = prefix + result;
         }
