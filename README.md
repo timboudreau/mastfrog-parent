@@ -20,7 +20,6 @@ The following projects are built here (and can be found via [this Maven reposito
   * [Giulius-Selenium](https://github.com/timboudreau/giulius-selenium-tests) - An extension to Giulius-Tests which makes it easy to write Selenium tests with injected test fixtures and run them via JUnit, so your Selenium tests can take advantage of all of the reporting options for JUnit; and supports writing Selenium tests in Groovy.  So you define complex test fixtures that may drive a web site to a particular state, and have them injected into your test.
   * [Annotation Tools](https://github.com/timboudreau/annotation-tools) - A toolkit for writing annotation processors, and an excellent, modern builder-based Java code generator
   * [Giulius-Web](https://github.com/timboudreau/giulius-web) - Guice bindings for using Giulius with servlet containers;  Freemarker-templated email generation
-  * [Netty-Http-Client](https://github.com/timboudreau/netty-http-client) - An asynchronous, Netty-based HTTP client
   * [Mastfrog-Utils](https://github.com/timboudreau/util) - Now broken out into a number of libraries, includes
     * Fast, tiny-memory-footprint BitSet based directed and undirected graphs
     * The missing functional interfaces you wish the JDK had - throwing variants of JDK consumers, predicates and functions, and derivations with 3-8 arguments - so if you need a 5-argument consumer that throws an `IOException`, then `IOPetaConsumer` is the lambda you're looking for
