@@ -54,8 +54,8 @@ public class RevisionInfoMojo extends AbstractMojo {
     /**
      * The dest dir for generated classes.
      */
-    @Parameter(defaultValue = "${project.build.directory}/generated-sources/annotations", 
-            readonly = false, property="classDir", alias = "destDir")
+    @Parameter(defaultValue = "${project.build.directory}/generated-sources/annotations",
+            readonly = false, property = "classDir", alias = "destDir")
     File genSourcesDir;
 
     /**
@@ -67,7 +67,21 @@ public class RevisionInfoMojo extends AbstractMojo {
     @Parameter(property = "auto", defaultValue = "true", alias = "autoGenerate")
     boolean auto;
 
-    @Parameter( defaultValue = "${project}", readonly = true )
+    /**
+     * If true, and if set to generate a Java class with version information,
+     * the generated class will be package-private rather than public.
+     */
+    @Parameter(property = "packagePrivate", defaultValue = "false")
+    boolean packagePrivate;
+
+    /**
+     * If true, information about the os and build jvm will be included in the
+     * generated output.
+     */
+    @Parameter(property = "includeSystemInfo", defaultValue = "false")
+    boolean includeSystemInfo;
+
+    @Parameter(defaultValue = "${project}", readonly = true)
     MavenProject project;
 
     /**
@@ -81,7 +95,7 @@ public class RevisionInfoMojo extends AbstractMojo {
     private List<String> compileSourceRoots;
 
     Path propertiesOutputFile() {
-        return outputDirectory.toPath().resolve("classes/META-INF/" + project.getGroupId() + "." 
+        return outputDirectory.toPath().resolve("classes/META-INF/" + project.getGroupId() + "."
                 + project.getArtifactId() + ".versions.properties");
     }
 
@@ -222,6 +236,14 @@ public class RevisionInfoMojo extends AbstractMojo {
                 }
             }
             props.setProperty("version", project.getVersion());
+            if (includeSystemInfo) {
+                props.setProperty("buildJDK", System.getProperty("java.version"));
+                props.setProperty("buildJvmSpec", System.getProperty("java.vm.specification.version"));
+                props.setProperty("buildJvmVendor", System.getProperty("java.vm.vendor"));
+                props.setProperty("buildOsArch", System.getProperty("os.arch"));
+                props.setProperty("buildOs", System.getProperty("os.name"));
+            }
+
             File f = outputDirectory;
             if (!f.exists()) {
                 f.mkdirs();
@@ -238,7 +260,7 @@ public class RevisionInfoMojo extends AbstractMojo {
             String fqn = generatedClassFqn();
             if (sourceFilePath != null && fqn != null) {
                 log("Generate class " + fqn + " in " + sourceFilePath);
-                String source = Utils.javaSourceFromProperties(fqn, props, project);
+                String source = Utils.javaSourceFromProperties(packagePrivate, fqn, props, project);
                 getLog().info("Generating class " + fqn + " in " + project.getBasedir().toPath().relativize(sourceFilePath));
                 Path sourceFilePackage = sourceFilePath.getParent();
                 Files.createDirectories(sourceFilePackage);
