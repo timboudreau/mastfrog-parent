@@ -50,12 +50,12 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.85.Final</netty.version>
+        <netty.version>4.1.86.Final</netty.version>
         <guice.version>5.1.0</guice.version>
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
         <netbeans.version>RELEASE126</netbeans.version>
-        <jackson-lib.version>2.13.4</jackson-lib.version>
-        <jackson-databind.version>${jackson-lib.version}.2</jackson-databind.version>
+        <jackson-lib.version>2.14.1</jackson-lib.version>
+        <jackson-databind.version>${jackson-lib.version}</jackson-databind.version>
         <mastfrog.groupId>com.mastfrog</mastfrog.groupId>
         <mastfrog.version>2.9.4</mastfrog.version>
         <mastfrog.graph.version>${mastfrog.version}</mastfrog.graph.version>
@@ -84,10 +84,10 @@
         <mongo.driver.version>3.12.11</mongo.driver.version>
         <mongo.reactive.driver.version>4.7.1</mongo.reactive.driver.version>
         <jetty.version>9.4.48.v20220622</jetty.version>
-        <log4j2.version>2.18.0</log4j2.version>
+        <log4j2.version>2.19.0</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.9.1</junit5.version>
-        <vertx-pg-client.version>4.3.3</vertx-pg-client.version>
+        <vertx-pg-client.version>4.3.7</vertx-pg-client.version>
         <surefire.version>3.0.0-M7</surefire.version>
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
         <bouncycastle.version>1.70</bouncycastle.version>
@@ -682,7 +682,7 @@
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
-                <version>2.9.1</version>
+                <version>2.10</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
@@ -697,7 +697,7 @@
             <dependency>
                 <groupId>com.google.http-client</groupId>
                 <artifactId>google-http-client-jackson2</artifactId>
-                <version>1.42.2</version>
+                <version>1.42.3</version>
             </dependency>
             <dependency>
                 <groupId>com.google.inject.extensions</groupId>
@@ -1451,7 +1451,7 @@
             <dependency>
                 <groupId>joda-time</groupId>
                 <artifactId>joda-time</artifactId>
-                <version>2.11.2</version>
+                <version>2.12.2</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -1486,12 +1486,12 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpcore</artifactId>
-                <version>4.4.15</version>
+                <version>4.4.16</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
                 <artifactId>maven-plugin-annotations</artifactId>
-                <version>3.6.4</version>
+                <version>3.7.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.surefire</groupId>
@@ -1516,7 +1516,7 @@
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
-                <version>3.0.12</version>
+                <version>3.0.14</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
