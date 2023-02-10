@@ -5,7 +5,7 @@ mvn clean
 # Uncomment this when we have a new version of this plugin - it necessarily cannot depend on
 # anything else, and has its own separate version, because the parent pom adds it to all other projects
 # mvn -Dmaven.test.skip.exec=true --activate-profiles release -f revision-info-plugin/pom.xml clean install javadoc:jar source:jar gpg:sign nexus-staging:deploy
-mvn -Dmaven.test.skip.exec=true --activate-profiles release -f automodule-inject/pom.xml clean install gpg:sign nexus-staging:deploy
-mvn -Dmaven.test.skip.exec=true --activate-profiles release -f parent/pom.xml clean install gpg:sign nexus-staging:deploy
-mvn -Dmaven.test.skip.exec=true --activate-profiles release clean install javadoc:jar source:jar gpg:sign nexus-staging:deploy
+mvn -Dmaven.test.skip.exec=true -DstagingProgressTimeoutMinutes=25 -DstagingProgressPauseDurationSeconds=5 --activate-profiles release -f automodule-inject/pom.xml clean install gpg:sign nexus-staging:deploy
+mvn -Dmaven.test.skip.exec=true -DstagingProgressTimeoutMinutes=25 -DstagingProgressPauseDurationSeconds=5 --activate-profiles release -f parent/pom.xml clean install gpg:sign nexus-staging:deploy
+mvn -Dmaven.test.skip.exec=true -DstagingProgressTimeoutMinutes=25 -DstagingProgressPauseDurationSeconds=5 --activate-profiles release clean install javadoc:jar source:jar gpg:sign nexus-staging:deploy
 
