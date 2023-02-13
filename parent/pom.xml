@@ -50,7 +50,7 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.86.Final</netty.version>
+        <netty.version>4.1.87.Final</netty.version>
         <guice.version>5.1.0</guice.version>
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
         <netbeans.version>RELEASE126</netbeans.version>
