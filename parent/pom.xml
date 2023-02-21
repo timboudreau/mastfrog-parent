@@ -1078,7 +1078,7 @@
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>bunyan-parse</artifactId>
-                <version>${obsolete.bunyan-java.version}</version>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
@@ -1354,6 +1354,11 @@
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>video</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>giulius-help</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
