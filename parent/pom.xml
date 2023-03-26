@@ -50,10 +50,10 @@
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.87.Final</netty.version>
+        <netty.version>4.1.90.Final</netty.version>
         <guice.version>5.1.0</guice.version>
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
-        <netbeans.version>RELEASE126</netbeans.version>
+        <netbeans.version>RELEASE160</netbeans.version>
         <jackson-lib.version>2.14.2</jackson-lib.version>
         <jackson-databind.version>${jackson-lib.version}</jackson-databind.version>
         <mastfrog.groupId>com.mastfrog</mastfrog.groupId>
@@ -82,16 +82,16 @@
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium-lib.version>3.141.59</selenium-lib.version>
         <mongo.driver.version>3.12.12</mongo.driver.version>
-        <mongo.reactive.driver.version>4.8.2</mongo.reactive.driver.version>
+        <mongo.reactive.driver.version>4.9.0</mongo.reactive.driver.version>
         <jetty.version>9.4.50.v20221201</jetty.version>
-        <log4j2.version>2.19.0</log4j2.version>
+        <log4j2.version>2.20.0</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.9.2</junit5.version>
-        <vertx-pg-client.version>4.3.8</vertx-pg-client.version>
-        <surefire.version>3.0.0-M8</surefire.version>
+        <vertx-pg-client.version>4.4.0</vertx-pg-client.version>
+        <surefire.version>3.0.0</surefire.version>
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
         <bouncycastle.version>1.70</bouncycastle.version>
-        <maven.deps.version>3.9.0</maven.deps.version>
+        <maven.deps.version>3.9.1</maven.deps.version>
 
     </properties>
 
@@ -1505,7 +1505,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
                 <artifactId>maven-plugin-annotations</artifactId>
-                <version>3.7.1</version>
+                <version>3.8.1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.surefire</groupId>
