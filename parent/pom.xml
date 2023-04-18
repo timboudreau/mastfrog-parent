@@ -83,7 +83,7 @@
         <selenium-lib.version>3.141.59</selenium-lib.version>
         <mongo.driver.version>3.12.12</mongo.driver.version>
         <mongo.reactive.driver.version>4.9.0</mongo.reactive.driver.version>
-        <jetty.version>9.4.50.v20221201</jetty.version>
+        <jetty.version>10.0.14</jetty.version>
         <log4j2.version>2.20.0</log4j2.version>
         <index.reflection>false</index.reflection>
         <junit5.version>5.9.2</junit5.version>
