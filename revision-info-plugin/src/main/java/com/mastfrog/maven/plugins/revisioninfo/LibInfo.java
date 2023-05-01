@@ -220,21 +220,6 @@ public class LibInfo {
     }
 
     private int waitForProcess(Process proc) throws InterruptedException, ExecutionException {
-        // JDK 9
-        // proc.onExit().get();
-        long then = System.currentTimeMillis();
-        for (;;) {
-            if (proc.isAlive()) {
-                Thread.sleep(10);
-            }
-            try {
-                return proc.exitValue();
-            } catch (IllegalThreadStateException ex) {
-                // keep going, not exited
-            }
-            if (System.currentTimeMillis() - then > 30 * 1000) {
-                throw new IllegalStateException("Timed out after 30 seconds waiting for git" + proc);
-            }
-        }
+         return proc.onExit().get().exitValue();
     }
 }
