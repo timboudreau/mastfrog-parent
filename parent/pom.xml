@@ -74,6 +74,8 @@
         <mastfrog.misc.version>${mastfrog.version}</mastfrog.misc.version>
         <mastfrog.shutdown.hooks.version>${mastfrog.version}</mastfrog.shutdown.hooks.version>
         <mastfrog.giulius.version>${mastfrog.version}</mastfrog.giulius.version>
+        <mastfrog.builder-builder.version>1.0.9</mastfrog.builder-builder.version>
+        <mastfrog.atomic-state.version>1.0.6</mastfrog.atomic-state.version>
 
         <!-- Bootstrapping in SmartJarMerge - we need the previous release or
         we wind up with a cyclic dependency, since it builds itself as
@@ -627,8 +629,7 @@
         </developer>
     </developers>
     <dependencyManagement>
-        <dependencies>
-
+        <dependencies>            
             <dependency>
                 <groupId>com.telenav.cactus</groupId>
                 <artifactId>cactus-maven-xml</artifactId>
@@ -754,6 +755,60 @@
                 <artifactId>simplevalidation-standalone-server</artifactId>
                 <version>${simplevalidation.version}</version>
             </dependency>
+            
+            <dependency>
+                <groupId>com.mastfrog.atomicstate</groupId>
+                <artifactId>atomic-state-annotation-processor</artifactId>
+                <version>${mastfrog.atomic-state.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog.atomicstate</groupId>
+                <artifactId>atomic-state</artifactId>
+                <version>${mastfrog.atomic-state.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog.builder</groupId>
+                <artifactId>builder-annotations</artifactId>
+                <version>${mastfrog.builder-builder.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.mastfrog.builder</groupId>
+                <artifactId>builder-annotation-processors</artifactId>
+                <version>${mastfrog.builder-builder.version}</version>
+                <scope>provided</scope>
+	    </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>http-test-harness</artifactId>
+                <version>${mastfrog.version}</version>            
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>http-test-harness-tests</artifactId>
+                <version>${mastfrog.version}</version>            
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>http-test-microframework</artifactId>
+                <version>${mastfrog.version}</version>            
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>microframework-test-app</artifactId>
+                <version>${mastfrog.version}</version>            
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>indexes</artifactId>
+                <version>${mastfrog.version}</version>            
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>storage</artifactId>
+                <version>${mastfrog.version}</version>            
+            </dependency>            
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>colors</artifactId>

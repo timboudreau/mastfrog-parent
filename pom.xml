@@ -48,6 +48,7 @@
         <module>atomic-state</module>
         <module>builder-builder</module>
         <module>storage</module>
+        <module>http-test-harness</module>
     </modules>
     <issueManagement>
         <system>Github</system>

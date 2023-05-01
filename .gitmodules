@@ -77,3 +77,6 @@
 [submodule "builder-builder"]
 	path = builder-builder
 	url = https://github.com/timboudreau/builder-builder.git
+[submodule "http-test-harness"]
+	path = http-test-harness
+	url = https://github.com/timboudreau/http-test-harness.git
