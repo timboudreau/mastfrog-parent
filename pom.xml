@@ -45,6 +45,9 @@
         <module>blurt/blurt-collector</module>
         <module>numble</module>
         <module>portable-crypto/portable-crypto</module>
+        <module>atomic-state</module>
+        <module>builder-builder</module>
+        <module>storage</module>
     </modules>
     <issueManagement>
         <system>Github</system>

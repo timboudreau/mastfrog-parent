@@ -68,3 +68,12 @@
 	path = desktop
 	url = https://github.com/timboudreau/desktop.git
 
+[submodule "storage"]
+	path = storage
+	url = https://github.com/timboudreau/storage.git
+[submodule "atomic-state"]
+	path = atomic-state
+	url = https://github.com/timboudreau/atomic-state.git
+[submodule "builder-builder"]
+	path = builder-builder
+	url = https://github.com/timboudreau/builder-builder.git
