@@ -8,3 +8,5 @@ nb-configuration.xml
 
 target/
 /parent/target/
+.idea/
+

@@ -349,13 +349,12 @@
                         <unit.test>true</unit.test>
                         <acteur.debug>false</acteur.debug>
                         <forkNumber>${surefire.forkNumber}</forkNumber>
-
-                        <!-- <io.netty.leakDetection.level>advanced</io.netty.leakDetection.level> -->
-
                         <system.exit.on.bind.failure>false</system.exit.on.bind.failure>
+                        <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
                     </systemPropertyVariables>
                     <properties>
                         <configurationParameters>
+                            <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
                             <junit.jupiter.execution.parallel.enabled>true</junit.jupiter.execution.parallel.enabled>
                             <junit.jupiter.execution.parallel.mode.default>concurrent</junit.jupiter.execution.parallel.mode.default>
                             <junit.jupiter.execution.parallel.mode.classes.default>concurrent</junit.jupiter.execution.parallel.mode.classes.default>
@@ -629,7 +628,7 @@
         </developer>
     </developers>
     <dependencyManagement>
-        <dependencies>            
+        <dependencies>
             <dependency>
                 <groupId>com.telenav.cactus</groupId>
                 <artifactId>cactus-maven-xml</artifactId>
@@ -755,7 +754,7 @@
                 <artifactId>simplevalidation-standalone-server</artifactId>
                 <version>${simplevalidation.version}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>com.mastfrog.atomicstate</groupId>
                 <artifactId>atomic-state-annotation-processor</artifactId>
@@ -778,37 +777,52 @@
                 <artifactId>builder-annotation-processors</artifactId>
                 <version>${mastfrog.builder-builder.version}</version>
                 <scope>provided</scope>
-	    </dependency>
+            </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>http-test-harness</artifactId>
-                <version>${mastfrog.version}</version>            
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>http-test-harness-tests</artifactId>
-                <version>${mastfrog.version}</version>            
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>http-test-harness-acteur</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>giulius-test-annotations</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>giulius-test-annotation-support</artifactId>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>http-test-microframework</artifactId>
-                <version>${mastfrog.version}</version>            
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>microframework-test-app</artifactId>
-                <version>${mastfrog.version}</version>            
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>indexes</artifactId>
-                <version>${mastfrog.version}</version>            
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>storage</artifactId>
-                <version>${mastfrog.version}</version>            
-            </dependency>            
+                <version>${mastfrog.version}</version>
+            </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>colors</artifactId>
