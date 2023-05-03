@@ -88,7 +88,7 @@
         <jetty.version>9.4.50.v20221201</jetty.version>
         <log4j2.version>2.20.0</log4j2.version>
         <index.reflection>false</index.reflection>
-        <junit5.version>5.9.2</junit5.version>
+        <junit5.version>5.9.3</junit5.version>
         <vertx-pg-client.version>4.4.0</vertx-pg-client.version>
         <surefire.version>3.0.0</surefire.version>
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
@@ -349,8 +349,10 @@
                         <unit.test>true</unit.test>
                         <acteur.debug>false</acteur.debug>
                         <forkNumber>${surefire.forkNumber}</forkNumber>
+                        <http.compression.debug>false</http.compression.debug>
                         <system.exit.on.bind.failure>false</system.exit.on.bind.failure>
                         <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
+                        <jdk.internal.httpclient.disableHostnameVerification>true</jdk.internal.httpclient.disableHostnameVerification>
                     </systemPropertyVariables>
                     <properties>
                         <configurationParameters>
@@ -788,6 +790,11 @@
                 <artifactId>http-test-harness-tests</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>giulius-junit5-tests</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>        
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>http-test-harness-acteur</artifactId>
@@ -1772,6 +1779,12 @@
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit5.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
                 <version>${junit5.version}</version>
                 <scope>test</scope>
             </dependency>
