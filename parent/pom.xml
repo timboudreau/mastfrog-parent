@@ -94,6 +94,7 @@
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
         <bouncycastle.version>1.70</bouncycastle.version>
         <maven.deps.version>3.9.1</maven.deps.version>
+        <jacoco.haltonfailure>false</jacoco.haltonfailure>
 
     </properties>
 
@@ -261,6 +262,64 @@
             </build>
 
         </profile>
+        <profile>
+            <id>coverage</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <file>
+                    <exists>${basedir}/coverage.marker</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <!-- 
+                    Jacoco destabilizes some tests, and makes builds dog-slow,
+                    so only run it when the profile is explicitly enabled.
+                    -->
+                    <plugin>
+
+                        <groupId>org.jacoco</groupId>
+                        <artifactId>jacoco-maven-plugin</artifactId>
+
+                        <executions>
+
+                            <execution>
+                                <id>prepare-agent</id>
+                                <goals>
+                                    <goal>prepare-agent</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>report</id>
+                                <phase>prepare-package</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>post-unit-test</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>report</goal>
+                                </goals>
+                                <configuration>
+                                    <dataFile>target/jacoco.exec</dataFile>
+                                    <outputDirectory>target/jacoco-ut</outputDirectory>
+                                </configuration>
+                            </execution>
+
+                        </executions>
+
+                        <configuration>
+                            <systemPropertyVariables>
+                                <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
+                            </systemPropertyVariables>
+                        </configuration>
+
+                    </plugin>            
+                </plugins>
+            </build>            
+        </profile>
 
     </profiles>
 
@@ -337,25 +396,35 @@
 
                 <configuration>
 
+                    <!-- With few exceptions all tests here are parallelizable -->
                     <parallel>all</parallel>
                     <parallelMavenExecution>true</parallelMavenExecution>
                     <perCoreThreadCount>6</perCoreThreadCount>
+                    <!-- A lot of tests spend a lot of time blocked on I/O, so
+                    this actually is a good set of settings on a 4-core laptop -->
                     <threadCount>20</threadCount>
                     <forkCount>16</forkCount>
                     <reuseForks>true</reuseForks>
+                    <!-- Ensure we actually get useful stacks out of junit -->
                     <trimStackTrace>false</trimStackTrace>
 
                     <systemPropertyVariables>
+                        <!-- Disable some abort-the-vm or do-destructive stuff code -->
                         <unit.test>true</unit.test>
+                        <!-- Individual tests can turn this on as needed -->
                         <acteur.debug>false</acteur.debug>
+                        <!-- Used in a few tests? -->
                         <forkNumber>${surefire.forkNumber}</forkNumber>
-                        <http.compression.debug>false</http.compression.debug>
+                        <!-- Ensure acteur tests don't abort the JVM if they stomp a port -->
                         <system.exit.on.bind.failure>false</system.exit.on.bind.failure>
+                        <!-- Enables giulius-junit5-tests to work automagically -->
                         <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
+                        <!-- SSL tests all use self-signed certificates, so keep cert checking off in tests -->
                         <jdk.internal.httpclient.disableHostnameVerification>true</jdk.internal.httpclient.disableHostnameVerification>
                     </systemPropertyVariables>
                     <properties>
                         <configurationParameters>
+                            <!-- Enable parallel tests for junit 5 -->
                             <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
                             <junit.jupiter.execution.parallel.enabled>true</junit.jupiter.execution.parallel.enabled>
                             <junit.jupiter.execution.parallel.mode.default>concurrent</junit.jupiter.execution.parallel.mode.default>
@@ -389,15 +458,6 @@
                                     <version>&gt;=17</version>
                                 </requireJavaVersion>
                                 <DependencyConvergence/>
-                                <bannedDependencies>
-                                    <searchTransitive>true</searchTransitive>
-                                    <excludes>
-
-                                        <!-- <exclude>commons-logging:commons-logging</exclude> -->
-                                        <!-- <exclude>org.slf4j:slf4j-simple</exclude> -->
-
-                                    </excludes>
-                                </bannedDependencies>
                             </rules>
                         </configuration>
 
@@ -541,6 +601,45 @@
 
                         <moduleType>autoload</moduleType>
 
+                    </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.8.9</version>
+
+                    <executions>
+                        <execution>
+                            <id>prepare-agent</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>report</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>post-unit-test</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                            <configuration>
+                                <dataFile>target/jacoco.exec</dataFile>
+                                <outputDirectory>target/jacoco-ut</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+
+                    <configuration>
+                        <systemPropertyVariables>
+                            <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
+                        </systemPropertyVariables>
                     </configuration>
                 </plugin>
 
@@ -794,7 +893,7 @@
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>giulius-junit5-tests</artifactId>
                 <version>${mastfrog.version}</version>
-            </dependency>        
+            </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>http-test-harness-acteur</artifactId>
