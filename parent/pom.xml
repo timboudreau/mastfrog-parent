@@ -51,7 +51,9 @@
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
         <netty.version>4.1.92.Final</netty.version>
-        <guice.version>5.1.0</guice.version>
+        <guice.version>6.0.0-rc2</guice.version>
+        <enforcer.skip>true</enforcer.skip> <!-- Guice 6 contains breakage in its own closure -->
+
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
         <netbeans.version>RELEASE160</netbeans.version>
         <jackson-lib.version>2.14.2</jackson-lib.version>
@@ -272,7 +274,7 @@
             </activation>
             <build>
                 <plugins>
-                    <!-- 
+                    <!--
                     Jacoco destabilizes some tests, and makes builds dog-slow,
                     so only run it when the profile is explicitly enabled.
                     -->
@@ -316,9 +318,9 @@
                             </systemPropertyVariables>
                         </configuration>
 
-                    </plugin>            
+                    </plugin>
                 </plugins>
-            </build>            
+            </build>
         </profile>
 
     </profiles>
@@ -1283,7 +1285,42 @@
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>function</artifactId>
-                <version>${mastfrog.function.version}</version>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>function-io</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>function-state</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>function-throwing</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>functions</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>optional</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>thread-local</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>bits-unsafe</artifactId>
+                <version>${mastfrog.version}</version>
             </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
