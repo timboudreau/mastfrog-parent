@@ -923,6 +923,11 @@
             </dependency>
             <dependency>
                 <groupId>${mastfrog.groupId}</groupId>
+                <artifactId>mime-jackson</artifactId>
+                <version>${mastfrog.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${mastfrog.groupId}</groupId>
                 <artifactId>indexes</artifactId>
                 <version>${mastfrog.version}</version>
             </dependency>
