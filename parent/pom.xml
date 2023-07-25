@@ -44,19 +44,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.fork>false</maven.compiler.fork>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.debug>true</maven.compiler.debug>
         <maven.compiler.force.javac>false</maven.compiler.force.javac>
         <maven.compiler.deprecation>false</maven.compiler.deprecation>
         <maven.compiler.warnings>false</maven.compiler.warnings>
-        <netty.version>4.1.92.Final</netty.version>
-        <guice.version>6.0.0-rc2</guice.version>
+        <netty.version>4.1.95.Final</netty.version>
+        <guice.version>6.0.0</guice.version>
         <enforcer.skip>true</enforcer.skip> <!-- Guice 6 contains breakage in its own closure -->
 
         <guice.multibindings.version>4.2.3</guice.multibindings.version>
         <netbeans.version>RELEASE160</netbeans.version>
-        <jackson-lib.version>2.14.2</jackson-lib.version>
+        <jackson-lib.version>2.15.2</jackson-lib.version>
         <jackson-databind.version>${jackson-lib.version}</jackson-databind.version>
         <mastfrog.groupId>com.mastfrog</mastfrog.groupId>
         <mastfrog.version>3.0.0</mastfrog.version>
@@ -85,19 +83,19 @@
         <maven.merge.configuration.previous>2.9.7</maven.merge.configuration.previous>
         <simplevalidation.version>1.14</simplevalidation.version>
         <selenium-lib.version>3.141.59</selenium-lib.version>
-        <mongo.driver.version>3.12.12</mongo.driver.version>
-        <mongo.reactive.driver.version>4.9.0</mongo.reactive.driver.version>
+        <mongo.driver.version>3.12.14</mongo.driver.version>
+        <mongo.reactive.driver.version>4.10.1</mongo.reactive.driver.version>
         <jetty.version>9.4.50.v20221201</jetty.version>
         <log4j2.version>2.20.0</log4j2.version>
         <index.reflection>false</index.reflection>
-        <junit5.version>5.9.3</junit5.version>
-        <vertx-pg-client.version>4.4.0</vertx-pg-client.version>
-        <surefire.version>3.0.0</surefire.version>
+        <junit5.version>5.10.0</junit5.version>
+        <vertx-pg-client.version>4.4.4</vertx-pg-client.version>
+        <surefire.version>3.1.2</surefire.version>
         <obsolete.bunyan-java.version>2.6.13</obsolete.bunyan-java.version>
         <bouncycastle.version>1.70</bouncycastle.version>
-        <maven.deps.version>3.9.1</maven.deps.version>
+        <maven.deps.version>3.9.3</maven.deps.version>
         <jacoco.haltonfailure>false</jacoco.haltonfailure>
-
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <profiles>
@@ -499,13 +497,13 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-plugin-plugin</artifactId>
-                    <version>3.7.1</version>
+                    <version>3.9.0</version>
                 </plugin>
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>3.2.1</version>
+                    <version>3.3.0</version>
                 </plugin>
 
                 <plugin>
@@ -523,7 +521,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.0-M7</version>
+                    <version>3.0.1</version>
                 </plugin>
 
                 <plugin>
@@ -535,7 +533,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.3.0</version>
                 </plugin>
 
                 <plugin>
@@ -567,7 +565,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.4.1</version>
+                    <version>3.5.0</version>
                 </plugin>
 
                 <plugin>
@@ -609,7 +607,7 @@
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
-                    <version>0.8.9</version>
+                    <version>0.8.10</version>
 
                     <executions>
                         <execution>
@@ -1623,7 +1621,7 @@
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.15</version>
+                <version>1.16.0</version>
             </dependency>
             <dependency>
                 <groupId>commons-lang</groupId>
@@ -1718,7 +1716,7 @@
             <dependency>
                 <groupId>org.apache.maven.plugin-tools</groupId>
                 <artifactId>maven-plugin-annotations</artifactId>
-                <version>3.8.2</version>
+                <version>3.9.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.surefire</groupId>
@@ -1827,11 +1825,6 @@
             </dependency>
 
             <dependency>
-                <groupId>org.mongojack</groupId>
-                <artifactId>mongojack</artifactId>
-                <version>4.8.0</version>
-            </dependency>
-            <dependency>
                 <groupId>org.netbeans.api</groupId>
                 <artifactId>org-netbeans-api-annotations-common</artifactId>
                 <version>${netbeans.version}</version>
@@ -1906,11 +1899,6 @@
                 <groupId>org.sonatype.aether</groupId>
                 <artifactId>aether-util</artifactId>
                 <version>1.13.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.twitter4j</groupId>
-                <artifactId>twitter4j-core</artifactId>
-                <version>3.0.5-hack</version>
             </dependency>
             <dependency>
                 <groupId>org.xeustechnologies</groupId>
